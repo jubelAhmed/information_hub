@@ -21,7 +21,7 @@
     <link href="./assets/css/cover.css" rel="stylesheet">
     <link href="./assets/css/forms.css" rel="stylesheet">
     <link href="./assets/css/buttons.css" rel="stylesheet">
-    <script src="./assets/js/jquery.1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="./assets/bootstrap.3.3.6/js/bootstrap.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,12 +48,12 @@
 
             <form class="form-inline" style="">
             	<div class="form-group">
-            		<label for="username" style="color: gray;">Username</label><br>
-            		<input type="text" id="username" class="form-control input-xs" width="80px" style="margin-bottom: 13%;">
+            		<label for="email" style="color: gray;">Email</label><br>
+            		<input type="email" id="email" class="form-control input-xs" width="80px" style="margin-bottom: 13%;">
             		<br>
             	</div>
             	<div class="form-group">
-            		<label for="username" style="color: gray;">Password</label><br>
+            		<label for="password" style="color: gray;">Password</label><br>
             		<input type="password" id="password" class="form-control input-xs" width="80px"><br>
             		<a href="#"><small>Forget Password</small></a>
             	</div>

@@ -20,7 +20,7 @@
     <link href="../assets/css/cover.css" rel="stylesheet">
     <link href="../assets/css/forms.css" rel="stylesheet">
     <link href="../assets/css/buttons.css" rel="stylesheet">
-    <script src="../assets/js/jquery.1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="../assets/bootstrap.3.3.6/js/bootstrap.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
