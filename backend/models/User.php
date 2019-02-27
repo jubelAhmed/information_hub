@@ -29,7 +29,7 @@ class User
 
      
         // query to insert record
-        $query = "INSERT INTO" . $this->table. "
+        $query = "INSERT INTO " . $this->table. "
                 SET first_name=:first_name, last_name=:last_name, email=:email , birthday=:birthday,occupation=:occupation,gender=:gender,password=:password";
     
         // prepare query
@@ -39,7 +39,7 @@ class User
         $this->firstName=htmlspecialchars(strip_tags($this->firstName));
         $this->lastName=htmlspecialchars(strip_tags($this->lastName));
         $this->email=htmlspecialchars(strip_tags($this->email));
-    
+        $pass = md5($this->password);
         // bind values
         $stmt->bindParam(":first_name", $this->firstName);
         $stmt->bindParam(":last_name", $this->lastName);
@@ -47,11 +47,11 @@ class User
         $stmt->bindParam(":birthday", $this->birthday);
         $stmt->bindParam(":occupation", $this->occupation);
         $stmt->bindParam(":gender", $this->gender);
-        $stmt->bindParam(":password", md5($this->password));
+        $stmt->bindParam(":password", $pass);
        
     
         // execute query
-        if($stmt->execute()){
+        if($stmt->execute() > 0){
             $this->id = $this->conn->lastInsertId();
             return true;
         }
@@ -93,23 +93,7 @@ class User
         }
     }
 
-
-
-   /*  // get all registered user
-    public function read()
-    {
-        $query = "SELECT `id`, `first_name`, `last_name`, `email`, `birthday`, `occupation`, `gender`, `password` FROM $this->table ";
-        
-
-        $stmt = $this->conn->query($query);
-
-        return $stmt;
-
-    }
-
-    // get single user
- */
-    
+ 
 
 
 

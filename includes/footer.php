@@ -1,6 +1,6 @@
 <footer class="footer">
       <div class="container">
-        <p class="text-muted"> Copyright &copy; Company - All rights reserved </p>
+        <p class="text-muted"> Copyright  &copy; Information hub - All rights reserved </p>
       </div>
     </footer>
     <style>
