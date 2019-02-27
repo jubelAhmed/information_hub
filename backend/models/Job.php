@@ -125,7 +125,18 @@ class Job
     }
 
     public function getAllPublishJobPost(){
+        $query = "SELECT *
+        FROM " . $this->jobs_table . " 
+        WHERE approve_status= true";
 
+        $stmt = $this->conn->prepare($query);
+        // execute query
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            return $stmt;
+        }else{
+            return false;
+        }
     }   
 
     public function getAllUserJobPost($id){
