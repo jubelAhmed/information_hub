@@ -5,8 +5,8 @@ class Database
 
     private $host = "database.amadersoft.com";
     private $db_name = "universityProject";
-    private $user_name = "admin";
-    private $password = "8526ba9357242b31d5ad0491468af18733140382be384c67";
+    private $user_name = "university";
+    private $password = "udb2019XBD";
 
         // db connect
 
