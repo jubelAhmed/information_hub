@@ -45,7 +45,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-
+ 
+            <div id="loginform">
             <form class="form-inline" style="">
             	<div class="form-group">
             		<label for="email" style="color: gray;">Email</label><br>
@@ -58,9 +59,10 @@
             		<a href="#"><small>Forget Password</small></a>
             	</div>
             	<div class="form-group" style="margin-top: 7%; margin-left: 10px; margin-bottom: 6%;">
-            		<input type="button" class="form-control input-xs" id="signinbutton" width="20px" value="Login" ><br>
+            		<input type="button" class="form-control input-xs" id="signinBtn" width="20px" value="Login" ><br>
             	</div>              	
             </form>
+            </div>
           </ul>
         </div>
       </div>
@@ -76,7 +78,11 @@
         	</div><br>
         	<div class="col-sm-2"></div>
         	<div class="col-sm-4">
+                 <h5 id="error" style="color: red;"></h5>
+
+                 
         		<h4 class="m-b-0">
+                 
 		          <span class="icon-text">Sign Up</span>
 		        </h4>
 		        <p class="text-muted">Create a new account</p>
@@ -104,13 +110,13 @@
 		          		<div class="control-group">
 	                      <div class="radio" style="display: inline-block;">
 	                          <label>
-	                              <input name="form-field-radio" type="radio" checked="checked" >
+	                              <input name="form-field-radio" name='gender' type="radio" >
 	                              <span class="text">Male </span>
 	                          </label>
 	                      </div>
 	                      <div class="radio" style="display: inline-block; margin-left: 10px;">
 	                          <label>
-	                              <input name="form-field-radio" class="inverted" type="radio">
+	                              <input name="form-field-radio" name='gender' class="inverted" type="radio">
 	                              <span class="text">Female</span>
 	                          </label>
 	                      </div>
@@ -125,15 +131,16 @@
 		          
 		          <small>By clicking register button you are agree with all terms and condition.</small> <br><br>
 
-		          <button class="btn btn-azure" type="submit">Register</button>
+		          <button class="btn btn-azure" id="registerbtn" type="submit">Register</button>
 		        </form>
+                 
         	</div>
         </div>
                   
     </div>
 
 <!-- scripts that is only for this page -->
-<script src="./ajax/signin.js"></script>
+<script src="./ajax/auth/signin.js"></script>
 <?php 
     include('./includes/footer.php');
 ?>
