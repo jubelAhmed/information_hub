@@ -21,7 +21,7 @@
     <link href="./assets/css/cover.css" rel="stylesheet">
     <link href="./assets/css/forms.css" rel="stylesheet">
     <link href="./assets/css/buttons.css" rel="stylesheet">
-    <script src="./assets/js/jquery.1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="./assets/bootstrap.3.3.6/js/bootstrap.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -45,22 +45,24 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-
+ 
+            <div id="loginform">
             <form class="form-inline" style="">
             	<div class="form-group">
-            		<label for="username" style="color: gray;">Username</label><br>
-            		<input type="text" id="username" class="form-control input-xs" width="80px" style="margin-bottom: 13%;">
+            		<label for="email" style="color: gray;">Email</label><br>
+            		<input type="email" id="email" class="form-control input-xs" width="80px" style="margin-bottom: 13%;">
             		<br>
             	</div>
             	<div class="form-group">
-            		<label for="username" style="color: gray;">Password</label><br>
+            		<label for="password" style="color: gray;">Password</label><br>
             		<input type="password" id="password" class="form-control input-xs" width="80px"><br>
             		<a href="#"><small>Forget Password</small></a>
             	</div>
             	<div class="form-group" style="margin-top: 7%; margin-left: 10px; margin-bottom: 6%;">
-            		<input type="button" class="form-control input-xs" id="signinbutton" width="20px" value="Login" ><br>
+            		<input type="button" class="form-control input-xs" id="signinBtn" width="20px" value="Login" ><br>
             	</div>              	
             </form>
+            </div>
           </ul>
         </div>
       </div>
@@ -76,26 +78,31 @@
         	</div><br>
         	<div class="col-sm-2"></div>
         	<div class="col-sm-4">
+                 <h5 id="error" style="color: red;"></h5>
+                 <h4 id="success" style="color: green;"></h4>
+
+                 
         		<h4 class="m-b-0">
+                 
 		          <span class="icon-text">Sign Up</span>
 		        </h4>
 		        <p class="text-muted">Create a new account</p>
-		        <form action="http://demos.bootdey.com/dayday/index.html" method="get">
+		        <form method="POST">
 		          <div class="form-group">
-		            <input class="form-control" type="text" placeholder="First Name">
+		            <input class="form-control" type="text" id="firstname" placeholder="First Name">
 		          </div>
 		          <div class="form-group">
-		            <input class="form-control" type="text" placeholder="Last Name">
+		            <input class="form-control" type="text" id="lastname" placeholder="Last Name">
 		          </div>
 		          <div class="form-group">
-		            <input class="form-control" type="email" placeholder="Email">
+		            <input class="form-control" type="email" id="emailb" placeholder="Email">
 		          </div>
 		          <div class="form-group">
-		            <input placeholder="Birthday" class="form-control" type="text" onfocus="(this.type='date')"  id="date"> 
+		            <input placeholder="Birthday" id="birthday" class="form-control" type="text" onfocus="(this.type='date')"  id="date"> 
 
 		          </div>
 		          <div class="form-group">
-		            <select name="ocopation" id="" class="form-control">
+		            <select name="ocopation" id="ocopation" class="form-control">
 		            	<option value="student">Student</option>
 		            	<option value="teacher">Teacher</option>
 		            </select>
@@ -104,36 +111,41 @@
 		          		<div class="control-group">
 	                      <div class="radio" style="display: inline-block;">
 	                          <label>
-	                              <input name="form-field-radio" type="radio" checked="checked" >
+	                              <input name="form-field-radio"   type="radio" value="male" >
 	                              <span class="text">Male </span>
 	                          </label>
 	                      </div>
 	                      <div class="radio" style="display: inline-block; margin-left: 10px;">
 	                          <label>
-	                              <input name="form-field-radio" class="inverted" type="radio">
+	                              <input name="form-field-radio"   class="inverted" type="radio" value="female">
 	                              <span class="text">Female</span>
 	                          </label>
 	                      </div>
 	                  </div>
 		          </div>
 		          <div class="form-group">
-		            <input class="form-control" type="password" placeholder="Password">
+		            <input class="form-control" id="passwordb" type="password" placeholder="Password">
 		          </div>
 		          <div class="form-group">
-		            <input class="form-control" type="password" placeholder="Confirm Password">
+		            <input class="form-control" id="passwordc" type="password" placeholder="Confirm Password">
 		          </div>
 		          
 		          <small>By clicking register button you are agree with all terms and condition.</small> <br><br>
-
-		          <button class="btn btn-azure" type="submit">Register</button>
+                    <input type="button" class="btn btn-azure" id="newuserbtn" value="Register New Account" ><br>
+                    <center>
+                    <div id="loading"></div>
+                    </center>
+ 
 		        </form>
+                 
         	</div>
         </div>
                   
     </div>
-
+</div>
 <!-- scripts that is only for this page -->
-<script src="./ajax/signin.js"></script>
+<script src="./ajax/auth/signin.js"></script>
+<script src="./ajax/auth/signup.js"></script>
 <?php 
     include('./includes/footer.php');
 ?>
