@@ -13,7 +13,6 @@ class Database
     public function connect()
     {
         $this->conn = null;
-      
 
         try {
             $this->conn = new PDO("mysql:host={$this->host};dbname={$this->db_name}", $this->user_name, $this->password);
