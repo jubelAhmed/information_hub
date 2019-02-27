@@ -1,35 +1,51 @@
 
 $(document).ready(function(){
-	$( "#registerbtn" ).on( "click", function() {
+	$( "#newuserbtn" ).on( "click", function() {
+
 	 	var firstname = $('#firstname').val()
 	 	var lastname = $('#lastname').val()
-	 	var email = $('#email').val()
+	 	var email = $('#emailb').val()
 	 	var birthday = $('#birthday').val()
 	 	var ocopation = $('#ocopation').val()
-	 	var gender = $("input[name='gender']:checked").val();
-	 	var password = $('#password').val()
+ 		var gender = $( "input:checked" ).val()
+	 	var passwordb = $('#passwordb').val()
 	 	var passwordc = $('#passwordc').val()
 
- 
-	 	//$("#loginstatus").html("<img src='https://cdn.dribbble.com/users/473527/screenshots/3443226/success.gif' style='max-height:70px; max-width:170px'>")
-	 	// Checking user and password is filled up or not
-	 	if( email.trim() != '' && pass.trim() != ''){
-	 		$.ajax({
-		  		url: "./backend/api/user/auth/login.php",
-				type: "POST",
-				data: {'email' : email, 'password' : pass},
-				dataType: "json",
-				success: function(result){
-					if(result.status == 'error'){
-						$('#error').html(result.msg)
-					}else if(result.status == 'ok'){
-						window.location.href = "./profile/";
+	 	$("#newuserbtn").hide()
+	 	$("#loading").html("<img src='./assets/static/img/gif/loading.gif' style='max-height:70px; max-width:170px'>")
+
+	 	if( passwordb.trim() != '' && passwordb.trim() == passwordc.trim()){
+	 		if( firstname.trim() != '' && lastname.trim() != '' && email.trim() != '' && birthday.trim() != '' && ocopation.trim() != '' && gender.trim() != ''){
+		 		$.ajax({
+			  		url: "./backend/api/user/auth/signup.php",
+					type: "POST",
+					data: {'firstName' : firstname, 'lastName' : lastname,'email' : email,'birthday' : birthday,'occupation' : ocopation,'gender' : gender,'password' : passwordb},
+					dataType: "json",
+					success: function(result){
+						if(result.status == 'error'){
+							$('#error').html(result.msg)
+							$("#loading").hide()
+							setTimeout(function(){
+								window.location.href = "./";
+							}, 2000)
+						}else if(result.status == 'ok'){
+							$("#success").html("Account Registraion Successfull")
+							$("#loading").hide()
+							setTimeout(function(){
+								window.location.href = "./";
+							}, 2000)
+						}
 					}
-				}
-		  	});
-	 	}else{
- 	 		$('#error').html('You must enter your username and password!')
-	 	}
+			  	});
+		 	}else{
+	 	 		setTimeout(function(){$("#loading").hide(); $('#error').html('You must enter all required informaiton!');}, 500)
+ 				setTimeout(function(){window.location.href = "./";}, 3000)
+		 	}
+		 }else{
+		 	setTimeout(function(){$("#loading").hide(); $('#error').html('Your password must match!');}, 500)
+		 	setTimeout(function(){window.location.href = "./";}, 3000)
+ 	 		
+		 } 
 	 	
 	});
  

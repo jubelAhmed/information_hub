@@ -79,6 +79,7 @@
         	<div class="col-sm-2"></div>
         	<div class="col-sm-4">
                  <h5 id="error" style="color: red;"></h5>
+                 <h4 id="success" style="color: green;"></h4>
 
                  
         		<h4 class="m-b-0">
@@ -86,22 +87,22 @@
 		          <span class="icon-text">Sign Up</span>
 		        </h4>
 		        <p class="text-muted">Create a new account</p>
-		        <form action="http://demos.bootdey.com/dayday/index.html" method="get">
+		        <form method="POST">
 		          <div class="form-group">
-		            <input class="form-control" type="text" placeholder="First Name">
+		            <input class="form-control" type="text" id="firstname" placeholder="First Name">
 		          </div>
 		          <div class="form-group">
-		            <input class="form-control" type="text" placeholder="Last Name">
+		            <input class="form-control" type="text" id="lastname" placeholder="Last Name">
 		          </div>
 		          <div class="form-group">
-		            <input class="form-control" type="email" placeholder="Email">
+		            <input class="form-control" type="email" id="emailb" placeholder="Email">
 		          </div>
 		          <div class="form-group">
-		            <input placeholder="Birthday" class="form-control" type="text" onfocus="(this.type='date')"  id="date"> 
+		            <input placeholder="Birthday" id="birthday" class="form-control" type="text" onfocus="(this.type='date')"  id="date"> 
 
 		          </div>
 		          <div class="form-group">
-		            <select name="ocopation" id="" class="form-control">
+		            <select name="ocopation" id="ocopation" class="form-control">
 		            	<option value="student">Student</option>
 		            	<option value="teacher">Teacher</option>
 		            </select>
@@ -110,37 +111,41 @@
 		          		<div class="control-group">
 	                      <div class="radio" style="display: inline-block;">
 	                          <label>
-	                              <input name="form-field-radio" name='gender' type="radio" >
+	                              <input name="form-field-radio"   type="radio" value="male" >
 	                              <span class="text">Male </span>
 	                          </label>
 	                      </div>
 	                      <div class="radio" style="display: inline-block; margin-left: 10px;">
 	                          <label>
-	                              <input name="form-field-radio" name='gender' class="inverted" type="radio">
+	                              <input name="form-field-radio"   class="inverted" type="radio" value="female">
 	                              <span class="text">Female</span>
 	                          </label>
 	                      </div>
 	                  </div>
 		          </div>
 		          <div class="form-group">
-		            <input class="form-control" type="password" placeholder="Password">
+		            <input class="form-control" id="passwordb" type="password" placeholder="Password">
 		          </div>
 		          <div class="form-group">
-		            <input class="form-control" type="password" placeholder="Confirm Password">
+		            <input class="form-control" id="passwordc" type="password" placeholder="Confirm Password">
 		          </div>
 		          
 		          <small>By clicking register button you are agree with all terms and condition.</small> <br><br>
-
-		          <button class="btn btn-azure" id="registerbtn" type="submit">Register</button>
+                    <input type="button" class="btn btn-azure" id="newuserbtn" value="Register New Account" ><br>
+                    <center>
+                    <div id="loading"></div>
+                    </center>
+ 
 		        </form>
                  
         	</div>
         </div>
                   
     </div>
-
+</div>
 <!-- scripts that is only for this page -->
 <script src="./ajax/auth/signin.js"></script>
+<script src="./ajax/auth/signup.js"></script>
 <?php 
     include('./includes/footer.php');
 ?>
