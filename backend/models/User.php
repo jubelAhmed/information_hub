@@ -93,23 +93,7 @@ class User
         }
     }
 
-
-
-   /*  // get all registered user
-    public function read()
-    {
-        $query = "SELECT `id`, `first_name`, `last_name`, `email`, `birthday`, `occupation`, `gender`, `password` FROM $this->table ";
-        
-
-        $stmt = $this->conn->query($query);
-
-        return $stmt;
-
-    }
-
-    // get single user
- */
-    
+ 
 
 
 
