@@ -1,34 +1,7 @@
 
-<!DOCTYPE html>
-<html lang="en">
-  
-<!-- Mirrored from demos.bootdey.com/dayday/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:35:14 GMT -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="img/favicon.png">
-    <title>Information Hub</title>
-    <!-- Bootstrap core CSS -->
-    <link href="bootstrap.3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome.4.6.1/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/animate.min.css" rel="stylesheet">
-    <link href="assets/css/timeline.css" rel="stylesheet">
-    <link href="assets/css/cover.css" rel="stylesheet">
-    <link href="assets/css/forms.css" rel="stylesheet">
-    <link href="assets/css/buttons.css" rel="stylesheet">
-    <script src="assets/js/jquery.1.11.1.min.js"></script>
-    <script src="bootstrap.3.3.6/js/bootstrap.min.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+<?php 
+    include('./includes/header.php');
+?>
 
   <body class="animated fadeIn">
 
@@ -47,19 +20,19 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
 
-            <form action="signin.php" class="form-inline" style="">
+            <form class="form-inline" style="">
             	<div class="form-group">
             		<label for="username" style="color: gray;">Username</label><br>
-            		<input type="text" class="form-control input-xs" width="80px" style="margin-bottom: 13%;">
+            		<input type="text" id="username" class="form-control input-xs" width="80px" style="margin-bottom: 13%;">
             		<br>
             	</div>
             	<div class="form-group">
             		<label for="username" style="color: gray;">Password</label><br>
-            		<input type="password" class="form-control input-xs" width="80px"><br>
+            		<input type="password" id="password" class="form-control input-xs" width="80px"><br>
             		<a href="#"><small>Forget Password</small></a>
             	</div>
             	<div class="form-group" style="margin-top: 7%; margin-left: 10px; margin-bottom: 6%;">
-            		<input type="submit" class="form-control input-xs" width="20px" value="Login" ><br>
+            		<input type="button" class="form-control input-xs" id="signinbutton" width="20px" value="Login" ><br>
             	</div>              	
             </form>
           </ul>
@@ -133,15 +106,8 @@
                   
     </div>
 
-    <footer class="footer">
-      <div class="container">
-        <p class="text-muted"> Copyright &copy; Company - All rights reserved </p>
-      </div>
-    </footer>
-    <style>
-      #bsaHolder{right:25px;position:absolute;top:0;width:345px;z-index:10}#bsa_closeAd{width:15px;height:15px;overflow:hidden;position:absolute;top:10px;right:11px;border:none!important;z-index:1;text-decoration:none!important;background:url(../../www.bootdey.com/img/x_icon.png) no-repeat}#carbonads,#carbonads span{overflow:hidden;display:block}#carbonads{border-radius:4px;background-color:#f9f9f9;line-height:1.5}.carbon-img{display:block;margin:0 auto 1em;text-align:center;float:left!important;margin-right:10px!important}.carbon-text{display:block;margin-bottom:1em;text-align:left;text-decoration:none;margin-top:15px;font-size:90%!important;line-height:130%!important;min-width:120px!important;color:#06c!important}.carbon-poweredby,.carbon-wrap,.carbon-wrap a{display:block!important}.carbon-wrap{background:#f1f1f1!important;padding:15px 15px 10px!important}.carbon-poweredby{color:#6e6e6e!important;text-decoration:underline!important;font-size:65%!important;font-style:italic!important;text-align:center!important;margin:8px 0 0!important}#carbonads{background:#fff!important;padding:0!important}    
-    </style>
-  </body>
-
-<!-- Mirrored from demos.bootdey.com/dayday/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:35:20 GMT -->
-</html>
+<!-- scripts that is only for this page -->
+<script src="./ajax/signin.js"></script>
+<?php 
+    include('./includes/footer.php');
+?>
