@@ -5,7 +5,7 @@ $(document).ready(function(){
 	  	var username = $("#username");
 	  	var username = $("#username");
 
-	  	$.ajax{
+	  	$.ajax({
 	  		url: "./backend/api/user/auth/login.php",
 			type: "POST",
 			data: {'username' : username, 'password' : password},
@@ -13,6 +13,6 @@ $(document).ready(function(){
 			success: function(result){
 				console.log(result)
 			}
-	  	}
+	  	});
 	});
 });
