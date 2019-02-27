@@ -10,18 +10,18 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-    <link rel="icon" href="img/favicon.png">
+    <link rel="icon" href="./assets/static/img/favicon.png">
     <title>Information Hub</title>
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap.3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome.4.6.1/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/animate.min.css" rel="stylesheet">
-    <link href="assets/css/timeline.css" rel="stylesheet">
-    <link href="assets/css/cover.css" rel="stylesheet">
-    <link href="assets/css/forms.css" rel="stylesheet">
-    <link href="assets/css/buttons.css" rel="stylesheet">
-    <script src="assets/js/jquery.1.11.1.min.js"></script>
-    <script src="bootstrap.3.3.6/js/bootstrap.min.js"></script>
+    <link href="./assets/bootstrap.3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/font-awesome.4.6.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./assets/css/animate.min.css" rel="stylesheet">
+    <link href="./assets/css/timeline.css" rel="stylesheet">
+    <link href="./assets/css/cover.css" rel="stylesheet">
+    <link href="./assets/css/forms.css" rel="stylesheet">
+    <link href="./assets/css/buttons.css" rel="stylesheet">
+    <script src="./assets/js/jquery.1.11.1.min.js"></script>
+    <script src="./assets/bootstrap.3.3.6/js/bootstrap.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
