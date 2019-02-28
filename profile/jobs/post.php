@@ -25,7 +25,15 @@
     <script src="../../assets/js/jquery.1.11.1.min.js"></script>
     <script src="../../assets/bootstrap.3.3.6/js/bootstrap.min.js"></script>
     <script src="../../assets/js/job_post.js"></script>
-    
+    <style>
+      .our-skill-plus-button:hover {
+          color: black;
+      }
+      .badge-close-feature:hover {
+        display: inline;
+        color: #580000 !important; padding-left: 5%; font-size: 16px;
+        cursor: pointer;  
+    </style>
   </head>
 
   <body>
@@ -357,7 +365,29 @@
                     </div>
                     
                 </div>
-                <div class="wizard-buttons">
+                
+                <div class="row" style="margin-top: 8px;">
+                  <div class="col-md-4"></div>
+                    <div class="col-md-3 col-sm-3 col-lg-3">
+                      <div class="input-group input-group-sm">
+                          <input class="form-control" type="text" placeholder="special-skill">
+                          <span class="input-group-btn">
+                              <i class="our-skill-plus-button fa fa-plus-circle" style="font-size: 30px; color: green; margin-left: 5px; cursor: pointer;"></i>
+                          </span>
+                      </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 30px; margin-left: 20%; margin-right: 30%;">
+           
+                      <div class="badge" style="height: 30px; padding-top: 7px; font-size: 16px; margin-right: 16px;  margin-top: 10px;">Cooking <i class="fa fa-times badge-close-feature" style="display: hidden; color: transparent;"></i></div>
+                      
+
+                      
+
+
+        
+                </div>
+                <div class="wizard-buttons" style="margin-top: 15px;">
                     <button type="button" class="btn btn-previous">Previous</button>
                     <button type="button" id="getSkills" class="btn btn-next">Next</button>
                 </div>
