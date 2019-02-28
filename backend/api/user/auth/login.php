@@ -31,6 +31,6 @@ if($stmt->rowCount() > 0){
 }
 else{
 
-    echo('{"msg": "login Failed!", "status": "error"}');
+    echo('{"msg": "login Failed! Try again.", "status": "error"}');
 }
 ?>
