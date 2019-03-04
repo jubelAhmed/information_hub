@@ -18,9 +18,18 @@ $(document).ready(function(){
 	// });
 
 
+	var skills = $(".allSpecialSkills") ; 
+
+	var skillsArr = [];
+    for (var i = 0; i < skills.length; i++) {
+      skillsArr.push(skills[i].firstChild.nodeValue);
+    }
+
+	console.log(skillsArr) ;
 
 	$("#getSkills").on("click", function(){
 		console.log($("input[type='checkbox']").val())
 	})
  
+
 });
