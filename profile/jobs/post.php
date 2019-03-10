@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
-    <link rel="icon" href="img/icon-infohub.png">
+    <link rel="icon" href="../../assets/static/img/icon-infohub.png">
     <title>Information-hub</title>
     <!-- Bootstrap core CSS -->
     <link href="../../assets/bootstrap.3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -387,7 +387,7 @@
                                 <input class="form-control" id="idSpecialSkillInput" type="text"
                                     placeholder="special-skill">
                                 <span class="input-group-btn">
-                                    <i class="our-skill-plus-button fa fa-plus-circle"
+                                    <i id="special_skill_btn" class="our-skill-plus-button fa fa-plus-circle"
                                         style="font-size: 30px; color: green; margin-left: 5px; cursor: pointer;"
                                         onclick="addNewSkill()"></i>
                                 </span>

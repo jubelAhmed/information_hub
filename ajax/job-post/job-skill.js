@@ -29,3 +29,11 @@ function addNewSkill() {
 function deleteChild(span_id) {
   rootSpecialSkill.removeChild(document.getElementById(span_id));
 }
+
+var input = document.getElementById("idSpecialSkillInput");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("special_skill_btn").click();
+  }
+});
