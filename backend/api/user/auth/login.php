@@ -26,6 +26,7 @@ if($stmt->rowCount() > 0){
     //sessions
     $_SESSION['user_login_email'] = $row['email'];
     $_SESSION['user_login_uid'] = $row['id'];
+    $_SESSION['valid'] = true;
 
     echo('{"msg": "login Successfully done", "status": "ok"}');
 }

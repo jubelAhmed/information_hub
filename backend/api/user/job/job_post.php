@@ -14,6 +14,10 @@ $db = $database->connect();
 
 $job = new Job($db);
 
+/* if((empty($_POST['jobTitle'])) || (empty($_POST['lastName'])) || (empty($_POST['email'])) || (empty($_POST['birthday'])) || (empty($_POST['occupation'])) || (empty($_POST['gender'])) || (empty($_POST['password']))){
+    echo('{"msg": "You must fill every require field!","status": "error"}');
+    die();
+} */
 
 $job->jobTitle = $_POST['jobTitle'];
 $job->companyName = $_POST['companyName'];

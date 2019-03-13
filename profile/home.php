@@ -1,3 +1,12 @@
+<?php 
+  session_start();
+  if(!$_SESSION['valid']){
+    session_destroy();
+    header("Location:http://localhost/information_hub/index.php");
+  }
+
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Mirrored from demos.bootdey.com/dayday/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:35:14 GMT -->
