@@ -27,6 +27,7 @@
     <script src="../../assets/js/jquery.1.11.1.min.js"></script>
     <script src="../../assets/bootstrap.3.3.6/js/bootstrap.min.js"></script>
     <script src="../../assets/js/job_post.js"></script>
+    <script src="../../assets/js/job-post-validation.js"></script>
 
     <style>
     .our-skill-plus-button:hover {
