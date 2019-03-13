@@ -78,8 +78,10 @@
         <div class="card-block center">
             <div class="row">
                 <div class="col-sm-6">
-                    <h2>Best place for sharing your stories</h2>
-                    <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yc/r/GwFs3_KxNjS.png" alt="">
+
+                    <img src="http://taskkosolutions.com/images/vocation.png" alt="">
+                    <p class="text-info">Information hub is the personal profile builder , knowledge share and job
+                        finder web apps</p>
                 </div><br>
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4">

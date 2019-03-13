@@ -113,7 +113,7 @@ class Job
         $query = "SELECT *
         FROM " . $this->jobs_table . " 
         WHERE approve_status= false";
-
+ 
         $stmt = $this->conn->prepare($query);
         // execute query
         $stmt->execute();
