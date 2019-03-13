@@ -3,6 +3,8 @@
 
 <!-- Mirrored from demos.bootdey.com/dayday/recover_password.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:36:05 GMT -->
 
+
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,6 +27,7 @@
     <script src="../../assets/js/jquery.1.11.1.min.js"></script>
     <script src="../../assets/bootstrap.3.3.6/js/bootstrap.min.js"></script>
     <script src="../../assets/js/job_post.js"></script>
+
     <style>
     .our-skill-plus-button:hover {
         color: black;
@@ -36,6 +39,7 @@
         padding-left: 5%;
         font-size: 16px;
         cursor: pointer;
+    }
     </style>
 </head>
 
@@ -57,19 +61,20 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="actives"><a href="profile.html">Profile</a></li>
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="../home.php">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false">
                             Jobs <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="new-job-post.html">Create New Job</a></li>
+                            <li><a href="../jobs/post.php">Create New Job</a></li>
                             <li><a href="search-job.html">Search Jobs</a></li>
 
                         </ul>
                     </li>
-                    <li class="right "><a style="color:blue" href="./index.html">Log Out</a></li>
+                    <li class="right "><a style="color:blue" href="../../backend/api/user/auth/logout.php">Log Out</a>
+                    </li>
                 </ul>
             </div>
         </div>
