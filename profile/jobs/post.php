@@ -69,7 +69,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="../jobs/post.php">Create New Job</a></li>
-                            <li><a href="search-job.html">Search Jobs</a></li>
+                            <li><a href="../jobs/search-job.php">Search Jobs</a></li>
 
                         </ul>
                     </li>
@@ -129,13 +129,14 @@
                     </center>
                     <div class="form-group">
                         <label>Job Title <font color="red">*</font></label>
-                        <input type="text" name="jobtitle" class="form-control" placeholder="Manager" />
+                        <input type="text" name="job_title" id="job_title" class="form-control" placeholder="Manager" />
                     </div>
                     <div class="row">
                         <div class="col-md-8">
                             <div class="form-group">
                                 <label>Company <font color="red">*</font> </label>
-                                <input type="text" name="jobtitle" class="form-control" placeholder="Diu" />
+                                <input type="text" name="jobtitle" id="company" class="form-control"
+                                    placeholder="Diu" />
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -240,8 +241,8 @@
 
                     </div>
                     <div class="wizard-buttons">
-                        <button type="button" class="btn btn-previous">Previous</button>
-                        <button type="button" class="btn btn-next">Continue</button>
+                        <button type="button" id="job_details_previous_btn" class="btn btn-previous">Previous</button>
+                        <button type="button" id="job_details_continue_btn" class="btn btn-next">Continue</button>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -321,7 +322,7 @@
                             <div class="checkbox">
                                 <label>
                                     <input class="checkbox-slider yesno" type="checkbox">
-                                    <span class="text">Grapics Design</span>
+                                    <span class="text">Graphics Design</span>
                                 </label>
                             </div>
                         </div>

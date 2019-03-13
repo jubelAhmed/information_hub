@@ -21,7 +21,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="../profile/jobs/post.php">Create New Job</a></li>
-                        <li><a href="search-job.html">Search Jobs</a></li>
+                        <li><a href="../profile/jobs/search-job.php">Search Jobs</a></li>
                     </ul>
                 </li>
                 <li class="right">
