@@ -1,4 +1,4 @@
-<nav class="navbar navbar-white navbar-fixed-top text-danger" style="">
+<nav class="navbar navbar-white navbar-fixed-top text-danger ">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
@@ -21,7 +21,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="../profile/jobs/post.php">Create New Job</a></li>
-                        <li><a href="search-job.html">Search Jobs</a></li>
+                        <li><a href="../profile/jobs/search-job.php">Search Jobs</a></li>
                     </ul>
                 </li>
                 <li class="right">
