@@ -136,14 +136,13 @@
                         <div class="col-md-8">
                             <div class="form-group">
                                 <label>Company <font color="red">*</font> </label>
-                                <input type="text" name="jobtitle" id="company" class="form-control"
-                                    placeholder="Diu" />
+                                <input type="text" name="company" id="company" class="form-control" placeholder="Diu" />
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Appling Deadline <font color="red">*</font></label>
-                                <input placeholder="Deadline" id="jobtitle" class="form-control" type="text"
+                                <input placeholder="Deadline" id="deadline" class="form-control" type="text"
                                     onfocus="(this.type='date')" id="jobtitle">
                             </div>
                         </div>
@@ -160,14 +159,14 @@
                     </div>
                     <div class="form-group">
                         <label>Location <font color="red">*</font></label>
-                        <input type="text" name="joblocation" class="form-control"
+                        <input type="text" name="joblocation" id="joblocation" class="form-control"
                             placeholder="Dhanmondi 32, Dhaka 1205" />
                     </div>
 
                     <label>This is a remote work / from home <font color="red">*</font></label>
                     <div class="form-group">
                         <label>
-                            <input class="checkbox-slider slider-icon yesno" type="checkbox">
+                            <input class="checkbox-slider slider-icon yesno" id="remotework" type="checkbox">
                             <span class="text"></span>
                         </label>
                     </div>
@@ -176,7 +175,7 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="radio">
                                 <label>
-                                    <input name="form-field-radio" type="radio" class="colored-blue">
+                                    <input name="jobtype" value="Part Time" type="radio" class="colored-blue">
                                     <span class="text"> Part Time</span>
                                 </label>
                             </div>
@@ -184,7 +183,7 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="radio">
                                 <label>
-                                    <input name="form-field-radio" type="radio" class="colored-blue">
+                                    <input name="jobtype" value="Full Time" type="radio" class="colored-blue">
                                     <span class="text"> Full Time</span>
                                 </label>
                             </div>
@@ -192,7 +191,7 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="radio">
                                 <label>
-                                    <input name="form-field-radio" type="radio" class="colored-blue">
+                                    <input name="jobtype" value="Contract" type="radio" class="colored-blue">
                                     <span class="text"> Contract</span>
                                 </label>
                             </div>
@@ -200,7 +199,7 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="radio">
                                 <label>
-                                    <input name="form-field-radio" type="radio" class="colored-blue">
+                                    <input name="jobtype" value="Internship" type="radio" class="colored-blue">
                                     <span class="text"> Internship</span>
                                 </label>
                             </div>
@@ -212,7 +211,7 @@
                         <div class="row">
                             <div class="col-md-3 col-sm-3 col-xs-3">
 
-                                <select name="" id="" style="width: 100%">
+                                <select name="" id="compensationtype" style="width: 100%">
                                     <option value="Annually">Annually</option>
                                     <option value="Annually">Monthly</option>
                                 </select>
@@ -221,7 +220,7 @@
                             <div class="col-md-4 col-sm-4 col-xs-4">
                                 <div class="input-group">
                                     <span class="input-group-addon">TK</span>
-                                    <input type="text" class="form-control" placeholder="50,000">
+                                    <input type="text" id="mincompensation" class="form-control" placeholder="50,000">
                                     <span class="input-group-addon">.0</span>
                                 </div>
                             </div>
@@ -234,7 +233,8 @@
                                 <div class="input-group">
 
                                     <span class="input-group-addon">TK</span>
-                                    <input type="text" class="form-control" placeholder="1,000,000">
+                                    <input type="text" id="maxcompensation" class="form-control"
+                                        placeholder="1,000,000">
                                     <span class="input-group-addon">.0</span>
                                 </div>
                             </div>
