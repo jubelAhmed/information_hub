@@ -116,11 +116,11 @@
                     <iframe src="../../assets/license.txt"></iframe>
                     <input class="checkbox-slider colored-danger" type="checkbox">
                     <label class="form-check-label"><br>
-                        <input class="form-check-input text-success" type="checkbox" style="color: green;"
-                            value="yes">By clicking next button I agree with this license
+                        <input id="agreement_text" class="form-check-input text-success" type="checkbox"
+                            style="color: green;" value="yes">By clicking next button I agree with this license
                     </label>
                     <div class="wizard-buttons">
-                        <button type="button" class="btn btn-next">Next</button>
+                        <button type="button" id="agree_btn" class="btn btn-next">Next</button>
                     </div>
                 </fieldset>
                 <fieldset>
