@@ -52,7 +52,7 @@ class Job
 
      
 
-        $query = "INSERT INTO ". $this->jobs_table ." SET user_id=:user_id, job_title=:job_title, company_name=:company_name ,logo_id=:logo_id,location=:location,remote_work=:remote_work,job_type=:job_type,salary_type=:salary_type,min_salary=:min_salary,max_salary=:max_salary,programming_skill=:programming_skill,design_skill=:design_skill,others_skill=:others_skill, job_description=:job_description,approve_status=:approve_status" ; 
+        $query = "INSERT INTO ". $this->jobs_table ." SET user_id=:user_id, job_title=:job_title, company_name=:company_name ,logo_id=:logo_id,location=:location,remote_work=:remote_work,job_type=:job_type,salary_type=:salary_type,min_salary=:min_salary,max_salary=:max_salary,programming_skills=:programming_skills,design_skills=:design_skills,others_skills=:others_skills, job_description=:job_description,approve_status=:approve_status" ; 
 
 
         $stmt = $this->conn->prepare($query);
@@ -68,9 +68,9 @@ class Job
         $stmt->bindParam(":salary_type", $this->salaryType);
         $stmt->bindParam(":min_salary", $this->minSalary);
         $stmt->bindParam(":max_salary", $this->maxSalary);
-        $stmt->bindParam(":programming_skill", $this->programmingSkill);
-        $stmt->bindParam(":design_skill", $this->designSkill);
-        $stmt->bindParam(":others_skill", $this->othersSkill);
+        $stmt->bindParam(":programming_skills", $this->programmingSkill);
+        $stmt->bindParam(":design_skills", $this->designSkill);
+        $stmt->bindParam(":other_skills", $this->othersSkill);
         $stmt->bindParam(":job_description", $this->jobDescription);
         $stmt->bindParam(":approve_status", $this->approveStatus );
 
@@ -112,7 +112,7 @@ class Job
     public function getAllPendingJobPost(){
         $query = "SELECT *
         FROM " . $this->jobs_table . " 
-        WHERE approve_status= false";
+        WHERE approve_status= 0";
  
         $stmt = $this->conn->prepare($query);
         // execute query
@@ -127,7 +127,22 @@ class Job
     public function getAllPublishJobPost(){
         $query = "SELECT *
         FROM " . $this->jobs_table . " 
-        WHERE approve_status= true";
+        WHERE approve_status = 1";
+
+        $stmt = $this->conn->prepare($query);
+        // execute query
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            return $stmt;
+        }else{
+            return false;
+        }
+    }
+    
+    public function getSingleJobPost($jobId){
+        $query = "SELECT *
+        FROM " . $this->jobs_table . " 
+        WHERE id = '$jobId'";
 
         $stmt = $this->conn->prepare($query);
         // execute query
@@ -139,7 +154,7 @@ class Job
         }
     }   
 
-    public function getAllUserJobPost($id){
+    public function getAllOwnUserJobPost($id){
         $query = "SELECT *
         FROM " . $this->jobs_table . " 
         WHERE user_id= '".$id."' ";
