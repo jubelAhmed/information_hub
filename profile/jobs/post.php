@@ -121,12 +121,13 @@
                             style="color: green;" value="yes">By clicking next button I agree with this license
                     </label>
                     <div class="wizard-buttons">
-                        <button type="button" id="agree_btn" class="btn btn-next">Next</button>
+                        <button type="button" id="agree_btn" class="btn btn-accept-licence">Next</button>
                     </div>
                 </fieldset>
                 <fieldset>
                     <center>
                         <h4>Job Details</h4>
+                        <font color="red" id="error"></font>
                     </center>
                     <div class="form-group">
                         <label>Job Title <font color="red">*</font></label>
@@ -243,7 +244,9 @@
                     </div>
                     <div class="wizard-buttons">
                         <button type="button" id="job_details_previous_btn" class="btn btn-previous">Previous</button>
-                        <button type="button" id="job_details_continue_btn" class="btn btn-next">Continue</button>
+                        <button type="button" id="job_details_continue_btn"
+                            class="btn btn-success btn-job-basic-info-filledup">Continue</button>
+                        <!-- btn-next -->
                     </div>
                 </fieldset>
                 <fieldset>

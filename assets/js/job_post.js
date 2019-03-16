@@ -24,7 +24,8 @@ jQuery(document).ready(function() {
     	$(this).removeClass('input-error');
     });
     
-    $('form .btn-next').on('click', function() {
+    $('form .btn-accept-licence').on('click', function() {
+		
     	var parent_fieldset = $(this).parents('fieldset');
     	var next_step = true;
     	var current_active_step = $(this).parents('form').find('.form-wizard.active');
