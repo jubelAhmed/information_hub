@@ -12,7 +12,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li class="actives"><a href="profile.html">Profile</a></li>
+                <li class="actives"><a href="../profile.php">Profile</a></li>
                 <li><a href="../home.php">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
