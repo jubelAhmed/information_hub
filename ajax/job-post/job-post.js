@@ -14,6 +14,8 @@ $(document).ready(function() {
   var remotework = 'no';
   jobdescriptioninfo = ''
 
+  var selectedCompanylogo = '';
+
   // Job Details First Page
   $("#job_details_continue_btn").on("click", function(){
     job_title = $("#job_title").val()
@@ -30,6 +32,8 @@ $(document).ready(function() {
     compensation = $("#compensationtype").val()
     min_salary = $("#min_salary").val()
     max_salary = $("#max_salary").val()
+    selectedCompanylogo = $("#selectedCompanylogo").attr('src');
+    //console.log(selectedCompanylogo)
   })
   // Required Skill Details second Page
   $("#skill_details_continue_btn").on("click", function(){
@@ -54,6 +58,7 @@ $(document).ready(function() {
       $("#JobDescriptionPreview").text(jobdescriptioninfo)
     
   })
+
   // Submit For Review Fourth Page
   $( "#submit-for-review" ).on( "click", function() {
 

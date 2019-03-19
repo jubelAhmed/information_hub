@@ -118,10 +118,11 @@
                     <div class="form-group">
                         <label for="">Company Logo <font color="red">*</font></label><br>
                         <span class="file-input btn btn-azure btn-file">
-                            Browse <input id="selectCompanylogo" type="file" multiple="">
+                            Browse <input onchange="encodeImagetoBase64(this)" type="file" multiple="">
                         </span>
                         <span>
-                            <img src="https://daffodilvarsity.edu.bd/images/logo.png" alt="Company Logo"
+                            <img class="link" id="selectedCompanylogo"
+                                src="https://daffodilvarsity.edu.bd/images/logo.png" alt="Company Logo"
                                 style="max-width: 100px; max-height: 100px; margin-left: 50px; padding: 10px;">
                         </span>
                     </div>
@@ -486,6 +487,18 @@
 </body>
 <script src="../../ajax/job-post/job-post.js"></script>
 <script src="../../ajax/job-post/job-skill.js"></script>
+<script>
+function encodeImagetoBase64(element) {
+    var file = element.files[0];
+    var reader = new FileReader();
+    reader.onloadend = function() {
+        $(".link").attr("src", reader.result);
+
+        $(".link").text(reader.result);
+    }
+    reader.readAsDataURL(file);
+}
+</script>
 <!-- Mirrored from demos.bootdey.com/dayday/recover_password.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:36:06 GMT -->
 
 </html>
