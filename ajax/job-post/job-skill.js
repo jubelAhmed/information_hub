@@ -16,7 +16,8 @@ function addNewSkill() {
     <i onclick="deleteChild('${
       span.id
     }')" class="cancel-btn fa fa-times badge-close-feature" style="display: hidden; color: transparent;"></i>
-    </div>`;
+    
+    </div><input name="extraskill" value="${skill.value}" type="hidden">`;
   n++;
 
   span.innerHTML = skillTemplate;

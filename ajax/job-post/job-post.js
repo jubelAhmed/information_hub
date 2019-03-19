@@ -1,31 +1,67 @@
 $(document).ready(function() {
-  // $( "#submit-for-review" ).on( "click", function() {
-  //  	 var job_title = $("#job-title").val()
-  //  	 var company = $("#company").val()
-  //  	 var applicationDeadline = $("#applicationDeadline").val()
-  //  	 var companyLogo = $("#companyLogo")
-  //  	 var location = $("#location").val()
-  //  	 var company = $("#company").val()
-  //  	 var isRemoteWork = $("#isRemoteWork").val()
-  //  	 var jobtype = $("#jobtype").val()
-  //  	 var compensation = $("#compensation").val()
-  //  	 var min_salary = $("#min_salary").val()
-  //  	 var max_salary = $("#max_salary").val()
-  //  	 var programmingSkills = $("#programmingSkills")
-  //  	 var job_description = $("#job_description").val()
+  // Skiping licence page because no need!
+  let job_title = '';
+  let company = '';
+  let applicationDeadline = '';
+  let companyLogo = '';
+  let location = '';
+  let companywebsite = '';
+  let jobtype = '';
+  let compensation = '';
+  let min_salary = '';
+  let max_salary = '';
+  let requiredSkills = '';
+  var remotework = 'no';
+  jobdescriptioninfo = ''
 
-  // });
+  var selectedCompanylogo = '';
 
-  var skills = $(".allSpecialSkills");
+  // Job Details First Page
+  $("#job_details_continue_btn").on("click", function(){
+    job_title = $("#job_title").val()
+    company = $("#company").val()
+    applicationDeadline = $("#applicationDeadline").val()
+    companyLogo = $("#companyLogo")
+    location = $("#location").val()
+    company = $("#company").val()
+    companywebsite = $("#companywebsite").val()
+    if($("#isRemoteWork").prop('checked') == true){
+        remotework = "yes"
+    }
+    jobtype = $("input[name='jobtype']:checked").val();
+    compensation = $("#compensationtype").val()
+    min_salary = $("#min_salary").val()
+    max_salary = $("#max_salary").val()
+    selectedCompanylogo = $("#selectedCompanylogo").attr('src');
+    //console.log(selectedCompanylogo)
+  })
+  // Required Skill Details second Page
+  $("#skill_details_continue_btn").on("click", function(){
+    var requireSkillsLocal = [];
+    $.each($("input[name='skillyesno']:checked"), function(){            
+      requireSkillsLocal.push($(this).val());
+    });
+    
+    $.each($("input[name='extraskill']"), function(){            
+      requireSkillsLocal.push($(this).val());
+    });
+    requiredSkills = requireSkillsLocal.join(", ")
+  })
 
-  var skillsArr = [];
-  for (var i = 0; i < skills.length; i++) {
-    skillsArr.push(skills[i].firstChild.nodeValue);
-  }
+  // Job Description Third Page
+  $("#description_details_continue_btn").on("click", function(){
+    jobdescriptioninfo = $("#jobdescriptioninfo").val()
+    $("#job_title_display").text("Job Title: "+ job_title)
+    $("#SimpleViewDetails").text("Address: " + location + " | Remotework? : "+ remotework + " | Job Type:"  + jobtype + " | Compensation: "+ compensation + " | Minimum Salary: " + min_salary + "| Maximum Salary: "+ max_salary )
+    
+      $("#reviewSkills").text(requiredSkills)
+      $("#JobDescriptionPreview").text(jobdescriptioninfo)
+    
+  })
 
-  console.log(skillsArr);
+  // Submit For Review Fourth Page
+  $( "#submit-for-review" ).on( "click", function() {
 
-  $("#getSkills").on("click", function() {
-    console.log($("input[type='checkbox']").val());
+      alert("Thank you your job will be reviewed!");
   });
 });
