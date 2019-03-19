@@ -65,79 +65,82 @@
       ?>
     <!-- Fixed navbar -->
 
+    <div style="margin-top:71px">
+        <div class="panel " styele="background:white">
 
-    <nav class="navbar navbar-white text-danger" style="margin-top:70px ;
-      background: #fcf9f9">
-        <div class="container">
 
-            <div class="row" style="padding-top:10px">
-                <div class="col-md-3">
-                    <div class="has-success" style="margin-bottom: 15px">
-                        <select class="form-control js-example-responsive" multiple="multiple" style="width: 100% ;">
-                            <optgroup label="Programming Language">
-                                <option>Java</option>
-                                <option>C</option>
-                                <option>javascript</option>
-                                <option>c#</option>
-                                <option>.net</option>
-                            </optgroup>
-                            <optgroup label="Development">
-                                <option>Web</option>
-                                <option>Desktop</option>
-                                <option>Android</option>
-                                <option>Robotics</option>
-                            </optgroup>
-                            <optgroup label="Javascript Framework">
-                                <option>jQuery</option>
-                                <option>AngularJs</option>
-                                <option>ReactJS</option>
-                                <option>ViewJs</option>
-                            </optgroup>
-                        </select>
+
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-6  m-a-2" style="font-size:18px;color:#2DC3E8">
+                        <strong> Filter  </strong>
                     </div>
-                </div>
-
-                <div class="col-md-6">
-
-                    <div class="row">
-                        <div class="col-xs-4 col-md-4">
-                            <label>
-                                <input class="checkbox-slider colored-blue" type="checkbox">
-                                <span class="text">Most Views</span>
-                            </label>
-                        </div>
-                        <div class="col-xs-4 col-md-4">
-                            <label>
-                                <input class="checkbox-slider slider-icon colored-blue" type="checkbox">
-                                <span class="text">Most Rated</span>
-                            </label>
-                        </div>
-                        <div class="col-xs-4 col-md-4">
-                            <label>
-                                <input class="checkbox-slider colored-blue" type="checkbox">
-                                <span class="text">My Favourite</span>
-                            </label>
-                        </div>
-
+                    <div class="col-md-6 text-right">
+                        <a class=" bg-white" style="text-decoration:none;background:white;  color:#2DC3E8"
+                            data-toggle="collapse" href="#filterPanel" aria-expanded="false" aria-controls="filterTab">
+                           
+                            <span style="margin-right:5%;"><i class="fa fa-braille fa-2x" ></i> </span>
+                        </a>
                     </div>
-
-
-
-                </div>
-                <div class="col-md-3">
-                    <div class="has-success" style="margin-bottom: 15px">
-                        <select class="form-control js-example-responsive" style="width:
-                100%">
-                            <option>Today</option>
-                            <option>Yesterday</option>
-                            <option>from 10 days ago</option>
-                        </select>
-                    </div>
-
                 </div>
             </div>
+
+
+            <div id="filterPanel" class="panel-collapse collapse" role="tabpanel" style="border-top:1px solid #2DC3E8"
+                aria-labelledby="filterTab">
+                <div class="panel-body text-info">
+                    <div class="row" style="padding-top:10px">
+                        <div class="col-md-1"> Filter Option</div>
+                        <div class="col-md-10">
+                            <div class="has-success" style="margin-bottom: 15px">
+                                <select class="form-control js-example-responsive" multiple="multiple" 
+                                    style="width: 100% ;" placeholder="Select">
+                                   
+                                    <optgroup label="Date">
+                                        <option>Today</option>
+                                        <option>Yesterday</option>  
+                                        <option>More Days Ago</option>  
+                                    </optgroup>
+                                    <optgroup label="Reviews">
+                                        <option>Top Rated</option>
+                                        <option>Most Views</option>  
+                                        
+                                    </optgroup>
+                                    <optgroup label="Programming Language">
+                                        <option>Java</option>
+                                        <option>C</option>
+                                        <option>javascript</option>
+                                        <option>c#</option>
+                                        <option>.net</option>
+                                    </optgroup>
+                                    <optgroup label="Development">
+                                        <option>Web</option>
+                                        <option>Desktop</option>
+                                        <option>Android</option>
+                                        <option>Robotics</option>
+                                    </optgroup>
+                                    <optgroup label="Javascript Framework">
+                                        <option>jQuery</option>
+                                        <option>AngularJs</option>
+                                        <option>ReactJS</option>
+                                        <option>ViewJs</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-1"></div>
+
+                        
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </nav>
+    </div>
+
+
+    <!--  -->
 
 
 
@@ -151,7 +154,7 @@
                         <div class="widget-body">
                             <div class="user-heading round">
                                 <a href="#">
-                                    <img src="../assets/static/img/dark-blue.png" class="rounded-circle" width="180px"
+                                    <img src="../assets/static/img/info-white.jpg" class="rounded-circle" width="180px"
                                         height="180px" alt="jubel ahmed" />
                                 </a>
                                 <h1>Jubel Ahmed</h1>
@@ -183,8 +186,7 @@
                             </ul>
                         </div>
                     </div>
-
-                    <!--    <div class="widget">
+                    <!-- <div class="widget">
               <div class="widget-body">
                 <ul class="nav nav-pills nav-stacked">
                   <li><a href="#"> <i class="fa fa-globe"></i> Pages</a></li>
@@ -201,55 +203,78 @@
 
             <!-- center posts -->
             <div class="col-md-6 bg-white">
-
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="box profile-info n-border-top">
-                            <div style="padding: 15px">
-                                <div class="title-info has-success" style="border:
-                    1px
-                    solid #ccccb3;margin-bottom: 15px">
-                                    <input class="form-control input-bg p-text-area" id="definput" type="text"
-                                        placeholder="Title" style="font-size:20px" />
-                                </div>
-                                <div class="has-success" style="margin-bottom: 15px">
-                                    <select class="form-control js-example-responsive" multiple="multiple"
-                                        style="width: 100% ;">
-                                        <optgroup label="Programming Language">
-                                            <option>Java</option>
-                                            <option>C</option>
-                                            <option>javascript</option>
-                                            <option>c#</option>
-                                            <option>.net</option>
-                                        </optgroup>
-                                        <optgroup label="Development">
-                                            <option>Web</option>
-                                            <option>Desktop</option>
-                                            <option>Android</option>
-                                            <option>Robotics</option>
-                                        </optgroup>
-                                        <optgroup label="Javascript Framework">
-                                            <option>jQuery</option>
-                                            <option>AngularJs</option>
-                                            <option>ReactJS</option>
-                                            <option>ViewJs</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                                <div class="has-success" style="margin-bottom:15px;border: 1px solid #ccccb3;">
-                                    <textarea class="form-control input-lg p-text-area" rows="4"
-                                        placeholder="Write details"></textarea>
+                        <div class="panel " styele="background:white">
+
+                            <div>
+                                <a class=" bg-white" style="text-decoration:none;background:white;  color:#2DC3E8"
+                                    data-toggle="collapse" href="#postPanel" aria-expanded="false"
+                                    aria-controls="answerOne">
+                                    <div class="panel-heading">
+                                        <center> <strong>CREATE POST</strong></center>
+                                    </div>
+                                </a>
+                            </div>
+
+
+                            <div id="postPanel" class="panel-collapse collapse" role="tabpanel"
+                                style="border-top:1px solid gray" aria-labelledby="questionOne">
+                                <div class="panel-body">
+                                    <div class="box profile-info n-border-top">
+                                        <div style="padding: 15px">
+                                            <div class="title-info has-success"
+                                                style="border: 1px solid #ccccb3;margin-bottom: 15px">
+                                                <input class="form-control input-bg p-text-area" id="definput"
+                                                    type="text" placeholder="Title" style="font-size:20px" />
+                                            </div>
+                                            <div class="has-success" style="margin-bottom: 15px">
+                                                <select class="form-control js-example-responsive" multiple="multiple"
+                                                    style="width: 100% ;">
+                                                    <optgroup label="Programming Language">
+                                                        <option>Java</option>
+                                                        <option>C</option>
+                                                        <option>javascript</option>
+                                                        <option>c#</option>
+                                                        <option>.net</option>
+                                                    </optgroup>
+                                                    <optgroup label="Development">
+                                                        <option>Web</option>
+                                                        <option>Desktop</option>
+                                                        <option>Android</option>
+                                                        <option>Robotics</option>
+                                                    </optgroup>
+                                                    <optgroup label="Javascript Framework">
+                                                        <option>jQuery</option>
+                                                        <option>AngularJs</option>
+                                                        <option>ReactJS</option>
+                                                        <option>ViewJs</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                            <div class="has-success"
+                                                style="margin-bottom:15px;border: 1px solid #ccccb3;">
+                                                <textarea class="form-control input-lg p-text-area" rows="4"
+                                                    placeholder="Write details"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="box-footer box-form">
+                                            <button class="btn btn-azure pull-right" type="button">Publish</button>
+                                            <ul class="nav nav-pills">
+                                                <li><a href="#"><i class="fa fa-camera"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-film"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-microphone"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="box-footer box-form">
-                                <button class="btn btn-azure pull-right" type="button">Publish</button>
-                                <ul class="nav nav-pills">
-                                    <li><a href="#"><i class="fa fa-camera"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-film"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-microphone"></i></a></li>
-                                </ul>
-                            </div>
+
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
 
                         <!-- post start -->
                         <div class="box box-widget">
@@ -283,10 +308,11 @@
                                     your mouth.</p>
 
                                 <div class="attachment-block clearfix">
-                                    <img class="attachment-img show-in-modal" alt="Attachment
-                      Image" src="../assets/static/img/dark-blue.png">
+                                    <img class="attachment-img show-in-modal" alt="Attachment Image"
+                                        src="../assets/static/img/dark-blue.png">
                                     <div class="attachment-pushed">
-                                        <h4 class="attachment-heading"><a href="http://www.bootdey.com/">Lorem ipsum
+                                        <h4 class="attachment-heading"><a href="http://www.bootdey.com/">Lorem
+                                                ipsum
                                                 text
                                                 generator</a></h4>
                                         <div class="attachment-text">
@@ -414,7 +440,8 @@
                                     <img class="attachment-img show-in-modal" alt="Attachment
                       Image" src="../assets/static/img/dark-blue.png">
                                     <div class="attachment-pushed">
-                                        <h4 class="attachment-heading"><a href="http://www.bootdey.com/">Lorem ipsum
+                                        <h4 class="attachment-heading"><a href="http://www.bootdey.com/">Lorem
+                                                ipsum
                                                 text
                                                 generator</a></h4>
                                         <div class="attachment-text">
@@ -535,7 +562,8 @@
                                                 <div><b><a href="#">wridoy</a></b></div>
                                                 <div class="text-info"> Total Point <b><span>500
                                                         </span></b></div>
-                                                <div class="text-info"> Total Post <b><span>10</span></b></div>
+                                                <div class="text-info"> Total Post <b><span>10</span></b>
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
@@ -551,7 +579,8 @@
                                                 <div><b><a href="#">Himel Rana</a></b></div>
                                                 <div class="text-info"> Total Point <b><span>500
                                                         </span></b></div>
-                                                <div class="text-info"> Total Post <b><span>10</span></b></div>
+                                                <div class="text-info"> Total Post <b><span>10</span></b>
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
@@ -584,7 +613,8 @@
 
                                             <div class="col-xs-3 text-right">
                                                 <btn class="btn btn-sm btn-azure btn-icon"><i class="fa fa-heart-o"
-                                                        style="padding-left: 3px"></i></btn>
+                                                        style="padding-left: 3px"></i>
+                                                </btn>
                                             </div>
                                         </div>
                                     </li>
@@ -602,7 +632,8 @@
 
                                             <div class="col-xs-3 text-right">
                                                 <btn class="btn btn-sm btn-azure btn-icon"><i class="fa fa-heart-o"
-                                                        style="padding-left: 3px"></i></btn>
+                                                        style="padding-left: 3px"></i>
+                                                </btn>
                                             </div>
                                         </div>
                                     </li>
@@ -634,6 +665,6 @@
     </script>
 </body>
 
-<!-- Mirrored from demos.bootdey.com/dayday/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:35:20 GMT -->
+
 
 </html>
