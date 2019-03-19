@@ -100,6 +100,22 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Company Website<font color="red">*</font> </label>
+                                    <input type="text" name="companywebsite" id="companywebsite" class="form-control"
+                                        placeholder="https://www.company.com" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">Require!</label><br>
+                                <span class="badge" style="background-color:green;">https://</span> Company website must
+                                have a secure http protocol (HTTPS)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="">Company Logo <font color="red">*</font></label><br>
                         <span class="file-input btn btn-azure btn-file">
                             Browse <input type="file" multiple="">
@@ -213,7 +229,8 @@
                             <div class="checkbox">
                                 <label>
                                     <label>
-                                        <input class="checkbox-slider yesno" id="java" value="Java" type="checkbox">
+                                        <input class="checkbox-slider yesno" name="skillyesno" id="java" value="Java"
+                                            type="checkbox">
                                         <span class="text">Java</span>
                                     </label>
                                 </label>
@@ -222,7 +239,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="checkbox">
                                 <label>
-                                    <input class="checkbox-slider yesno" type="checkbox">
+                                    <input class="checkbox-slider yesno" name="skillyesno" value="Python"
+                                        type="checkbox">
                                     <span class="text">Python</span>
                                 </label>
                             </div>
@@ -230,7 +248,7 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="checkbox">
                                 <label>
-                                    <input class="checkbox-slider yesno" type="checkbox">
+                                    <input class="checkbox-slider yesno" name="skillyesno" value="C++" type="checkbox">
                                     <span class="text">C++</span>
                                 </label>
                             </div>
@@ -238,7 +256,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="checkbox">
                                 <label>
-                                    <input class="checkbox-slider yesno" type="checkbox">
+                                    <input class="checkbox-slider yesno" name="skillyesno" value="Nodejs"
+                                        type="checkbox">
                                     <span class="text">Nodejs</span>
                                 </label>
                             </div>
@@ -251,7 +270,8 @@
                             <div class="checkbox">
                                 <label>
                                     <label>
-                                        <input class="checkbox-slider yesno" type="checkbox">
+                                        <input class="checkbox-slider yesno" name="skillyesno" value="UI Design"
+                                            type="checkbox">
                                         <span class="text">UI Design</span>
                                     </label>
                                 </label>
@@ -260,7 +280,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="checkbox">
                                 <label>
-                                    <input class="checkbox-slider yesno" type="checkbox">
+                                    <input class="checkbox-slider yesno" name="skillyesno" value="Software Design"
+                                        type="checkbox">
                                     <span class="text">Software Design</span>
                                 </label>
                             </div>
@@ -268,7 +289,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="checkbox">
                                 <label>
-                                    <input class="checkbox-slider yesno" type="checkbox">
+                                    <input class="checkbox-slider yesno" name="skillyesno" value="System Design"
+                                        type="checkbox">
                                     <span class="text">System Design</span>
                                 </label>
                             </div>
@@ -276,7 +298,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="checkbox">
                                 <label>
-                                    <input class="checkbox-slider yesno" type="checkbox">
+                                    <input class="checkbox-slider yesno" name="skillyesno" value="Graphics Design"
+                                        type="checkbox">
                                     <span class="text">Graphics Design</span>
                                 </label>
                             </div>
@@ -288,7 +311,8 @@
                             <div class="checkbox">
                                 <label>
                                     <label>
-                                        <input class="checkbox-slider yesno" type="checkbox">
+                                        <input class="checkbox-slider yesno" name="skillyesno" value="Analysts"
+                                            type="checkbox">
                                         <span class="text">Analysts</span>
                                     </label>
                                 </label>
@@ -297,7 +321,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="checkbox">
                                 <label>
-                                    <input class="checkbox-slider yesno" type="checkbox">
+                                    <input class="checkbox-slider yesno" name="skillyesno" value="Project Manager"
+                                        type="checkbox">
                                     <span class="text">Project Manager</span>
                                 </label>
                             </div>
@@ -305,7 +330,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="checkbox">
                                 <label>
-                                    <input class="checkbox-slider yesno" type="checkbox">
+                                    <input class="checkbox-slider yesno" name="skillyesno" value="Software Tester"
+                                        type="checkbox">
                                     <span class="text">Software Tester</span>
                                 </label>
                             </div>
@@ -313,7 +339,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="checkbox">
                                 <label>
-                                    <input class="checkbox-slider yesno" type="checkbox">
+                                    <input class="checkbox-slider yesno" name="skillyesno" value="Front End Developer"
+                                        type="checkbox">
                                     <span class="text">Front End Developer</span>
                                 </label>
                             </div>
@@ -324,7 +351,8 @@
                             <div class="checkbox">
                                 <label>
                                     <label>
-                                        <input class="checkbox-slider yesno" type="checkbox">
+                                        <input class="checkbox-slider yesno" name="skillyesno" value="Teacher"
+                                            type="checkbox">
                                         <span class="text">Teacher</span>
                                     </label>
                                 </label>
@@ -333,7 +361,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="checkbox">
                                 <label>
-                                    <input class="checkbox-slider yesno" type="checkbox">
+                                    <input class="checkbox-slider yesno" name="skillyesno" value="Marketing Expert"
+                                        type="checkbox">
                                     <span class="text">Marketing Expert</span>
                                 </label>
                             </div>
@@ -364,7 +393,8 @@
                     </div>
                     <div class="wizard-buttons" style="margin-top: 15px;">
                         <button type="button" class="btn btn-previous">Previous</button>
-                        <button type="button" id="getSkills" class="btn btn-next">Next</button>
+                        <button type="button" id="skill_details_continue_btn"
+                            class="btn btn-next skill-job-basic-info-filledup">Next</button>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -382,7 +412,8 @@
 
                     <div class="wizard-buttons">
                         <button type="button" class="btn btn-previous">Previous</button>
-                        <button type="button" class="btn btn-next">Next</button>
+                        <button type="button" id="description_details_continue_btn"
+                            class="btn btn-next description-job-basic-info-filledup">Next</button>
                     </div>
                 </fieldset>
                 <fieldset>
