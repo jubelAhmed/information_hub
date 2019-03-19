@@ -118,23 +118,24 @@
                     <div class="form-group">
                         <label for="">Company Logo <font color="red">*</font></label><br>
                         <span class="file-input btn btn-azure btn-file">
-                            Browse <input type="file" multiple="">
+                            Browse <input onchange="encodeImagetoBase64(this)" type="file" multiple="">
                         </span>
                         <span>
-                            <img src="https://daffodilvarsity.edu.bd/images/logo.png" alt="Company Logo"
+                            <img class="link" id="selectedCompanylogo"
+                                src="https://daffodilvarsity.edu.bd/images/logo.png" alt="Company Logo"
                                 style="max-width: 100px; max-height: 100px; margin-left: 50px; padding: 10px;">
                         </span>
                     </div>
                     <div class="form-group">
                         <label>Location <font color="red">*</font></label>
-                        <input type="text" name="joblocation" id="joblocation" class="form-control"
+                        <input type="text" name="joblocation" id="location" class="form-control"
                             placeholder="Dhanmondi 32, Dhaka 1205" />
                     </div>
 
                     <label>This is a remote work / from home <font color="red">*</font></label>
                     <div class="form-group">
                         <label>
-                            <input class="checkbox-slider slider-icon yesno" id="remotework" type="checkbox">
+                            <input class="checkbox-slider slider-icon yesno" id="isRemoteWork" type="checkbox">
                             <span class="text"></span>
                         </label>
                     </div>
@@ -143,7 +144,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="radio">
                                 <label>
-                                    <input name="jobtype" value="Part Time" type="radio" class="colored-blue">
+                                    <input name="jobtype" value="Part Time" id="jobtype" type="radio"
+                                        class="colored-blue">
                                     <span class="text"> Part Time</span>
                                 </label>
                             </div>
@@ -151,7 +153,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="radio">
                                 <label>
-                                    <input name="jobtype" value="Full Time" type="radio" class="colored-blue">
+                                    <input name="jobtype" value="Full Time" id="jobtype" type="radio"
+                                        class="colored-blue">
                                     <span class="text"> Full Time</span>
                                 </label>
                             </div>
@@ -159,7 +162,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="radio">
                                 <label>
-                                    <input name="jobtype" value="Contract" type="radio" class="colored-blue">
+                                    <input name="jobtype" id="jobtype" value="Contract" type="radio"
+                                        class="colored-blue">
                                     <span class="text"> Contract</span>
                                 </label>
                             </div>
@@ -167,7 +171,8 @@
                         <div class="col-md-3 col-sm-3 col-xs-3">
                             <div class="radio">
                                 <label>
-                                    <input name="jobtype" value="Internship" type="radio" class="colored-blue">
+                                    <input name="jobtype" id="jobtype" value="Internship" type="radio"
+                                        class="colored-blue">
                                     <span class="text"> Internship</span>
                                 </label>
                             </div>
@@ -188,7 +193,7 @@
                             <div class="col-md-4 col-sm-4 col-xs-4">
                                 <div class="input-group">
                                     <span class="input-group-addon">TK</span>
-                                    <input type="text" id="mincompensation" class="form-control" placeholder="50,000">
+                                    <input type="text" id="min_salary" class="form-control" placeholder="50,000">
                                     <span class="input-group-addon">.0</span>
                                 </div>
                             </div>
@@ -201,8 +206,7 @@
                                 <div class="input-group">
 
                                     <span class="input-group-addon">TK</span>
-                                    <input type="text" id="maxcompensation" class="form-control"
-                                        placeholder="1,000,000">
+                                    <input type="text" id="max_salary" class="form-control" placeholder="1,000,000">
                                     <span class="input-group-addon">.0</span>
                                 </div>
                             </div>
@@ -401,13 +405,13 @@
                     <center>
                         <h4>Job Description <font color="red">*</font>
                         </h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque velit maxime itaque, ad
-                            aperiam magnam voluptas id debitis molestias dolor!</p>
+                        <p>Job Description must be in clear text. Try to explain batter. If information not written in
+                            clearly reviewer may reject this request.</p>
                     </center>
 
                     <div class="form-group">
-                        <textarea class="form-control" rows="15"
-                            style="width: 100%">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic autem deleniti in cum harum dolor iusto veniam necessitatibus, culpa praesentium ullam perferendis? Enim quo ad consectetur, recusandae excepturi delectus minima.</textarea>
+                        <textarea class="form-control" id="jobdescriptioninfo" rows="15"
+                            style="width: 100%">Your job post Description</textarea>
                     </div>
 
                     <div class="wizard-buttons">
@@ -421,9 +425,9 @@
                         <h4>Job Preview</h4>
                     </center>
                     <label for="">
-                        <h2>Job Title:</h2>
+                        <h2 id="job_title_display">Job Title:</h2>
                     </label>
-                    <address style="color: gray;"> <b>
+                    <address style="color: gray;"> <b id="SimpleViewDetails">
                             Phoenix Market City Mall, New No. 142, Velachery Main Rd, Next To Raptakos Brett & Co, opp.
                             Maruthi Driving School, Indira Gandhi Nagar, Velachery, Chennai, Tamil Nadu 600042, India
                         </b></address>
@@ -431,18 +435,20 @@
                         <h2>Required Skills:</h2>
                     </label><br>
 
-                    <span class="badge">Java</span>
-                    <span class="badge">C++</span>
-                    <span class="badge">Grapics Design</span>
-                    <span class="badge">Front End Developer</span>
-                    <span class="badge">Python</span>
+                    <div id="reviewSkills">
+                        <!-- <span class="badge">Java</span>
+                        <span class="badge">C++</span>
+                        <span class="badge">Grapics Design</span>
+                        <span class="badge">Front End Developer</span>
+                        <span class="badge">Python</span> -->
+                    </div>
 
                     <br>
 
                     <label for="">
                         <h2>Job Description:</h2>
                     </label>
-                    <p>
+                    <p id="JobDescriptionPreview">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto cupiditate esse est doloremque,
                         libero, nemo! Possimus unde nam, quo impedit, enim velit dignissimos, est praesentium mollitia
                         dolores consequuntur molestias eius. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -481,6 +487,18 @@
 </body>
 <script src="../../ajax/job-post/job-post.js"></script>
 <script src="../../ajax/job-post/job-skill.js"></script>
+<script>
+function encodeImagetoBase64(element) {
+    var file = element.files[0];
+    var reader = new FileReader();
+    reader.onloadend = function() {
+        $(".link").attr("src", reader.result);
+
+        $(".link").text(reader.result);
+    }
+    reader.readAsDataURL(file);
+}
+</script>
 <!-- Mirrored from demos.bootdey.com/dayday/recover_password.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:36:06 GMT -->
 
 </html>

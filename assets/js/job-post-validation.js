@@ -4,17 +4,17 @@ $( document ).ready(function() {
         var job_title = $("#job_title").val()
         var company = $("#company").val()
         var deadline = $("#deadline").val()
-        var joblocation = $("#joblocation").val()
+        var joblocation = $("#location").val()
         var jobtype = $("input[name='jobtype']:checked").val();
         
         var remotework = 'no'
 
-        if($("#remotework").prop('checked') == true){
+        if($("#isRemoteWork").prop('checked') == true){
             remotework = "yes"
         }
         var compensationtype = $("#compensationtype").val()
-        var mincompensation = $("#mincompensation").val()
-        var maxcompensation = $("#maxcompensation").val()
+        var mincompensation = $("#min_salary").val()
+        var maxcompensation = $("#max_salary").val()
         
 
         // console.log(job_title)

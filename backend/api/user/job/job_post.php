@@ -39,7 +39,21 @@ $job->programmingSkill = $_POST['programmingSkill'];
 $job->designSkill = $_POST['designSkill'];
 $job->othersSkill = $_POST['othersSkill'];
 $job->jobDescription = $_POST['jobDescription'];
-
+/*
+let job_title = '';
+    let company = '';
+    let applicationDeadline = '';
+    let companyLogo = '';
+    let location = '';
+    let companywebsite = '';
+    let jobtype = '';
+    let compensation = '';
+    let min_salary = '';
+    let max_salary = '';
+    let requiredSkills = '';
+    var remotework = 'no';
+    var jobdescriptioninfo = ''
+  */
 if($job->post()){
     
     $jobArray = array(
