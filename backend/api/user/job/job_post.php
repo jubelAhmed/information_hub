@@ -1,7 +1,7 @@
 <?php
 
     //headers
-header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
 include_once('../../../config/Database.php');
@@ -14,31 +14,23 @@ $db = $database->connect();
 
 $job = new Job($db);
 
-/* if((empty($_POST['jobTitle'])) || (empty($_POST['lastName'])) || (empty($_POST['email'])) || (empty($_POST['birthday'])) || (empty($_POST['occupation'])) || (empty($_POST['gender'])) || (empty($_POST['password']))){
-    echo('{"msg": "You must fill every require field!","status": "error"}');
-    die();
-} */
 
-$job->jobTitle = $_POST['jobTitle'];
-$job->companyName = $_POST['companyName'];
 
-// log info
-$job->logoImage = $_POST['logoImage'];// it will come by image upload file with encoded data
-$job->logoName = $_POST['logoImage'];// it will come by image upload file with encoded data
+$job->jobTitle = isset($_POST['jobTitle']) ? $_POST['jobTitle'] : die();
+$job->companyName = isset($_POST['companyName']) ? $_POST['companyName'] : die();
+$job->companyLogo = isset($_POST['companyLogo']) ? $_POST['companyLogo'] : die();
+$job->applicationDeadline = isset($_POST['applicationDeadline']) ? $_POST['applicationDeadline'] : die();
 
-//user info 
-$job->userId = $_POST['userId']; // it will come by session
+$job->location = isset($_POST['location']) ? $_POST['location'] : die();
+$job->companyWebsite = isset($_POST['companyWebsite']) ? $_POST['companyWebsite'] : die();
+$job->compensation = isset($_POST['compensation']) ? $_POST['compensation'] : die();
+$job->remoteWork = isset($_POST['remoteWork']) ? $_POST['remoteWork'] : die();
+$job->jobType = isset($_POST['jobType']) ? $_POST['jobType'] : die();
+$job->minSalary = isset($_POST['minSalary']) ? $_POST['minSalary'] : die();
+$job->maxSalary = isset($_POST['maxSalary']) ? $_POST['maxSalary'] : die();
+$job->requiredSkills = isset($_POST['requiredSkills']) ? $_POST['requiredSkills'] : die();
+$job->jobDescription = isset($_POST['jobDescription']) ? $_POST['jobDescription'] : die();
 
-$job->location = $_POST['location'];
-$job->remoteWork = $_POST['remoteWork'];
-$job->jobType = $_POST['jobType'];
-$job->salaryType = $_POST['salaryType'];
-$job->minSalary = $_POST['minSalary'];
-$job->maxSalary = $_POST['maxSalary'];
-$job->programmingSkill = $_POST['programmingSkill'];
-$job->designSkill = $_POST['designSkill'];
-$job->othersSkill = $_POST['othersSkill'];
-$job->jobDescription = $_POST['jobDescription'];
 /*
 let job_title = '';
     let company = '';
@@ -56,43 +48,11 @@ let job_title = '';
   */
 if($job->post()){
     
-    $jobArray = array(
-        "status" => true,
-        "message" => "successfully job post",
-        "id" => $job->id ,
-        
-    );
+    echo('{"msg": "job post Successfully done", "status": "ok"}');
 }else{
-    $jobArray = array(
-        "status" => false,
-        "message" => "job post failed"
-    );
+    echo('{"msg": "job post Failed", "status": "error"}');
 }
 
-print_r(json_encode($jobArray));
-
-
-
-
 
 ?>
 
-<?php
-/* 
-print_r($job->jobTitle);
-print_r($job->companyName);
-print_r($job->logoImage);
-print_r($job->logoName);
-print_r($job->userId);
-print_r($job->location);
-print_r($job->remoteWork);
-print_r($job->jobType);
-print_r($job->salaryType);
-print_r($job->minSalary);
-print_r($job->maxSalary);
-print_r($job->programmingSkill);
-print_r($job->designSkill);
-print_r($job->othersSkill);
-print_r($job->jobDescription);
- */
-?>

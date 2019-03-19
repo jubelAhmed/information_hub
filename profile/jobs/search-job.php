@@ -33,9 +33,6 @@
 
 
 
-
-<!-- Mirrored from demos.bootdey.com/dayday/people_directory.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:36:03 GMT -->
-
 <head>
 
     <?php include('../job-includes/job-header.php') ?>
@@ -253,6 +250,6 @@
 
 </body>
 
-<!-- Mirrored from demos.bootdey.com/dayday/people_directory.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:36:03 GMT -->
+
 
 </html>

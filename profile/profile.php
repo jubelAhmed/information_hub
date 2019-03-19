@@ -1,3 +1,13 @@
+
+<?php 
+  session_start();
+  if(!$_SESSION['valid']){
+    session_destroy();
+    header("Location:http://localhost/information_hub/index.php");
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
