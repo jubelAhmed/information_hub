@@ -71,9 +71,95 @@ $( document ).ready(function() {
             $("#error").text("All Fields Are Required!")
             return false;
         }
+        
     })
 
     // Skill Selection Section
 
-    //========================================Skills ========================
+    $("#skill_details_continue_btn").on('click', function(){
+
+            $('form .skill-job-basic-info-filledup').on('click', function() {
+                var parent_fieldset = $(this).parents('fieldset');
+                var next_step = true;
+                var current_active_step = $(this).parents('form').find('.form-wizard.active');
+                var progress_line = $(this).parents('form').find('.progress-line');
+                
+                parent_fieldset.find('input[type="text"], input[type="password"], input[type="username"], input[type="email"], input[type="tel"], input[type="url"], textarea').each(function() {
+                    if( $(this).val() == "" ) {
+                        $(this).addClass('input-error');
+                        next_step = false;
+                    }
+                    else {
+                        $(this).removeClass('input-error');
+                    }
+                });
+                
+                parent_fieldset.find('input[type="checkbox"]').each(function() {
+                    if( $(this).prop("checked") == false ) {
+                        $('.form-check-label').css("color","green");
+                        next_step = true;
+                    }
+                    else {
+                        $('.form-check-label').css("color","black");
+                    }
+                });
+                
+                if( next_step ) {
+                    parent_fieldset.fadeOut(400, function() {
+                        current_active_step.removeClass('active').addClass('activated').next().addClass('active');
+                        bar_progress(progress_line, 'right');
+                        $(this).next().fadeIn();
+                        scroll_to_class( $('form'), 20 );
+                    });
+                }
+                
+            });
+            // Next operation success
+         
+        
+    })
+
+    //========================================Description ========================
+    $("#description_details_continue_btn").on('click', function(){
+
+        $('form .description-job-basic-info-filledup').on('click', function() {
+            var parent_fieldset = $(this).parents('fieldset');
+            var next_step = true;
+            var current_active_step = $(this).parents('form').find('.form-wizard.active');
+            var progress_line = $(this).parents('form').find('.progress-line');
+            
+            parent_fieldset.find('input[type="text"], input[type="password"], input[type="username"], input[type="email"], input[type="tel"], input[type="url"], textarea').each(function() {
+                if( $(this).val() == "" ) {
+                    $(this).addClass('input-error');
+                    next_step = false;
+                }
+                else {
+                    $(this).removeClass('input-error');
+                }
+            });
+            
+            parent_fieldset.find('input[type="checkbox"]').each(function() {
+                if( $(this).prop("checked") == false ) {
+                    $('.form-check-label').css("color","green");
+                    next_step = true;
+                }
+                else {
+                    $('.form-check-label').css("color","black");
+                }
+            });
+            
+            if( next_step ) {
+                parent_fieldset.fadeOut(400, function() {
+                    current_active_step.removeClass('active').addClass('activated').next().addClass('active');
+                    bar_progress(progress_line, 'right');
+                    $(this).next().fadeIn();
+                    scroll_to_class( $('form'), 20 );
+                });
+            }
+            
+        });
+        // Next operation success
+     
+    
+})
 });
