@@ -58,8 +58,7 @@
         <div class="row">
             <!-- Left Sidebar -->
             <div class="col-md-3">
-                <div class="row" style="max-width: 80%; background-color: white;
-            margin-left: 10%;">
+                <div class="row" style="max-width: 80%; background-color: white;margin-left: 10%;">
                     <div class="row" style="margin-left: 10%">
                         <div class="col-md-10">
                             <div class="title">
@@ -175,50 +174,46 @@
                 <?php foreach ($publishedJobs['data'] as $jobs) { ?>
 
 
-                <div class="row" style="background-color: white; border-radius: 10px;
+                <div style="background-color: white; border-radius: 10px;
             margin-bottom: 10px;">
                     <div class="row">
                         <!-- logo column -->
                         <div class="col-md-4 col-sm-3 col-xs-12" style="padding: 20px;">
-                            <img src=" http://saayc.co.za/wp-content/uploads/2017/02/INFORMATION-HUB-01.jpg"
-                                width="160px" height="70px" alt="Company Logo">
+                            <img src=" http://www.logofound.com/wp-content/uploads/2016/11/travel-company-logo-template-01.jpg"
+                                width="160px" height="110px" alt="Company Logo">
                         </div>
                         <!-- Title column -->
-                        <div class="com-md-5 pull-left" style="padding-left:1%;">
-                            <h3><?php echo $jobs['job_title'] ?>
-                                <span class="text-muted small "></span>
-                                <br><span class="text-capitalize"><small><?php echo $jobs['company_name'] ?><br>
-                                        <?php echo $jobs['company_location'] ?></small></span></h3>
+                        <div class="col-md-8 pull-left text-info" style="padding-left:1%;">
+                            <div>
+                                <h3><?php echo $jobs['job_title'] ?></h3>
+                                <h5><span class="text-capitalize"><?php echo $jobs['company_name'] ?></span></h5>
+                                <h6> <?php echo $jobs['company_location'] ?></h6>
+                            </div>
+
+
+                            <div class="row" style="padding: 10px; ">
+
+                                <?php 
+                                 $skills = $jobs['skills']; 
+                                    $i = 1;
+                                    foreach ($skills as $value) {
+                                        if($i==8)break;
+                                        echo "<span style=\"font-size:16px ; padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;margin-right:5px;margin-top:5px\" class=\"badge \"> ".$value."</span>\n";
+                                        $i =$i+1;
+                                
+                                    }
+                        
+                                 ?>
+
+                            </div>
 
                         </div>
                     </div>
-                    <center>
-                        <div class="row" style="padding: 10px; margin-left: 10px;">
 
-                            <?php 
-                        $skills = array_merge($jobs['programming_skills'],$jobs['design_skills'],$jobs['other_skills'],$jobs['special_skills']); 
-
-                        foreach ($skills as $value) {
-                            echo "<span style=\"font-size:16px ; padding:5px;\" class=\"badge \"> ".$value."</span>\n";
-                    
-                        }
-                    
-                    ?>
-                            <!--  <span class="badge">Java</span>
-                    <span class="badge">C++</span>
-                    <span class="badge">Grapics Design</span>
-                    <span class="badge">Front End Developer</span>
-                    <span class="badge">Python</span>
-                    <span class="badge">C++</span>
-                    <span class="badge">Grapics Design</span>
-                    <span class="badge">Front End Developer</span>
-                    <span class="badge">Python</span> -->
-                        </div>
-                    </center>
                     <div class="row">
                         <div class="com-md-6 pull-right" style="padding-right:5%;
                 padding-bottom: 20px">
-                            <?php echo "<a href=\"./view-single-job.php?id=$jobs[job_id]\" target=\"_blank\" id=\"details_btn\" class=\"btn btn-sm btn-secondery\">Details</a>" ?>
+                            <?php echo "<a href=\"./view-single-job.php?id=$jobs[job_id]&userId=$_SESSION[user_login_uid] \" target=\"_blank\" id=\"details_btn\" class=\"btn btn-sm btn-secondery\">Details</a>" ?>
                         </div>
                     </div>
                 </div>

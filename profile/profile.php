@@ -74,7 +74,7 @@
 
                 <ul class="cover-nav">
                   <li class="active">
-                    <a href="./profile.html"><i class="fa fa-fw fa-user"></i>
+                    <a href="./profile.php"><i class="fa fa-fw fa-user"></i>
                       Info</a>
                   </li>
                   <!-- <li>
@@ -86,7 +86,7 @@
                     <a href="#"><i class="fa fa-fw fa-users"></i> Favourite List</a>
                   </li>
                   <li>
-                    <a href="profile.html"><i class="fa fa-fw fa-bars"></i> Feed
+                    <a href="profile.php"><i class="fa fa-fw fa-bars"></i> Feed
                     </a>
                   </li>
 

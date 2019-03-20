@@ -15,20 +15,21 @@ $db = $database->connect();
 $applyJob = new ApplyJob($db);
 
 // 
-$applicatId= 37; // get from seassion
-$jobId = 2; // get from user clikable link
+$applicantId = isset($_POST['applicantId']) ? $_POST['applicantId'] : die();
+$jobId = isset($_POST['jobId']) ? $_POST['jobId'] : die();
+
 
 // add apply job
 
-if($applyJob->applyjob($jobId,$applicatId)){
+if($applyJob->applyjob($applicantId,$jobId)){
     echo('{
-        "msg": "job apply successful",
+        "msg": "Thanks for applying this job",
         "status": "ok"
       }');
 }else{
     echo('{
-        "msg": "job apply faild or already applied job",
-        "status": "failed"
+        "msg": "You already applied this job",
+        "status": "error"
       }');
 }
 
