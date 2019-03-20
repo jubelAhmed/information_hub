@@ -659,8 +659,7 @@
     <script>
     $(".js-example-responsive").select2({
         width: "resolve",
-        placeholder: "Select a state",
-        placeholder: "Select catagory" // need to override the changed default
+        placeholder: "Select catagories" // need to override the changed default
     });
     </script>
 </body>

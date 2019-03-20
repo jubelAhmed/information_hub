@@ -11,6 +11,8 @@
     }
 
     $job_id = $_GET['id'];
+    $user_id = $_GET['userId'];
+   
 
     include_once('../../backend/config/Database.php');
     include_once('../../backend/models/Job.php');  
@@ -28,7 +30,7 @@
     
     $job = json_decode($publishedJob, true);
     
-    $skills = array_merge($job['programming_skills'],$job['design_skills'],$job['other_skills'],$job['special_skills']); 
+    $skills = $job['skills']; 
 
     $skillListwithComma = implode(", ", $skills);
 
@@ -43,7 +45,7 @@
 <head>
 
     <?php include('../job-includes/job-header.php') ?>
-    <script src="../../assets/js/custom.js"></script>
+
 
     <style>
     .hover-effect:hover {
@@ -53,83 +55,100 @@
     </style>
 </head>
 
-<body class="bg-danger">
+<body style="background-color:white ">
 
 
 
     <!-- Begin page content -->
 
 
-    <div class="container ">
-        <div class="row " style="margin-top:10px;">
-            <div class="col-md-10">
+    <div class="container " style="background-color:white ">
+        <div class="row " style="margin-top:15px;padding-left:10px;padding-right:10px"">
+            <div class=" col-md-10">
 
-                <center>
-                    <div>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                            alt="Company Logo" style="border-radius: 5%; max-height:
+            <center>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+                        alt="Company Logo" style="border-radius: 5%; max-height:
                   100px; max-width: 100px;">
-                        <h2><?php echo $job['job_title'] ; ?></h2>
-                        <h3><?php echo $job['company_name'] ; ?></h3>
-                        <p><?php echo $job['company_location'] ;?></p>
-                        <hr>
-                    </div>
+                    <h2><?php echo $job['job_title'] ; ?></h2>
+                    <h3><?php echo $job['company_name'] ; ?></h3>
+                    <a href="<?php echo $job['company_website']; ?>">
+                        <?php echo $job['company_website']; ?>
+                    </a>
+
+                    <p><?php echo $job['company_location'] ;?></p>
+                    <hr>
+                </div>
+            </center>
+
+        </div>
+        <div class="col-md-2">
+            <h4 class="text-info">Last Apply Date : <span> <strong>
+                        <center> <?php echo $deadline ?>
+                </span></strong></center>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-5">
+            <table class="table" style="font-size: 22px;">
+
+                <tr>
+                    <td>Work From: </td>
+                    <td><?php echo $job['remote_work']==0?"Office":"Remote Job" ?></td>
+                </tr>
+                <tr>
+                    <td>Job Type : </td>
+                    <td><?php echo $job['job_type'] ; ?></td>
+                </tr>
+                <tr>
+                    <td>Compensation: </td>
+                    <td><?php echo $job['compensation'] ; ?></td>
+                </tr>
+                <tr>
+                    <td>Salary: </td>
+                    <td><?php echo $job['min_salary'] ." - ".$job['max_salary'] ; ?> </td>
+                </tr>
+                <tr>
+                    <td>Required Skills: </td>
+                    <td> <?php echo $skillListwithComma ; ?> </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col-md-6 lead">
+            <?php echo $job['job_description']; ?>
+        </div>
+
+
+    </div>
+
+
+    <div class="row" style="margin-top: 10px;margin-bottom: 40px;">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-5">
+        <div>
+                <center>
+                    <h3 id="applySuccess" class="text-info"></h3>
+                    <h3 id="applyError" class="text-danger"></h3>
                 </center>
-
-            </div>
-            <div class="col-md-2">
-                <h4 class="text-info">Last Apply Date : <span> <strong>
-                            <center> <?php echo $deadline ?>
-                    </span></strong></center>
-                </h4>
             </div>
         </div>
-        <div class="row">
-
-            <div class="col-md-5">
-                <table class="table" style="font-size: 22px;">
-
-                    <tr>
-                        <td>Work From: </td>
-                        <td><?php echo $job['work_type']==0?"Office":"Remote Job" ?></td>
-                    </tr>
-                    <tr>
-                        <td>Job Type : </td>
-                        <td><?php echo $job['job_type'] ; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Compensation: </td>
-                        <td><?php echo $job['salary_type'] ; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Salary: </td>
-                        <td><?php echo $job['min_salary'] ." - ".$job['max_salary'] ; ?> </td>
-                    </tr>
-                    <tr>
-                        <td>Require Skills: </td>
-                        <td> <?php echo $skillListwithComma ; ?> </td>
-                    </tr>
-                </table>
-            </div>
-
-            <div class="col-md-7 lead">
-                <?php echo $job['job_description']; ?>
-            </div>
-
-
-        </div>
-
-
-        <div class="row" style="margin-top: 10px;margin-bottom: 40px;">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-5"></div>
-            <div class="col-md-3 ">
-                <button type="button" class=" hover-effect btn btn-success btn-lg "><i class="fa
+        <div class="col-md-3 ">
+            
+            <input type="text" id='applicantId' value="<?php echo $user_id ; ?>" hidden>
+            <input type="text" id='jobId' value="<?php echo $job_id ; ?>" hidden>
+            <button type="button" id="applyBtn" class=" hover-effect btn btn-success btn-lg "><i class="fa
                   fa-check"></i> Apply Job</button>
-            </div>
-
         </div>
+
+
+
+    </div>
+
 
 
     </div>
@@ -137,7 +156,8 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
-    <script src="../../assets/js/admin-cart.js"></script>
+
+    <script src="../../ajax/job-post/apply-job-post.js"></script>
 </body>
 
 <!-- Mirrored from demos.bootdey.com/dayday/sidebar_profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:35:42 GMT -->

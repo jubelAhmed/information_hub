@@ -33,17 +33,19 @@ function getPublishedJobs($job){
                 'user_id'=>$user_id,
                 'job_title'=>$job_title,
                 'company_name'=>$company_name,
+                'company_logo'=>$company_logo,
+                'company_website'=>$company_website,
                 'company_location'=>$location,
-                'programming_skills'=>json_decode($programming_skills),
-                'design_skills'=>json_decode($design_skills),
-                'other_skills'=>json_decode($other_skills),
-                'special_skills'=>json_decode($special_skills),
+                'remote_work'=>$remote_work,
                 'job_type'=>$job_type,
-                'slary_type'=>$job_type,
-                'max_salary'=>$max_salary,
+                'compensation'=>$compensation,
                 'min_salary'=>$min_salary,
+                'max_salary'=>$max_salary,
+                'skills'=>json_decode($skills),
                 'job_description'=>$job_description,
-                'work_type'=>$remote_work
+                'current_data'=>$current_data,
+                'deadline'=>$deadline
+                
             );
 
             array_push($jobArray['data'],$jobList);
@@ -56,8 +58,8 @@ function getPublishedJobs($job){
         return json_encode($jobArray);
 
     }else{
-        echo json_encode(array('message'=>"there have no registered user",'status'=>"no"));
-        return json_encode(array('message'=>"there have no registered user",'status'=>"no"));
+        echo json_encode(array('message'=>"there have no published jobs",'status'=>"no"));
+        return json_encode(array('message'=>"there have no published jobs",'status'=>"no"));
     }
 
     
@@ -74,18 +76,18 @@ function getSingleJob($job,$job_id){
             'user_id'=>$user_id,
             'job_title'=>$job_title,
             'company_name'=>$company_name,
+            'company_logo'=>$company_logo,
+            'company_website'=>$company_website,
             'company_location'=>$location,
-            'programming_skills'=>json_decode($programming_skills),
-            'design_skills'=>json_decode($design_skills),
-            'other_skills'=>json_decode($other_skills),
-            'special_skills'=>json_decode($special_skills),
+            'remote_work'=>$remote_work,
             'job_type'=>$job_type,
-            'salary_type'=>$job_type,
-            'max_salary'=>$max_salary,
+            'compensation'=>$compensation,
             'min_salary'=>$min_salary,
+            'max_salary'=>$max_salary,
+            'skills'=>json_decode($skills),
             'job_description'=>$job_description,
-            'work_type'=>$remote_work,
-             "deadline"=> $deadline
+            'current_data'=>$current_data,
+            'deadline'=>$deadline
         );
         return json_encode($jobArray);
 
@@ -113,13 +115,21 @@ function getPendingJobs(){
 
             $jobList = array(
                 'job_id'=> $id ,
-                'job_provider_id'=>$user_id,
+                'user_id'=>$user_id,
                 'job_title'=>$job_title,
                 'company_name'=>$company_name,
-                'programming_skills'=>json_decode($programming_skills),
-                'design_skills'=>json_decode($design_skills),
-                'other_skills'=>json_decode($other_skills),
-                'special_skills'=>json_decode($special_skills)
+                'company_logo'=>$company_logo,
+                'company_website'=>$company_website,
+                'company_location'=>$location,
+                'remote_work'=>$remote_work,
+                'job_type'=>$job_type,
+                'compensation'=>$compensation,
+                'min_salary'=>$min_salary,
+                'max_salary'=>$max_salary,
+                'skills'=>json_decode($skills),
+                'job_description'=>$job_description,
+                'current_data'=>$current_data,
+                'deadline'=>$deadline
             );
 
             array_push($jobArray['data'],$jobList);
@@ -133,7 +143,7 @@ function getPendingJobs(){
 
     }else{
         echo json_encode(array('message'=>"there have no pending post",'status'=>"no"));
-        return json_encode(array('message'=>"there have no registered user",'status'=>"no"));
+        return json_encode(array('message'=>"there have no pending post",'status'=>"no"));
     }
 
     
