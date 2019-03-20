@@ -1,9 +1,16 @@
+
+<?php
+        session_start();
+        if(!$_SESSION['valid']){
+        session_destroy();
+        header("Location:http://localhost/information_hub/index.php");
+        }
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from demos.bootdey.com/dayday/recover_password.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:36:05 GMT -->
-
-
 
 <head>
 
@@ -487,6 +494,7 @@
 </body>
 <script src="../../ajax/job-post/job-post.js"></script>
 <script src="../../ajax/job-post/job-skill.js"></script>
+
 <script>
 function encodeImagetoBase64(element) {
     var file = element.files[0];
