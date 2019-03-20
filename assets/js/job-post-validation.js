@@ -3,7 +3,7 @@ $( document ).ready(function() {
     $("#job_details_continue_btn").on('click', function(){
         var job_title = $("#job_title").val()
         var company = $("#company").val()
-        var deadline = $("#deadline").val()
+        var deadline = $("#applicationDeadline").val()
         var joblocation = $("#location").val()
         var jobtype = $("input[name='jobtype']:checked").val();
         
