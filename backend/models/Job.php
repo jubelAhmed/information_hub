@@ -149,7 +149,7 @@ class Job
         }
     }   
 
-    public function getAllOwnUserJobPost($id){
+    public function getOwnUserAllJobPost($id){
         $query = "SELECT *
         FROM " . $this->jobs_table . " 
         WHERE user_id= '".$id."' ";

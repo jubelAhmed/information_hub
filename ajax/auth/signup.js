@@ -42,13 +42,13 @@ $(document).ready(function() {
               $("#loading").hide();
               setTimeout(function() {
                 window.location.href = "./";
-              }, 2000);
+              }, 20000);
             } else if (result.status == "ok") {
               $("#success").html("Account Registraion Successfull");
               $("#loading").hide();
               setTimeout(function() {
                 window.location.href = "./";
-              }, 2000);
+              }, 10000);
             }
           }
         });
@@ -56,19 +56,19 @@ $(document).ready(function() {
         setTimeout(function() {
           $("#loading").hide();
           $("#error").html("Your password must match!");
-        }, 500);
+        }, 20000);
         setTimeout(function() {
           window.location.href = "./";
-        }, 3000);
+        }, 20000);
       }
     } else {
       setTimeout(function() {
         $("#loading").hide();
         $("#error").html("You must enter all required informaiton!");
-      }, 500);
+      }, 20000);
       setTimeout(function() {
         window.location.href = "./";
-      }, 1000);
+      }, 20000);
     }
   });
 });
