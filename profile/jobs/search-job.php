@@ -179,7 +179,7 @@
                     <div class="row">
                         <!-- logo column -->
                         <div class="col-md-4 col-sm-3 col-xs-12" style="padding: 20px;">
-                            <img src=" http://www.logofound.com/wp-content/uploads/2016/11/travel-company-logo-template-01.jpg"
+                            <img src="http://www.logofound.com/wp-content/uploads/2016/11/travel-company-logo-template-01.jpg"
                                 width="160px" height="110px" alt="Company Logo">
                         </div>
                         <!-- Title column -->

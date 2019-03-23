@@ -9,8 +9,8 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
-    <link rel="icon" href="img/favicon.png" />
-    <title>Day-Day</title>
+    <link rel="icon" href="../assets/static/img/icon-infohub.png" />
+    <title>Information HUb</title>
     <!-- Bootstrap core CSS -->
     <link href="../assets/bootstrap.3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/font-awesome.4.6.1/css/font-awesome.min.css" rel="stylesheet" />
@@ -56,7 +56,7 @@
             <a href="./admin-panel.html" class="hover-effect">Home</a>
           </li>
           <li class="">
-            <a href="view-job-posts.html" class="hover-effect">Job Posts</a>
+            <a href="job-post-status.html" class="hover-effect">Job Posts</a>
           </li>
           <li>
             <a href="#" class="hover-effect">Users </a>

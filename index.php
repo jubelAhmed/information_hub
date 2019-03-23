@@ -113,6 +113,8 @@
                             <select name="ocopation" id="ocopation" class="form-control">
                                 <option value="student">Student</option>
                                 <option value="teacher">Teacher</option>
+                                <option value="teacher">Employee</option>
+                                
                             </select>
                         </div>
                         <div class="form-group ">
