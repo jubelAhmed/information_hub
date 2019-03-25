@@ -16,20 +16,20 @@ $job = new Job($db);
 
 
 
-$job->jobTitle = isset($_POST['jobTitle']) ? $_POST['jobTitle'] : die();
-$job->companyName = isset($_POST['companyName']) ? $_POST['companyName'] : die();
-$job->companyLogo = isset($_POST['companyLogo']) ? $_POST['companyLogo'] : die();
-$job->applicationDeadline = isset($_POST['applicationDeadline']) ? $_POST['applicationDeadline'] : die();
+$job->jobTitle = $_POST['jobTitle'];
+$job->companyName = $_POST['companyName'];
+$job->companyLogo = $_POST['companyLogo'];
+$job->applicationDeadline = $_POST['applicationDeadline'];
 
-$job->location = isset($_POST['location']) ? $_POST['location'] : die();
-$job->companyWebsite = isset($_POST['companyWebsite']) ? $_POST['companyWebsite'] : die();
-$job->compensation = isset($_POST['compensation']) ? $_POST['compensation'] : die();
-$job->remoteWork = isset($_POST['remoteWork']) ? $_POST['remoteWork'] : die();
-$job->jobType = isset($_POST['jobType']) ? $_POST['jobType'] : die();
-$job->minSalary = isset($_POST['minSalary']) ? $_POST['minSalary'] : die();
-$job->maxSalary = isset($_POST['maxSalary']) ? $_POST['maxSalary'] : die();
-$job->requiredSkills = isset($_POST['requiredSkills']) ? $_POST['requiredSkills'] : die();
-$job->jobDescription = isset($_POST['jobDescription']) ? $_POST['jobDescription'] : die();
+$job->location = $_POST['location'];
+$job->companyWebsite = $_POST['companyWebsite'];
+$job->compensation = $_POST['compensation'];
+$job->remoteWork = $_POST['remoteWork']; 
+$job->jobType = $_POST['jobType'];
+$job->minSalary = $_POST['minSalary'];
+$job->maxSalary = $_POST['maxSalary'];
+$job->requiredSkills = $_POST['requiredSkills']; 
+$job->jobDescription = $_POST['jobDescription'];
 
 /*
 let job_title = '';
@@ -55,4 +55,3 @@ if($job->post()){
 
 
 ?>
-

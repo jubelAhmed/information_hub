@@ -61,7 +61,48 @@ $(document).ready(function() {
 
   // Submit For Review Fourth Page
   $( "#submit-for-review" ).on( "click", function() {
+  /*
+let job_title = '';
+let company = '';
+let applicationDeadline = '';
+let companyLogo = '';
+let location = '';
+let companywebsite = '';
+let jobtype = '';
+let compensation = '';
+let min_salary = '';
+let max_salary = '';
+let requiredSkills = '';
+var remotework = 'no';
+var jobdescriptioninfo = ''
+*/
+      $.ajax({
+          url: "http://localhost/University/information_hub/backend/api/user/job/job_post.php",
+          type: "POST",
+          data: {
+            job_title:job_title,
+            company:company,
+            applicationDeadline:applicationDeadline, 
+            companyLogo:companyLogo, 
+            location:location, 
+            companywebsite:companywebsite, 
+            jobtype:jobtype, 
+            compensation:compensation, 
+            min_salary:min_salary, 
+            max_salary:max_salary, 
+            requiredSkills:requiredSkills, 
+            remotework:remotework, 
+            jobdescriptioninfo:jobdescriptioninfo
+          } ,
+          success: function (response) {
+            console.log(response)
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log("Ajax Error form script" + textStatus, errorThrown);
+          }
 
-      alert("Thank you your job will be reviewed!");
+
+      });
+      console.log("Hello")
   });
 });
