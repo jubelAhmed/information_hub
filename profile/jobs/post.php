@@ -1,4 +1,3 @@
-
 <?php
         session_start();
         if(!$_SESSION['valid']){
@@ -101,7 +100,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Appling Deadline <font color="red">*</font></label>
-                                <input placeholder="Deadline" id="deadline" class="form-control" type="text"
+                                <input placeholder="Deadline" id="applicationDeadline" class="form-control" type="text"
                                     onfocus="(this.type='date')" id="jobtitle">
                             </div>
                         </div>
