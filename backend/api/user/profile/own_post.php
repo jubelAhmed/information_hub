@@ -14,29 +14,20 @@ $db = $database->connect();
 
 $ownPost = new OwnPost($db);
 
-if((empty($_POST['firstName'])) || (empty($_POST['lastName'])) || (empty($_POST['email'])) || (empty($_POST['birthday'])) || (empty($_POST['occupation'])) || (empty($_POST['gender'])) || (empty($_POST['password']))){
+if((empty($_POST['title'])) || (empty($_POST['category'])) || (empty($_POST['description'])) || (empty($_POST['userid']))){
     echo('{"msg": "You must fill every require field!","status": "error"}');
     die();
 }
 
-$user->firstName = $_POST['firstName'];
-$user->lastName = $_POST['lastName'];
-//$user->userName = $_POST['userName'];
-$user->email = $_POST['email'];
-$user->birthday = $_POST['birthday'];
-$user->occupation = $_POST['occupation'];
-$user->gender = $_POST['gender'];
-$user->password = $_POST['password'];
+$ownPost->postTitle = $_POST['title'];
+$ownPost->postCatagories = $_POST['category'];
+$ownPost->postDescription = $_POST['description'];
+$user_id = $_POST['userid'];
 
-if($user->signup()){
+if($ownPost->post($user_id)){
     
-    echo('{"msg": "Signup Successfull!","status": "ok"}');
+    echo('{"msg": "New post Successfull","status": "ok"}');
 }else{
-    echo('{"msg": "User already exists!","status": "error"}');
+    echo('{"msg": "You have not enough permission to create new post!","status": "error"}');
 }
-
-// print_r(json_encode($userArray));
-
-
-
 ?>
