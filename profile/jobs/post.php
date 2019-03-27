@@ -124,7 +124,7 @@
                     <div class="form-group">
                         <label for="">Company Logo <font color="red">*</font></label><br>
                         <span class="file-input btn btn-azure btn-file">
-                            Browse <input onchange="encodeImagetoBase64(this)" type="file" multiple="">
+                            Browse <input onchange="encodeImagetoBase64(this)" type="file" multiple="" id="companyLogo" >
                         </span>
                         <span>
                             <img class="link" id="selectedCompanylogo"
@@ -190,9 +190,9 @@
                         <div class="row">
                             <div class="col-md-3 col-sm-3 col-xs-3">
 
-                                <select name="" id="compensationtype" style="width: 100%">
+                                <select name="compensation" id="compensationtype" style="width: 100%">
                                     <option value="Annually">Annually</option>
-                                    <option value="Annually">Monthly</option>
+                                    <option value="Monthly">Monthly</option>
                                 </select>
 
                             </div>
@@ -491,8 +491,9 @@
     </footer>
 
 </body>
-<script src="../../ajax/job-post/job-post.js"></script>
 <script src="../../ajax/job-post/job-skill.js"></script>
+<script src="../../ajax/job-post/job-post.js"></script>
+
 
 <script>
 function encodeImagetoBase64(element) {

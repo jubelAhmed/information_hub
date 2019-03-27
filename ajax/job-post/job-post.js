@@ -1,38 +1,43 @@
+const url = "http://localhost/information_hub/backend/api/user/job/job_post.php";
+
+
 $(document).ready(function() {
   // Skiping licence page because no need!
-  let job_title = '';
-  let company = '';
-  let applicationDeadline = '';
-  let companyLogo = '';
-  let location = '';
-  let companywebsite = '';
-  let jobtype = '';
-  let compensation = '';
-  let min_salary = '';
-  let max_salary = '';
-  let requiredSkills = '';
-  var remotework = 'no';
+  var job_title = '';
+  var company = '';
+  var applicationDeadline = '';
+  // var companyLogo = '';
+  var location = '';
+  var companywebsite = '';
+  var jobtype = '';
+  var compensation = '';
+  var min_salary = '';
+  var max_salary = '';
+  var requiredSkills = '';
+  var remotework = '0';
   jobdescriptioninfo = ''
 
-  var selectedCompanylogo = '';
+  // var selectedCompanylogo = '';
 
   // Job Details First Page
   $("#job_details_continue_btn").on("click", function(){
     job_title = $("#job_title").val()
+
+    console.log(job_title);
     company = $("#company").val()
     applicationDeadline = $("#applicationDeadline").val()
-    companyLogo = $("#companyLogo")
+    // companyLogo = $("#companyLogo").val()
     location = $("#location").val()
     company = $("#company").val()
     companywebsite = $("#companywebsite").val()
     if($("#isRemoteWork").prop('checked') == true){
-        remotework = "yes"
+        remotework = "1"
     }
     jobtype = $("input[name='jobtype']:checked").val();
     compensation = $("#compensationtype").val()
     min_salary = $("#min_salary").val()
     max_salary = $("#max_salary").val()
-    selectedCompanylogo = $("#selectedCompanylogo").attr('src');
+    // selectedCompanylogo = $("#selectedCompanylogo").attr('src');
     //console.log(selectedCompanylogo)
   })
   // Required Skill Details second Page
@@ -59,50 +64,99 @@ $(document).ready(function() {
     
   })
 
+  
   // Submit For Review Fourth Page
   $( "#submit-for-review" ).on( "click", function() {
-  /*
-let job_title = '';
-let company = '';
-let applicationDeadline = '';
-let companyLogo = '';
-let location = '';
-let companywebsite = '';
-let jobtype = '';
-let compensation = '';
-let min_salary = '';
-let max_salary = '';
-let requiredSkills = '';
-var remotework = 'no';
-var jobdescriptioninfo = ''
-*/
-      $.ajax({
-          url: "http://localhost/University/information_hub/backend/api/user/job/job_post.php",
-          type: "POST",
-          data: {
-            job_title:job_title,
-            company:company,
-            applicationDeadline:applicationDeadline, 
-            companyLogo:companyLogo, 
-            location:location, 
-            companywebsite:companywebsite, 
-            jobtype:jobtype, 
-            compensation:compensation, 
-            min_salary:min_salary, 
-            max_salary:max_salary, 
-            requiredSkills:requiredSkills, 
-            remotework:remotework, 
-            jobdescriptioninfo:jobdescriptioninfo
-          } ,
-          success: function (response) {
-            console.log(response)
-          },
-          error: function(jqXHR, textStatus, errorThrown) {
-            console.log("Ajax Error form script" + textStatus, errorThrown);
-          }
 
+  
 
-      });
-      console.log("Hello")
+    $.ajax({
+      url: url,
+      method: "post",
+      data: {
+      job_title:job_title,
+      company:company,
+      applicationDeadline:applicationDeadline, 
+      location:location, 
+      companywebsite:companywebsite, 
+      jobType:jobtype, 
+      compensation:compensation, 
+      minSalary:min_salary, 
+      maxSalary:max_salary, 
+      requiredSkills:requiredSkills, 
+      remoteWork:remotework, 
+      jobdescriptioninfo:jobdescriptioninfo
+      },
+      success: function(response) {
+        if (result.status == "error") {
+          $("#error").html(result.msg);
+         
+        } else if (result.status == "ok") {
+          $("#success").html("Account Registraion Successfull");
+          
+        }
+      },
+      error: function(err) {
+        console.log(err);
+      },
+      dataType: "text"
+    });
+     
+      
   });
 });
+
+
+/* $.ajax({
+  url: "http://localhost/information_hub/backend/api/user/job/job_post.php",
+  type: "POST",
+  data: {
+    job_title:job_title,
+    company:company,
+    applicationDeadline:applicationDeadline, 
+    companyLogo:"ssdadsssd", 
+    location:location, 
+    companywebsite:companywebsite, 
+    jobType:jobtype, 
+    compensation:compensation, 
+    minSalary:min_salary, 
+    maxSalary:max_salary, 
+    requiredSkills:requiredSkills, 
+    remoteWork:remotework, 
+    jobdescriptioninfo:jobdescriptioninfo
+  } ,
+ 
+  processData: false,
+  success: function (response) {
+    if(response.data.length == 0){ 
+      // EMPTY
+     }else{
+      var obj =jQuery.parseJSON(response.data);
+        console.log(obj);
+     }
+  },
+  error: function(jqXHR, textStatus, errorThrown) {
+    console.log("Ajax Error form script " +jqXHR, textStatus, errorThrown);
+    
+  }
+
+
+});
+
+
+/   console.log(job_title);
+//   console.log(company);
+//   console.log(applicationDeadline);
+//  // console.log(selectedCompanylogo);
+//   console.log(location);
+//   console.log(companywebsite);
+//   console.log(min_salary);
+//   console.log(max_salary);
+//   console.log(requiredSkills);
+//   console.log(remotework);
+
+//   console.log(jobdescriptioninfo);
+
+
+
+*/

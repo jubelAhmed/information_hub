@@ -368,7 +368,7 @@
                                             <div class="widget-body">
                                                 <div class="collapse in">
                                                     <form role="form">
-                                                        <div class="form-group">
+                                                         <div class="form-group">
                                                             <span class="input-icon icon-right">
                                                                 <input class="form-control" type="text">
                                                                 <i class="fa fa-user darkorange"></i>
