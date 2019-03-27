@@ -4,16 +4,16 @@
         private $conn;
         private $apply_job_table = 'apply_job';
 
-        public $applyId ;
+        
 
         public function __construct($db){
             $this->conn = $db;
         }
 
         //apply job
-        public function applyjob($jobId,$applicantId){
+        public function applyjob($applicantId,$jobId){
 
-            if($this->isAlreadyAppliedJob($jobId,$applicantId)){
+            if($this->isAlreadyAppliedJob($applicantId,$jobId)){
                 return false;
             }
 
@@ -29,17 +29,15 @@
             // execute query
             if($stmt->execute()){
                 $this->applyId = $this->conn->lastInsertId();
-             
                 return true;
             }
-        
-            return false;
+            else return false;
         
         }
 
         //check already apply job 
 
-        private function isAlreadyAppliedJob($jobId,$applicantId){
+        private function isAlreadyAppliedJob($applicantId,$jobId){
 
             $result = $this->conn->prepare("SELECT *
             FROM " . $this->apply_job_table . " 

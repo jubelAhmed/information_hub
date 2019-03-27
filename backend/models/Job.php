@@ -41,11 +41,11 @@ class Job
 
 
     public function post(){
-        $this->approveStatus = 1;
+        $this->approveStatus = 0;
 
        
         
-        $query = "INSERT INTO ". $this->jobs_table ." SET user_id=:user_id, job_title=:job_title, company_name=:company_name ,company_logo=:company_logo,company_website=:company_website,location=:location,remote_work=:remote_work,job_type=:job_type,compensation=:compensation,min_salary=:min_salary,max_salary=:max_salary,skills=:skills, job_description=:job_description,approve_status=:approve_status" ; 
+        $query = "INSERT INTO ". $this->jobs_table ." SET user_id=:user_id, job_title=:job_title, company_name=:company_name ,company_website=:company_website,location=:location,remote_work=:remote_work,job_type=:job_type,compensation=:compensation,min_salary=:min_salary,max_salary=:max_salary,skills=:skills, job_description=:job_description,deadline=:deadline, approve_status=:approve_status" ; 
 
 
         $stmt = $this->conn->prepare($query);
@@ -54,7 +54,7 @@ class Job
         $stmt->bindParam(":user_id", $this->userId);
         $stmt->bindParam(":job_title", $this->jobTitle);
         $stmt->bindParam(":company_name", $this->companyName);
-        $stmt->bindParam(":company_logo", $this->companyLogo);
+        // $stmt->bindParam(":company_logo", $this->companyLogo);
         $stmt->bindParam(":company_website", $this->companyWebsite);
 
     
@@ -67,6 +67,7 @@ class Job
         $stmt->bindParam(":skills", $this->requiredSkills);
         
         $stmt->bindParam(":job_description", $this->jobDescription);
+        $stmt->bindParam(":deadline", $this->applicationDeadline);
         $stmt->bindParam(":approve_status", $this->approveStatus );
 
         
@@ -149,7 +150,7 @@ class Job
         }
     }   
 
-    public function getAllOwnUserJobPost($id){
+    public function getOwnUserAllJobPost($id){
         $query = "SELECT *
         FROM " . $this->jobs_table . " 
         WHERE user_id= '".$id."' ";

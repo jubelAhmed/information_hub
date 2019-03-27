@@ -225,11 +225,11 @@
                                         <div style="padding: 15px">
                                             <div class="title-info has-success"
                                                 style="border: 1px solid #ccccb3;margin-bottom: 15px">
-                                                <input class="form-control input-bg p-text-area" id="definput"
+                                                <input class="form-control input-bg p-text-area" id="titleInput"
                                                     type="text" placeholder="Title" style="font-size:20px" />
                                             </div>
                                             <div class="has-success" style="margin-bottom: 15px">
-                                                <select class="form-control js-example-responsive" multiple="multiple"
+                                                <select class="form-control js-example-responsive" id="postCatagories" multiple="multiple"
                                                     style="width: 100% ;">
                                                     <optgroup label="Programming Language">
                                                         <option>Java</option>
@@ -254,7 +254,7 @@
                                             </div>
                                             <div class="has-success"
                                                 style="margin-bottom:15px;border: 1px solid #ccccb3;">
-                                                <textarea class="form-control input-lg p-text-area" rows="4"
+                                                <textarea class="form-control input-lg p-text-area" id="postDetails" rows="4"
                                                     placeholder="Write details"></textarea>
                                             </div>
                                         </div>
@@ -659,8 +659,7 @@
     <script>
     $(".js-example-responsive").select2({
         width: "resolve",
-        placeholder: "Select a state",
-        placeholder: "Select catagory" // need to override the changed default
+        placeholder: "Select catagories" // need to override the changed default
     });
     </script>
 </body>

@@ -93,46 +93,40 @@
 
                         <span class="icon-text">Sign Up</span>
                     </h4>
-                    <p class="text-muted">Create a new account</p>
+                    <p class="text-muted">Create a new employer account</p>
                     <form method="POST">
                         <div class="form-group">
-                            <input class="form-control" type="text" id="firstname" placeholder="First Name">
+                            <input class="form-control" type="text" id="username" placeholder="Employer user Name">
                         </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="lastname" placeholder="Last Name">
-                        </div>
+                        
                         <div class="form-group">
                             <input class="form-control" type="email" id="emailb" placeholder="Email">
                         </div>
-                        <div class="form-group">
-                            <input placeholder="Birthday" id="birthday" class="form-control" type="text"
-                                onfocus="(this.type='date')" id="date">
 
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="company_name" placeholder="company Name">
                         </div>
                         <div class="form-group">
-                            <select name="ocopation" id="ocopation" class="form-control">
-                                <option value="student">Student</option>
-                                <option value="teacher">Teacher</option>
-                                <option value="teacher">Employee</option>
-                                
-                            </select>
+                            <input class="form-control" type="text" id="company_website" placeholder="company website link">
                         </div>
-                        <div class="form-group ">
-                            <div class="control-group">
-                                <div class="radio" style="display: inline-block;">
-                                    <label>
-                                        <input name="form-field-radio" type="radio" value="male">
-                                        <span class="text">Male </span>
-                                    </label>
-                                </div>
-                                <div class="radio" style="display: inline-block; margin-left: 10px;">
-                                    <label>
-                                        <input name="form-field-radio" class="inverted" type="radio" value="female">
-                                        <span class="text">Female</span>
-                                    </label>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label>Location <font color="red">*</font></label>
+                            <input type="text" name="joblocation" id="location" class="form-control"
+                                placeholder="Dhanmondi 32, Dhaka 1205" />
                         </div>
+
+                        <div class="form-group">
+                            <label for="">Company Logo <font color="red">*</font></label><br>
+                            <span class="file-input btn btn-azure btn-file">
+                                Browse <input onchange="encodeImagetoBase64(this)" type="file" multiple="" id="file" name="file">
+                            </span>
+                            <span>
+                                <img class="link" id="selectedCompanylogo"
+                                    src="https://daffodilvarsity.edu.bd/images/logo.png" alt="Company Logo"
+                                    style="max-width: 100px; max-height: 100px; margin-left: 50px; padding: 10px;">
+                            </span>
+                        </div>
+
                         <div class="form-group">
                             <input class="form-control" id="passwordb" type="password" placeholder="Password">
                         </div>
@@ -141,7 +135,7 @@
                         </div>
 
                         <small>By clicking register button you are agree with all terms and condition.</small> <br><br>
-                        <input type="button" class="btn btn-azure" id="newuserbtn" value="Register New Account"><br>
+                        <input type="button" class="btn btn-azure" id="newuserbtn" value="Register New CompanyAccount"><br>
                         <center>
                             <div id="loading"></div>
                         </center>
@@ -155,7 +149,20 @@
     </div>
     <!-- scripts that is only for this page -->
     <script src="./ajax/auth/signin.js"></script>
-    <script src="./ajax/auth/signup.js"></script>
+    <script src="./ajax/auth/employer-signup.js"></script>
+
+    <script>
+    function encodeImagetoBase64(element) {
+        var file = element.files[0];
+        var reader = new FileReader();
+        reader.onloadend = function() {
+            $(".link").attr("src", reader.result);
+
+            $(".link").text(reader.result);
+        }
+        reader.readAsDataURL(file);
+    }
+    </script>
     <?php 
     include('./includes/footer.php');
 ?>

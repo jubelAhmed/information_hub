@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     // Job Basic Information
-    $("#job_details_continue_btn").on('click', function(){
+    $("#job_details_continue_btn").on('click', function(e){
         var job_title = $("#job_title").val()
         var company = $("#company").val()
         var deadline = $("#applicationDeadline").val()
@@ -30,7 +30,7 @@ $( document ).ready(function() {
         if(job_title.trim().length > 0 && company.trim().length > 0 && deadline.trim().length > 0 && joblocation.trim().length > 0 && jobtype.trim().length > 0 
         && remotework.trim().length > 0 && compensationtype.trim().length > 0 && mincompensation.trim().length > 0 && maxcompensation.trim().length > 0){
             // Form Validation Successfull
-            $('form .btn-job-basic-info-filledup').on('click', function() {
+  
                 var parent_fieldset = $(this).parents('fieldset');
                 var next_step = true;
                 var current_active_step = $(this).parents('form').find('.form-wizard.active');
@@ -65,20 +65,20 @@ $( document ).ready(function() {
                     });
                 }
                 
-            });
+          
             // Next operation success
         }else{
             $("#error").text("All Fields Are Required!")
             return false;
         }
-        
+        e.preventDefault();
     })
 
     // Skill Selection Section
 
-    $("#skill_details_continue_btn").on('click', function(){
+    $("#skill_details_continue_btn").on('click', function(e){
 
-            $('form .skill-job-basic-info-filledup').on('click', function() {
+            
                 var parent_fieldset = $(this).parents('fieldset');
                 var next_step = true;
                 var current_active_step = $(this).parents('form').find('.form-wizard.active');
@@ -113,16 +113,16 @@ $( document ).ready(function() {
                     });
                 }
                 
-            });
+          
             // Next operation success
-         
+            e.preventDefault();
         
     })
 
     //========================================Description ========================
-    $("#description_details_continue_btn").on('click', function(){
+    $("#description_details_continue_btn").on('click', function(e){
 
-        $('form .description-job-basic-info-filledup').on('click', function() {
+       
             var parent_fieldset = $(this).parents('fieldset');
             var next_step = true;
             var current_active_step = $(this).parents('form').find('.form-wizard.active');
@@ -157,9 +157,9 @@ $( document ).ready(function() {
                 });
             }
             
-        });
+      
         // Next operation success
-     
+        e.preventDefault();
     
 })
 });
