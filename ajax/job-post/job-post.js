@@ -20,10 +20,10 @@ $(document).ready(function() {
   // var selectedCompanylogo = '';
 
   // Job Details First Page
-  $("#job_details_continue_btn").on("click", function(){
+  $("#job_details_continue_btn").on("click", function(event){
+   
     job_title = $("#job_title").val()
 
-    console.log(job_title);
     company = $("#company").val()
     applicationDeadline = $("#applicationDeadline").val()
     // companyLogo = $("#companyLogo").val()
@@ -37,11 +37,13 @@ $(document).ready(function() {
     compensation = $("#compensationtype").val()
     min_salary = $("#min_salary").val()
     max_salary = $("#max_salary").val()
+     event.preventDefault();
     // selectedCompanylogo = $("#selectedCompanylogo").attr('src');
     //console.log(selectedCompanylogo)
   })
   // Required Skill Details second Page
-  $("#skill_details_continue_btn").on("click", function(){
+  $("#skill_details_continue_btn").on("click", function(event){
+    
     var requireSkillsLocal = [];
     $.each($("input[name='skillyesno']:checked"), function(){            
       requireSkillsLocal.push($(this).val());
@@ -51,10 +53,12 @@ $(document).ready(function() {
       requireSkillsLocal.push($(this).val());
     });
     requiredSkills = requireSkillsLocal.join(", ")
+    event.preventDefault();
   })
 
   // Job Description Third Page
-  $("#description_details_continue_btn").on("click", function(){
+  $("#description_details_continue_btn").on("click", function(event){
+    event.preventDefault();
     jobdescriptioninfo = $("#jobdescriptioninfo").val()
     $("#job_title_display").text("Job Title: "+ job_title)
     $("#SimpleViewDetails").text("Address: " + location + " | Remotework? : "+ remotework + " | Job Type:"  + jobtype + " | Compensation: "+ compensation + " | Minimum Salary: " + min_salary + "| Maximum Salary: "+ max_salary )
@@ -66,9 +70,9 @@ $(document).ready(function() {
 
   
   // Submit For Review Fourth Page
-  $( "#submit-for-review" ).on( "click", function() {
+  $( "#submit-for-review" ).on("click", function(event) {
 
-  
+    event.preventDefault();
 
     $.ajax({
       url: url,
@@ -88,11 +92,17 @@ $(document).ready(function() {
       jobdescriptioninfo:jobdescriptioninfo
       },
       success: function(response) {
+        var result = JSON.parse(response);
         if (result.status == "error") {
           $("#error").html(result.msg);
          
-        } else if (result.status == "ok") {
-          $("#success").html("Account Registraion Successfull");
+        }else if(result.status === "ok") {
+          $("#success").html(result.msg);
+          alert("thank you and your job will be reviewed");
+      
+          setTimeout(function() {
+            window.location.href = "http://localhost/information_hub/profile/jobs/post.php";
+          }, 5000);
           
         }
       },
@@ -105,6 +115,8 @@ $(document).ready(function() {
       
   });
 });
+
+
 
 
 /* $.ajax({

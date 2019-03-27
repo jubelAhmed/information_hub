@@ -18,7 +18,7 @@ $job = new Job($db);
 
 $job->jobTitle = $_POST['job_title'];
 
-echo $job->jobTitle;
+
 $job->companyName = $_POST['company'];
 // $job->companyLogo = $_POST['companyLogo'];
 $job->applicationDeadline = $_POST['applicationDeadline'];

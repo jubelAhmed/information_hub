@@ -121,7 +121,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="">Company Logo <font color="red">*</font></label><br>
                         <span class="file-input btn btn-azure btn-file">
                             Browse <input onchange="encodeImagetoBase64(this)" type="file" multiple="" id="companyLogo" >
@@ -131,7 +131,7 @@
                                 src="https://daffodilvarsity.edu.bd/images/logo.png" alt="Company Logo"
                                 style="max-width: 100px; max-height: 100px; margin-left: 50px; padding: 10px;">
                         </span>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label>Location <font color="red">*</font></label>
                         <input type="text" name="joblocation" id="location" class="form-control"
@@ -230,8 +230,7 @@
                     <center>
                         <h4>Skils <font color="red">*</font>
                         </h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque velit maxime itaque, ad
-                            aperiam magnam voluptas id debitis molestias dolor!</p>
+                        <p>you must have provide all needed skills </p>
                     </center>
                     <h5><b>Programming Skills</b></h5>
                     <div class="row">
@@ -468,6 +467,9 @@
                         <button type="button" class="btn btn-previous">Previous</button>
                         <button type="button" id="submit-for-review" class="btn btn-next">Ok Submit For Review</button>
                     </div>
+                    <div>
+                       <center> <p id="success" class="text-success">  </p> </center> 
+                    </div>
                 </fieldset>
                 <fieldset>
                     <div class="jumbotron text-center">
@@ -495,7 +497,7 @@
 <script src="../../ajax/job-post/job-post.js"></script>
 
 
-<script>
+<!-- <script>
 function encodeImagetoBase64(element) {
     var file = element.files[0];
     var reader = new FileReader();
@@ -506,7 +508,7 @@ function encodeImagetoBase64(element) {
     }
     reader.readAsDataURL(file);
 }
-</script>
+</script> -->
 <!-- Mirrored from demos.bootdey.com/dayday/recover_password.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:36:06 GMT -->
 
 </html>

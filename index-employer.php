@@ -93,20 +93,21 @@
 
                         <span class="icon-text">Sign Up</span>
                     </h4>
-                    <p class="text-muted">Create a new account</p>
+                    <p class="text-muted">Create a new employer account</p>
                     <form method="POST">
                         <div class="form-group">
-                            <input class="form-control" type="text" id="firstname" placeholder="Employer First Name">
+                            <input class="form-control" type="text" id="username" placeholder="Employer user Name">
                         </div>
-                        <div class="form-group">
-                            <input class="form-control" type="text" id="lastname" placeholder="Employer Last Name">
-                        </div>
+                        
                         <div class="form-group">
                             <input class="form-control" type="email" id="emailb" placeholder="Email">
                         </div>
 
                         <div class="form-group">
                             <input class="form-control" type="text" id="company_name" placeholder="company Name">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="company_website" placeholder="company website link">
                         </div>
                         <div class="form-group">
                             <label>Location <font color="red">*</font></label>
@@ -117,7 +118,7 @@
                         <div class="form-group">
                             <label for="">Company Logo <font color="red">*</font></label><br>
                             <span class="file-input btn btn-azure btn-file">
-                                Browse <input onchange="encodeImagetoBase64(this)" type="file" multiple="">
+                                Browse <input onchange="encodeImagetoBase64(this)" type="file" multiple="" id="file" name="file">
                             </span>
                             <span>
                                 <img class="link" id="selectedCompanylogo"
@@ -134,7 +135,7 @@
                         </div>
 
                         <small>By clicking register button you are agree with all terms and condition.</small> <br><br>
-                        <input type="button" class="btn btn-azure" id="newuserbtn" value="Register New Account"><br>
+                        <input type="button" class="btn btn-azure" id="newuserbtn" value="Register New CompanyAccount"><br>
                         <center>
                             <div id="loading"></div>
                         </center>
@@ -148,7 +149,7 @@
     </div>
     <!-- scripts that is only for this page -->
     <script src="./ajax/auth/signin.js"></script>
-    <script src="./ajax/auth/signup.js"></script>
+    <script src="./ajax/auth/employer-signup.js"></script>
 
     <script>
     function encodeImagetoBase64(element) {
