@@ -28,7 +28,23 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    
     <![endif]-->
+
+    <style>
+    #reference{
+        color:green; 
+        margin-left:20px;
+        text-decoration: overline;
+
+    }
+    #reference:hover{
+        color:blue;
+        
+    }
+    </style>
+
 </head>
 
 <body class="animated fadeIn">
@@ -85,9 +101,9 @@
                 </div><br>
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4">
-                    <h5 id="error" style="color: red;"></h5>
-                    <h4 id="success" style="color: green;"></h4>
-
+                    
+                <h5 id="error" style="color: red;"></h5>
+                         <h4 id="success" style="color: green;"></h4> 
 
                     <h4 class="m-b-0">
 
@@ -135,10 +151,13 @@
                         </div>
 
                         <small>By clicking register button you are agree with all terms and condition.</small> <br><br>
-                        <input type="button" class="btn btn-azure" id="newuserbtn" value="Register New CompanyAccount"><br>
+                        <input type="button" class="btn btn-azure" id="newuserbtn" value="Register New Employer Account">
+                        <a id="reference"  href="./index.php">create user account</a>
+                        <br>
                         <center>
                             <div id="loading"></div>
                         </center>
+                        
 
                     </form>
 

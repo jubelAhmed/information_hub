@@ -2,7 +2,7 @@
 
     class OwnPost{
 
-        public $own_post_table = "posts"
+        public $own_post_table = "posts" ;
         private $conn;
         public $postTitle;
         public $postCatagories;
@@ -14,13 +14,9 @@
         {
             $this->conn = $db;
         }
-        public function __construct($postTitle,$postCatagories,$postDescription)
-        {
-            $this->postTitle = $postTitle;
-            $this->postCatagories = $postCatagories;
-            $this->postDescription = $postDescription;
 
-        }
+        
+
 
 
         public function post($user_id){

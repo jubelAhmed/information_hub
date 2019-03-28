@@ -53,10 +53,37 @@ class User
         // execute query
         if($stmt->execute() > 0){
             $this->id = $this->conn->lastInsertId();
-            return true;
+            return $this->updateInsertTable($this->email,"user", $this->id );
         }
     
         return false;
+    }
+
+    private function updateInsertTable($email,$type,$userId){
+
+        $query = "INSERT INTO login
+                SET user_id=:user_id,  email=:email , type=:type";
+    
+        // prepare query
+        $stmt = $this->conn->prepare($query);
+    
+        // sanitize
+        
+        
+        // bind values
+        $stmt->bindParam(":user_id", $userId);
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":type", $type);
+       
+       
+    
+        // execute query
+        if($stmt->execute() > 0){
+            $this->id = $this->conn->lastInsertId();
+            return true;
+        }
+        return false ;
+
     }
 
     // signin function
@@ -64,15 +91,36 @@ class User
     public function login(){
 
 
-        // select all query
-        $query = "SELECT `id`, `first_name`, `last_name`, `email`, `birthday`, `occupation`, `gender`, `password`
-        FROM " . $this->table . " 
-        WHERE email='".$this->email."' AND password='".$this->password."'";
-        // prepare query statement
-        $stmt = $this->conn->prepare($query);
+        $firstquery = "SELECT `user_id`, `email`, `type` FROM login where email = '".$this->email."  ' "  ; 
+
+        $first_stmt = $this->conn->prepare($firstquery);
         // execute query
-        $stmt->execute();
-        return $stmt;
+         $first_stmt->execute();
+
+   
+
+        if($first_stmt->rowCount() > 0){
+            // get retrieved row
+            $row = $first_stmt->fetch(PDO::FETCH_ASSOC);
+            
+            $type = $row['type'];
+
+            if($type === "user"){
+                // select all query
+            $query = "SELECT `id`, `first_name`, `last_name`, `email`, `birthday`, `occupation`, `gender`, `password`
+            FROM " . $this->table . " 
+            WHERE email='".$this->email."' AND password='".$this->password."'";
+            // prepare query statement
+            $stmt = $this->conn->prepare($query);
+            // execute query
+            $stmt->execute();
+            return $stmt;
+            }
+        }else{
+            return $first_stmt;
+        }
+
+        
     }
 
     // is already exist check
