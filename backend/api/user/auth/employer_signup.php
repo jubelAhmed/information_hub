@@ -5,30 +5,48 @@ header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
 include_once('../../../config/Database.php');
-include_once('../../../models/User.php');
+include_once('../../../models/Employer.php');
 
 
 $database = new Database();
 
 $db = $database->connect();
 
-$user = new User($db);
+$employer = new Employer($db);
 
-if((empty($_POST['firstName'])) || (empty($_POST['lastName'])) || (empty($_POST['email'])) || (empty($_POST['birthday'])) || (empty($_POST['occupation'])) || (empty($_POST['gender'])) || (empty($_POST['password']))){
-    echo('{"msg": "You must fill every require field!","status": "error"}');
-    die();
+$image = 0 ;
+
+if(isset($_FILES['file'])){
+    $test  = explode(".",$_FILES["file"]["name"]);
+    // echo $test;
+
+
+    $extension = end($test);
+
+    // echo $extension;
+    $name = rand(100,999).'.'.$extension;
+    $location = "./upload/".$name ;
+    $file = $_FILES["file"]["tmp_name"] ; 
+    
+    $image = addslashes($file);
+    $name = addslashes($file);
+    $image = file_get_contents($image);
+    $image = base64_encode($image);
+  
+   
 }
 
-$user->firstName = $_POST['firstName'];
-$user->lastName = $_POST['lastName'];
-//$user->userName = $_POST['userName'];
-$user->email = $_POST['email'];
-$user->birthday = $_POST['birthday'];
-$user->occupation = $_POST['occupation'];
-$user->gender = $_POST['gender'];
-$user->password = $_POST['password'];
+$employer->userName = isset($_POST['username']) ? $_POST['username'] : die();
+$employer->email = isset($_POST['email']) ? $_POST['email'] : die();
+$employer->companyName = isset($_POST['company_name']) ? $_POST['company_name'] : die();
+$employer->companyWebsite = isset($_POST['company_website']) ? $_POST['company_website'] : die();
+$employer->location = isset($_POST['location']) ? $_POST['location'] : die();
+$employer->companyLogo  = $image?$image:'0' ;
+$employer->password = isset($_POST['password']) ? $_POST['password'] : die();
 
-if($user->signup()){
+
+
+if($employer->signup()){
     
     echo('{"msg": "Signup Successfull!","status": "ok"}');
 }else{

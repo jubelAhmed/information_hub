@@ -20,7 +20,7 @@
                         Jobs <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="../jobs/post.php">Create New Job</a></li>
+                       
                         <li><a href="../jobs/search-job.php">Search Jobs</a></li>
 
                     </ul>

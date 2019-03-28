@@ -12,10 +12,16 @@ $(document).ready(function() {
         data: { email: email, password: pass },
         dataType: "json",
         success: function(result) {
+         
+          console.log(result.type);
           if (result.status == "error") {
             $("#error").html(result.msg);
           } else if (result.status == "ok") {
-            window.location.href = "./profile/home.php";
+              if(result.type == "employer"){
+                window.location.href = "./employer/employer-home.php";
+              }else if(result.type == "user"){
+                window.location.href = "./profile/home.php";
+              }
           }
         }
       });
