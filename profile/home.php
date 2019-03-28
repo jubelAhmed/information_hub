@@ -179,9 +179,9 @@
                                     <a href="#"> <i class="fa fa-floppy-o"></i> Saved</a>
                                 </li>
                                 <li>
-                                    <script async type="text/javascript"
-                                        src="../../cdn.carbonads.com/carboned55.js?zoneid=1673&amp;serve=C6AILKT&amp;placement=bootdeycom"
-                                        id="_carbonads_js"></script>
+                                   <!--  <script async type="text/javascript"
+                                        src="https://cdn.carbonads.com/carboned55.js?zoneid=1673&amp;serve=C6AILKT&amp;placement=bootdeycom"
+                                        id="_carbonads_js"></script> -->
                                 </li>
                             </ul>
                         </div>
@@ -225,8 +225,9 @@
                                         <div style="padding: 15px">
                                             <div class="title-info has-success"
                                                 style="border: 1px solid #ccccb3;margin-bottom: 15px">
-                                                <input class="form-control input-bg p-text-area" id="titleInput"
+                                                <input class="form-control input-bg p-text-area" id="postTile"
                                                     type="text" placeholder="Title" style="font-size:20px" />
+                                                <input type="hidden" id="userid" value="<?php echo $_SESSION['user_login_uid']; ?>">
                                             </div>
                                             <div class="has-success" style="margin-bottom: 15px">
                                                 <select class="form-control js-example-responsive" id="postCatagories" multiple="multiple"
@@ -259,7 +260,8 @@
                                             </div>
                                         </div>
                                         <div class="box-footer box-form">
-                                            <button class="btn btn-azure pull-right" type="button">Publish</button>
+
+                                            <button class="btn btn-azure pull-right" id="publishPostBtn" type="button"><span id="showPublish">Publish</span><img id="loadingPublishBtn" src="https://loading.io/spinners/comets/lg.comet-spinner.gif" style="max-height: 20px; max-width: 20px;" alt=""></button>
                                             <ul class="nav nav-pills">
                                                 <li><a href="#"><i class="fa fa-camera"></i></a></li>
                                                 <li><a href="#"><i class="fa fa-film"></i></a></li>
@@ -662,6 +664,7 @@
         placeholder: "Select catagories" // need to override the changed default
     });
     </script>
+    <script src="../assets/js/post.js"></script>
 </body>
 
 
