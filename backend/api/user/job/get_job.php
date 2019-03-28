@@ -33,7 +33,7 @@ function getPublishedJobs($job){
                 'user_id'=>$user_id,
                 'job_title'=>$job_title,
                 'company_name'=>$company_name,
-                'company_logo'=>$company_logo,
+                
                 'company_website'=>$company_website,
                 'company_location'=>$location,
                 'remote_work'=>$remote_work,

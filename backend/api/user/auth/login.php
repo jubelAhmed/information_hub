@@ -26,9 +26,19 @@ if($stmt->rowCount() > 0){
     //sessions
     $_SESSION['user_login_email'] = $row['email'];
     $_SESSION['user_login_uid'] = $row['id'];
+    $_SESSION['type'] = $row['type'];
     $_SESSION['valid'] = true;
 
-    echo('{"msg": "login Successfully done", "status": "ok"}');
+    $type = $row['type'];
+
+   
+    if($type == "user"){
+        echo('{"msg": "login Successfully done", "status": "ok","type": "user"}');
+    }else if($type == "employer"){
+        echo('{"msg": "login Successfully done", "status": "ok","type": "employer"}');
+    }
+
+   
 }
 else{
 

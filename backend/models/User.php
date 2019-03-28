@@ -105,9 +105,9 @@ class User
             
             $type = $row['type'];
 
-            if($type === "user"){
+            if($type == "user"){
                 // select all query
-            $query = "SELECT `id`, `first_name`, `last_name`, `email`, `birthday`, `occupation`, `gender`, `password`
+            $query = "SELECT `id`, `first_name`, `last_name`, `email`, `birthday`, `occupation`, `gender`,`type`, `password`
             FROM " . $this->table . " 
             WHERE email='".$this->email."' AND password='".$this->password."'";
             // prepare query statement
@@ -115,6 +115,16 @@ class User
             // execute query
             $stmt->execute();
             return $stmt;
+            }
+            else if($type == "employer"){
+                $query = "SELECT `id`, `user_name`, `email`, `company_name`, `company_website`, `company_logos`, `company_location`,`type`
+                FROM employer 
+                WHERE email='".$this->email."' AND password='".$this->password."'";
+                // prepare query statement
+                $stmt = $this->conn->prepare($query);
+                // execute query
+                $stmt->execute();
+                return $stmt;
             }
         }else{
             return $first_stmt;
