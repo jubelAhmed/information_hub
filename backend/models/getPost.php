@@ -7,9 +7,9 @@
 
         public function getPosts($user_id) {
 
-            $query = "SELECT * FROM posts WHERE user_id = :user_id";
+            $query = "SELECT * FROM posts order by time DESC limit 20";
             $stmt = $this->conn->prepare($query);
-            $stmt->bindParam(":user_id", $user_id);
+            // $stmt->bindParam(":user_id", $user_id);
 
             if ($stmt->execute()) {
                 $myCustomResult = [];
@@ -26,7 +26,7 @@
             }
             return false;
         }
-
+        
         public function userIdToUserFullName($user_id){
             $query = "SELECT first_name, last_name FROM users WHERE id = :user_id";
             $stmt = $this->conn->prepare($query);
