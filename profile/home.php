@@ -161,7 +161,6 @@
                                 <p>@username</p>
                             </div>
                             <ul class="nav nav-pills nav-stacked">
-                                <!--  <li class="active"><a href="#"> <i class="fa fa-user"></i> News feed</a></li> -->
                                 <li>
                                     <a href="#">
                                         <i class="fa fa-envelope"></i> Messages
@@ -174,29 +173,15 @@
                                 <li>
                                     <a href="#"> <i class="fa fa-image"></i> Photos</a>
                                 </li>
-                                <!--  <li><a href="#"> <i class="fa fa-share"></i> Browse</a></li> -->
                                 <li>
                                     <a href="#"> <i class="fa fa-floppy-o"></i> Saved</a>
                                 </li>
                                 <li>
-                                   <!--  <script async type="text/javascript"
-                                        src="https://cdn.carbonads.com/carboned55.js?zoneid=1673&amp;serve=C6AILKT&amp;placement=bootdeycom"
-                                        id="_carbonads_js"></script> -->
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <!-- <div class="widget">
-              <div class="widget-body">
-                <ul class="nav nav-pills nav-stacked">
-                  <li><a href="#"> <i class="fa fa-globe"></i> Pages</a></li>
-                  <li><a href="#"> <i class="fa fa-gamepad"></i> Games</a></li>
-                  <li><a href="#"> <i class="fa fa-puzzle-piece"></i> Ads</a></li>
-                  <li><a href="#"> <i class="fa fa-home"></i> Markerplace</a></li>
-                  <li><a href="#"> <i class="fa fa-users"></i> Groups</a></li>
-                </ul>
-              </div>
-            </div> -->
+
                 </div>
             </div>
             <!-- end left links -->
@@ -275,268 +260,225 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
+                <!-- Start Post -->
+<div class="row">
+<div class="col-md-12">
 
-                        <!-- post start -->
-                        <div class="box box-widget">
-                            <div class="box-header with-border">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="user-block">
-                                            <img class="img-circle" alt="User Image"
-                                                src="../assets/static/img/dark-blue.png">
-                                            <span class="username"><a href="#">Jubel Ahmed</a></span>
-                                            <span class="description">7:30 PM Today</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-
-                                        <ul id="catagoryList">
-                                            <li>JavaScript</li>
-                                            <li>ReactJs</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-body">
-                                <p>Far far away, behind the word mountains, far from the
-                                    countries Vokalia and Consonantia, there live the blind
-                                    texts. Separated they live in Bookmarksgrove right at</p>
-                                <p>the coast of the Semantics, a large language ocean.
-                                    A small river named Duden flows by their place and supplies
-                                    it with the necessary regelialia. It is a paradisematic
-                                    country, in which roasted parts of sentences fly into
-                                    your mouth.</p>
-
-                                <div class="attachment-block clearfix">
-                                    <img class="attachment-img show-in-modal" alt="Attachment Image"
-                                        src="../assets/static/img/dark-blue.png">
-                                    <div class="attachment-pushed">
-                                        <h4 class="attachment-heading"><a href="http://www.bootdey.com/">Lorem
-                                                ipsum
-                                                text
-                                                generator</a></h4>
-                                        <div class="attachment-text">
-                                            Description about the attachment can be placed here.
-                                            Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry... <a href="#">more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" style="margin-left:2px;margin-top:25px;
-                    margin-right:2px;
-                    border-bottom:1px solid #c9b7b7">
-                                    <div class="col-md-4 col-sm-2 ">
-                                        <div class='rating-stars text-center'>
-                                            <ul id='stars'>
-                                                <li class='star' title='Poor' data-value='1'>
-                                                    <i class='fa fa-star fa-fw'></i>
-                                                </li>
-                                                <li class='star' title='Fair' data-value='2'>
-                                                    <i class='fa fa-star fa-fw'></i>
-                                                </li>
-                                                <li class='star' title='Good' data-value='3'>
-                                                    <i class='fa fa-star fa-fw'></i>
-                                                </li>
-                                                <li class='star' title='Excellent' data-value='4'>
-                                                    <i class='fa fa-star fa-fw'></i>
-                                                </li>
-                                                <li class='star' title='WOW!!!' data-value='5'>
-                                                    <i class='fa fa-star fa-fw'></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-1 col-sm-1 "></div>
-                                    <div class="col-md-2 col-sm-2 ">
-                                        <span class="text-info">80 point </span>
-                                    </div>
-                                    <div class="col-md-3 col-sm-3 ">
-                                        <span class="text-info">5 comments</span>
-                                    </div>
-                                    <div class="col-md-2 col-sm-2 " style="float:right">
-                                        <button class="btn btn-info btn-xs" type="button"><i class="fa fa-share"></i>
-                                            share</button>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="box-footer box-comments">
-                                <div class="box-comment">
-                                    <img class="img-circle img-sm" alt="User Image"
-                                        src="../assets/static/img/dark-blue.png">
-                                    <div class="comment-text">
-                                        <span class="username">
-                                            Maria Gonzales
-                                            <span class="text-muted pull-right">8:03 PM Today</span>
-                                        </span>
-                                        It is a long established fact that a reader will be
-                                        distracted
-                                        by the readable content of a page when looking at its
-                                        layout.
-                                    </div>
-                                </div>
-                                <div class="box-comment">
-                                    <img class="img-circle img-sm" alt="User Image"
-                                        src="../assets/static/img/dark-blue.png">
-                                    <div class="comment-text">
-                                        <span class="username">
-                                            Nora Havisham
-                                            <span class="text-muted pull-right">8:03 PM Today</span>
-                                        </span>
-                                        The point of using Lorem Ipsum is that it has a
-                                        more-or-less
-                                        normal distribution of letters, as opposed to using
-                                        'Content here, content here', making it look like readable
-                                        English.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-footer">
-                                <form action="#" method="post">
-                                    <img class="img-responsive img-circle img-sm" alt="Alt Text"
-                                        src="../assets/static/img/dark-blue.png">
-                                    <div class="img-push">
-                                        <input class="form-control input-sm" type="text"
-                                            placeholder="Press enter to post comment">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- post end -->
-                        <!-- post start -->
-                        <div class="box box-widget">
-                            <div class="box-header with-border">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="user-block">
-                                            <img class="img-circle" alt="User Image"
-                                                src="../assets/static/img/dark-blue.png">
-                                            <span class="username"><a href="#">Jubel Ahmed</a></span>
-                                            <span class="description">7:30 PM Today</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-
-                                        <ul id="catagoryList">
-                                            <li>JavaScript</li>
-                                            <li>ReactJs</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-body">
-                                <p>Far far away, behind the word mountains, far from the
-                                    countries Vokalia and Consonantia, there live the blind
-                                    texts. Separated they live in Bookmarksgrove right at</p>
-                                <p>the coast of the Semantics, a large language ocean.
-                                    A small river named Duden flows by their place and supplies
-                                    it with the necessary regelialia. It is a paradisematic
-                                    country, in which roasted parts of sentences fly into
-                                    your mouth.</p>
-
-                                <div class="attachment-block clearfix">
-                                    <img class="attachment-img show-in-modal" alt="Attachment
-                      Image" src="../assets/static/img/dark-blue.png">
-                                    <div class="attachment-pushed">
-                                        <h4 class="attachment-heading"><a href="http://www.bootdey.com/">Lorem
-                                                ipsum
-                                                text
-                                                generator</a></h4>
-                                        <div class="attachment-text">
-                                            Description about the attachment can be placed here.
-                                            Lorem Ipsum is simply dummy text of the printing and
-                                            typesetting industry... <a href="#">more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" style="margin-left:2px;margin-top:25px;
-                    margin-right:2px;
-                    border-bottom:1px solid #c9b7b7">
-                                    <div class="col-md-4">
-                                        <div class='rating-stars text-center'>
-                                            <ul id='stars'>
-                                                <li class='star' title='Poor' data-value='1'>
-                                                    <i class='fa fa-star fa-fw'></i>
-                                                </li>
-                                                <li class='star' title='Fair' data-value='2'>
-                                                    <i class='fa fa-star fa-fw'></i>
-                                                </li>
-                                                <li class='star' title='Good' data-value='3'>
-                                                    <i class='fa fa-star fa-fw'></i>
-                                                </li>
-                                                <li class='star' title='Excellent' data-value='4'>
-                                                    <i class='fa fa-star fa-fw'></i>
-                                                </li>
-                                                <li class='star' title='WOW!!!' data-value='5'>
-                                                    <i class='fa fa-star fa-fw'></i>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-1"></div>
-                                    <div class="col-md-2">
-                                        <span class="text-info">80 point </span>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <span class="text-info">5 comments</span>
-                                    </div>
-                                    <div class="col-md-2" style="float:right">
-                                        <button class="btn btn-info btn-xs" type="button"><i class="fa fa-share"></i>
-                                            share</button>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="box-footer box-comments">
-                                <div class="box-comment">
-                                    <img class="img-circle img-sm" alt="User Image"
-                                        src="../assets/static/img/dark-blue.png">
-                                    <div class="comment-text">
-                                        <span class="username">
-                                            Maria Gonzales
-                                            <span class="text-muted pull-right">8:03 PM Today</span>
-                                        </span>
-                                        It is a long established fact that a reader will be
-                                        distracted
-                                        by the readable content of a page when looking at its
-                                        layout.
-                                    </div>
-                                </div>
-                                <div class="box-comment">
-                                    <img class="img-circle img-sm" alt="User Image"
-                                        src="../assets/static/img/dark-blue.png">
-                                    <div class="comment-text">
-                                        <span class="username">
-                                            Nora Havisham
-                                            <span class="text-muted pull-right">8:03 PM Today</span>
-                                        </span>
-                                        The point of using Lorem Ipsum is that it has a
-                                        more-or-less
-                                        normal distribution of letters, as opposed to using
-                                        'Content here, content here', making it look like readable
-                                        English.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-footer">
-                                <form action="#" method="post">
-                                    <img class="img-responsive img-circle img-sm" alt="Alt Text"
-                                        src="../assets/static/img/dark-blue.png">
-                                    <div class="img-push">
-                                        <input class="form-control input-sm" type="text"
-                                            placeholder="enter to post comment">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <!-- post end -->
+    <!-- post start -->
+    <div class="box box-widget">
+        <div class="box-header with-border">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="user-block">
+                        <img class="img-circle" alt="User Image" src="../assets/static/img/dark-blue.png">
+                        <span class="username"><a href="#">Jubel Ahmedx</a></span>
+                        <span class="description">7:30 PM Today</span>
                     </div>
+                </div>
+                <div class="col-md-6">
+
+                    <ul id="catagoryList">
+                        <li>JavaScript</li>
+                        <li>ReactJs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box-body">
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at</p>
+            <p>the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+
+            <div class="attachment-block clearfix">
+                <img class="attachment-img show-in-modal" alt="Attachment Image" src="../assets/static/img/dark-blue.png">
+                <div class="attachment-pushed">
+                    <h4 class="attachment-heading"><a href="http://www.bootdey.com/">Lorem
+                                                ipsum
+                                                text
+                                                generator</a></h4>
+                    <div class="attachment-text">
+                        Description about the attachment can be placed here. Lorem Ipsum is simply dummy text of the printing and typesetting industry... <a href="#">more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-left:2px;margin-top:25px;
+                    margin-right:2px;
+                    border-bottom:1px solid #c9b7b7">
+                <div class="col-md-4 col-sm-2 ">
+                    <div class='rating-stars text-center'>
+                        <ul id='stars'>
+                            <li class='star' title='Poor' data-value='1'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Fair' data-value='2'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Good' data-value='3'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Excellent' data-value='4'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='WOW!!!' data-value='5'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-md-1 col-sm-1 "></div>
+                <div class="col-md-2 col-sm-2 ">
+                    <span class="text-info">80 point </span>
+                </div>
+                <div class="col-md-3 col-sm-3 ">
+                    <span class="text-info">5 comments</span>
+                </div>
+                <div class="col-md-2 col-sm-2 " style="float:right">
+                    <button class="btn btn-info btn-xs" type="button"><i class="fa fa-share"></i> share
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="box-footer box-comments">
+            <div class="box-comment">
+                <img class="img-circle img-sm" alt="User Image" src="../assets/static/img/dark-blue.png">
+                <div class="comment-text">
+                    <span class="username">
+                                            Maria Gonzales
+                                            <span class="text-muted pull-right">8:03 PM Today</span>
+                    </span>
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                </div>
+            </div>
+            <div class="box-comment">
+                <img class="img-circle img-sm" alt="User Image" src="../assets/static/img/dark-blue.png">
+                <div class="comment-text">
+                    <span class="username">
+                                            Nora Havisham
+                                            <span class="text-muted pull-right">8:03 PM Today</span>
+                    </span>
+                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <form action="#" method="post">
+                <img class="img-responsive img-circle img-sm" alt="Alt Text" src="../assets/static/img/dark-blue.png">
+                <div class="img-push">
+                    <input class="form-control input-sm" type="text" placeholder="Press enter to post comment">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- post end -->
+    <!-- post start -->
+    <div class="box box-widget">
+        <div class="box-header with-border">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="user-block">
+                        <img class="img-circle" alt="User Image" src="../assets/static/img/dark-blue.png">
+                        <span class="username"><a href="#">Jubel Ahmed</a></span>
+                        <span class="description">7:30 PM Today</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <ul id="catagoryList">
+                        <li>JavaScript</li>
+                        <li>ReactJs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="box-body">
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at</p>
+            <p>the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+
+            <div class="attachment-block clearfix">
+                <img class="attachment-img show-in-modal" alt="Attachment
+                      Image" src="../assets/static/img/dark-blue.png">
+                <div class="attachment-pushed">
+                    <h4 class="attachment-heading"><a href="http://www.bootdey.com/">Lorem
+                                                ipsum
+                                                text
+                                                generator</a></h4>
+                    <div class="attachment-text">
+                        Description about the attachment can be placed here. Lorem Ipsum is simply dummy text of the printing and typesetting industry... <a href="#">more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-left:2px;margin-top:25px;
+                    margin-right:2px;
+                    border-bottom:1px solid #c9b7b7">
+                <div class="col-md-4">
+                    <div class='rating-stars text-center'>
+                        <ul id='stars'>
+                            <li class='star' title='Poor' data-value='1'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Fair' data-value='2'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Good' data-value='3'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='Excellent' data-value='4'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                            <li class='star' title='WOW!!!' data-value='5'>
+                                <i class='fa fa-star fa-fw'></i>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                    <span class="text-info">80 point </span>
+                </div>
+                <div class="col-md-3">
+                    <span class="text-info">5 comments</span>
+                </div>
+                <div class="col-md-2" style="float:right">
+                    <button class="btn btn-info btn-xs" type="button"><i class="fa fa-share"></i> share
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="box-footer box-comments">
+            <div class="box-comment">
+                <img class="img-circle img-sm" alt="User Image" src="../assets/static/img/dark-blue.png">
+                <div class="comment-text">
+                    <span class="username">
+                                            Maria Gonzales
+                                            <span class="text-muted pull-right">8:03 PM Today</span>
+                    </span>
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                </div>
+            </div>
+            <div class="box-comment">
+                <img class="img-circle img-sm" alt="User Image" src="../assets/static/img/dark-blue.png">
+                <div class="comment-text">
+                    <span class="username">
+                                            Nora Havisham
+                                            <span class="text-muted pull-right">8:03 PM Today</span>
+                    </span>
+                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                </div>
+            </div>
+        </div>
+        <div class="box-footer">
+            <form action="#" method="post">
+                <img class="img-responsive img-circle img-sm" alt="Alt Text" src="../assets/static/img/dark-blue.png">
+                <div class="img-push">
+                    <input class="form-control input-sm" type="text" placeholder="enter to post comment">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
                 </div>
 
             </div>
