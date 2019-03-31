@@ -1,9 +1,9 @@
 <?php
         session_start();
-        if(!$_SESSION['valid']){
-        session_destroy();
-        header("Location:http://localhost/information_hub/index.php");
-        }
+        if(!$_SESSION['valid'] && !$_SESSION['type'] == "user"){
+            session_destroy();
+            header("Location:http://localhost/information_hub/index.php");
+          }
 ?>
 
 
@@ -92,20 +92,17 @@
                     </div>
                     <div class="row">
                         <div class="col-md-8">
-                            <div class="form-group">
-                                <label>Company <font color="red">*</font> </label>
-                                <input type="text" name="company" id="company" class="form-control" placeholder="Diu" />
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
+                        <div class="form-group">
                                 <label>Appling Deadline <font color="red">*</font></label>
                                 <input placeholder="Deadline" id="applicationDeadline" class="form-control" type="text"
                                     onfocus="(this.type='date')" id="jobtitle">
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            
+                        </div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -120,7 +117,7 @@
                                 have a secure http protocol (HTTPS)
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- <div class="form-group">
                         <label for="">Company Logo <font color="red">*</font></label><br>
                         <span class="file-input btn btn-azure btn-file">
@@ -132,11 +129,11 @@
                                 style="max-width: 100px; max-height: 100px; margin-left: 50px; padding: 10px;">
                         </span>
                     </div> -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Location <font color="red">*</font></label>
                         <input type="text" name="joblocation" id="location" class="form-control"
                             placeholder="Dhanmondi 32, Dhaka 1205" />
-                    </div>
+                    </div> -->
 
                     <label>This is a remote work / from home <font color="red">*</font></label>
                     <div class="form-group">
@@ -466,6 +463,9 @@
                     <div class="wizard-buttons">
                         <button type="button" class="btn btn-previous">Previous</button>
                         <button type="button" id="submit-for-review" class="btn btn-next">Ok Submit For Review</button>
+                    </div>
+                    <div>
+                    <input type="text" id='employer_id' value="<?php echo $_SESSION['user_login_uid'] ; ?>" hidden>
                     </div>
                     <div>
                        <center> <p id="success" class="text-success">  </p> </center> 

@@ -1,25 +1,31 @@
 <?php 
     
     session_start();
-    if(!$_SESSION['valid']){
-      session_destroy();
-      header("Location:http://localhost/information_hub/index.php");
-    }
+    if(!$_SESSION['valid'] && !$_SESSION['type'] == "user"){
+        session_destroy();
+        header("Location:http://localhost/information_hub/index.php");
+      }
 
     include_once('../../backend/config/Database.php');
     include_once('../../backend/models/Job.php');
+    //include_once('../../backend/models/Employer.php');
+   
+    
 
     $database = new Database();
 
     $db = $database->connect();
 
     $job = new Job($db);
+    //$employer = new Employer($db);
 
     include '../../backend/api/user/job/get_job.php';
+   // include '../../backend/api/user/job/employer.php';
 
     $allPublishedJobArray = getPublishedJobs($job);
+    //$companyInfo = getAllCompanyInfo($employer, $_SESSION['user_login_uid']);
 
-    
+
     $publishedJobs = json_decode($allPublishedJobArray, true);
 
     
@@ -179,13 +185,14 @@
                     <div class="row">
                         <!-- logo column -->
                         <div class="col-md-4 col-sm-3 col-xs-12" style="padding: 20px;">
-                            <img src="http://www.logofound.com/wp-content/uploads/2016/11/travel-company-logo-template-01.jpg"
-                                width="160px" height="110px" alt="Company Logo">
+                        <?php echo '<img height="110px" width="160px" alt="Company Logo" src="data:image ; base64 , '.$jobs['company_logo'].' "/> ';?>
+                           
                         </div>
                         <!-- Title column -->
                         <div class="col-md-8 pull-left text-info" style="padding-left:1%;">
                             <div>
                                 <h3><?php echo $jobs['job_title'] ?></h3>
+                                
                                 <h5><span class="text-capitalize"><?php echo $jobs['company_name'] ?></span></h5>
                                 <h6> <?php echo $jobs['company_location'] ?></h6>
                             </div>

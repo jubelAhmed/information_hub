@@ -4,7 +4,7 @@ const url = "http://localhost/information_hub/backend/api/user/job/job_post.php"
 $(document).ready(function() {
   // Skiping licence page because no need!
   var job_title = '';
-  var company = '';
+  var employer_id = '';
   var applicationDeadline = '';
   // var companyLogo = '';
   var location = '';
@@ -14,6 +14,7 @@ $(document).ready(function() {
   var min_salary = '';
   var max_salary = '';
   var requiredSkills = '';
+  var requiredSkillsArray = [];
   var remotework = '0';
   jobdescriptioninfo = ''
 
@@ -23,13 +24,13 @@ $(document).ready(function() {
   $("#job_details_continue_btn").on("click", function(event){
    
     job_title = $("#job_title").val()
+    employer_id = $("#employer_id").val()
 
-    company = $("#company").val()
+    
     applicationDeadline = $("#applicationDeadline").val()
     // companyLogo = $("#companyLogo").val()
-    location = $("#location").val()
-    company = $("#company").val()
-    companywebsite = $("#companywebsite").val()
+  
+   
     if($("#isRemoteWork").prop('checked') == true){
         remotework = "1"
     }
@@ -52,6 +53,7 @@ $(document).ready(function() {
     $.each($("input[name='extraskill']"), function(){            
       requireSkillsLocal.push($(this).val());
     });
+    requiredSkillsArray = requireSkillsLocal ; 
     requiredSkills = requireSkillsLocal.join(", ")
     event.preventDefault();
   })
@@ -61,7 +63,7 @@ $(document).ready(function() {
     event.preventDefault();
     jobdescriptioninfo = $("#jobdescriptioninfo").val()
     $("#job_title_display").text("Job Title: "+ job_title)
-    $("#SimpleViewDetails").text("Address: " + location + " | Remotework? : "+ remotework + " | Job Type:"  + jobtype + " | Compensation: "+ compensation + " | Minimum Salary: " + min_salary + "| Maximum Salary: "+ max_salary )
+    $("#SimpleViewDetails").text(" Remotework? : "+ remotework + " | Job Type:"  + jobtype + " | Compensation: "+ compensation + " | Minimum Salary: " + min_salary + "| Maximum Salary: "+ max_salary )
     
       $("#reviewSkills").text(requiredSkills)
       $("#JobDescriptionPreview").text(jobdescriptioninfo)
@@ -79,20 +81,20 @@ $(document).ready(function() {
       method: "post",
       data: {
       job_title:job_title,
-      company:company,
+      employer_id:employer_id,
       applicationDeadline:applicationDeadline, 
-      location:location, 
-      companywebsite:companywebsite, 
       jobType:jobtype, 
       compensation:compensation, 
       minSalary:min_salary, 
       maxSalary:max_salary, 
-      requiredSkills:requiredSkills, 
+      requiredSkills:requiredSkillsArray, 
       remoteWork:remotework, 
       jobdescriptioninfo:jobdescriptioninfo
       },
       success: function(response) {
+       
         var result = JSON.parse(response);
+       
         if (result.status == "error") {
           $("#error").html(result.msg);
          
