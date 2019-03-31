@@ -4,7 +4,7 @@ class Employer
 {
     private $conn;
     private $table = 'employer';
-
+    private $type= "employer";
     public $userName;
     public $email;
     public $companyName;
@@ -31,7 +31,7 @@ class Employer
      
         // query to insert record
         $query = "INSERT INTO " . $this->table. "
-                SET user_name=:user_name,  email=:email , company_name=:company_name,company_website=:company_website,company_logos=:company_logos,company_location=:company_location,password=:password";
+                SET user_name=:user_name,  email=:email , company_name=:company_name,company_website=:company_website,company_logos=:company_logos,company_location=:company_location,type=:type,password=:password";
     
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -47,6 +47,7 @@ class Employer
         $stmt->bindParam(":company_website", $this->companyWebsite);
         $stmt->bindParam(":company_logos", $this->companyLogo);
         $stmt->bindParam(":company_location", $this->location);
+        $stmt->bindParam(":type", $this->type);
         $stmt->bindParam(":password", $pass);
        
     
@@ -54,8 +55,8 @@ class Employer
         if($stmt->execute() > 0){
 
             $this->id = $this->conn->lastInsertId();
-
-           return $this->updateInsertTable($this->email,"employer", $this->id);
+           
+           return $this->updateInsertTable($this->email,$this->type, $this->id);
            
         }
     
@@ -63,7 +64,7 @@ class Employer
     }
 
     private function updateInsertTable($email,$type,$userId){
-
+      
         $query = "INSERT INTO login
                 SET user_id=:user_id,  email=:email , type=:type";
     
@@ -123,6 +124,21 @@ class Employer
     }
 
  
+    public function getCompanyInfo($employerId){
+        $query = "SELECT `id`, `company_name`, `company_website`, `company_logos`, `company_location`,`type`
+        FROM " . $this->table . " 
+        WHERE id = '$employerId' ";
+
+        $stmt = $this->conn->prepare($query);
+        // execute query
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            return $stmt;
+        }else{
+            return false;
+        }
+    }
+    
 
 
 

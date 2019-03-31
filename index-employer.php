@@ -123,7 +123,21 @@
                             <input class="form-control" type="text" id="company_name" placeholder="company Name">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" id="company_website" placeholder="company website link">
+                         <div class="row">
+                            <div class="col-md-7">
+                                <div class="form-group">
+                                    <label>Company Website<font color="red">*</font> </label>
+                                    <input type="text" name="company_website" id="company_website" class="form-control"
+                                        placeholder="https://www.company.com" />
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="">Require!</label><br>
+                                <span class="badge" style="background-color:green;">https://</span> Company website must
+                                have a secure http protocol (HTTPS)
+                            </div>
+                         </div>
+                           
                         </div>
                         <div class="form-group">
                             <label>Location <font color="red">*</font></label>
