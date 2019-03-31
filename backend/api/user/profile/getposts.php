@@ -1,4 +1,6 @@
 <?php 
+session_start();
+error_reporting(0);
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
@@ -11,10 +13,7 @@ $database = new Database();
 $db = $database->connect();
 
 $getPost = new GetPost($db);
-// $resultJSON = json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
-
-// $user_id = $_SESSION['user_login_uid'];
-$user_id = 49;
+$user_id = $_SESSION['user_login_uid'];
 
 if(count($getPost->getPosts($user_id)) == 0){
 
