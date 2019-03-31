@@ -17,9 +17,12 @@ $(document).ready(function() {
           
           if (result.status == "error") {
              $("#applyError").html(result.msg);
-           
+             $("#applyBtn").attr("disabled", "disabled");
           } else if (result.status == "ok") {
+            
             $("#applySuccess").html(result.msg);
+            $("#applyBtn").attr("disabled", "disabled");
+            
             
           }
         }

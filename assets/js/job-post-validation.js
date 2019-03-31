@@ -2,9 +2,9 @@ $( document ).ready(function() {
     // Job Basic Information
     $("#job_details_continue_btn").on('click', function(e){
         var job_title = $("#job_title").val()
-        var company = $("#company").val()
+      
         var deadline = $("#applicationDeadline").val()
-        var joblocation = $("#location").val()
+      
         var jobtype = $("input[name='jobtype']:checked").val();
         
         var remotework = 'no'
@@ -16,7 +16,7 @@ $( document ).ready(function() {
         var mincompensation = $("#min_salary").val()
         var maxcompensation = $("#max_salary").val()
         
-
+     
         // console.log(job_title)
         // console.log(company)
         // console.log(deadline)
@@ -27,7 +27,8 @@ $( document ).ready(function() {
         // console.log(mincompensation)
         // console.log(maxcompensation)
 
-        if(job_title.trim().length > 0 && company.trim().length > 0 && deadline.trim().length > 0 && joblocation.trim().length > 0 && jobtype.trim().length > 0 
+        if(job_title.trim().length > 0 &&  deadline.trim().length > 0 && 
+         jobtype.trim().length > 0 
         && remotework.trim().length > 0 && compensationtype.trim().length > 0 && mincompensation.trim().length > 0 && maxcompensation.trim().length > 0){
             // Form Validation Successfull
   

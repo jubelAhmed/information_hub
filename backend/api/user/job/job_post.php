@@ -17,20 +17,20 @@ $job = new Job($db);
 
 
 $job->jobTitle = $_POST['job_title'];
+$job->u_id = $_POST['employer_id'];
 
 
-$job->companyName = $_POST['company'];
 // $job->companyLogo = $_POST['companyLogo'];
 $job->applicationDeadline = $_POST['applicationDeadline'];
 
-$job->location = $_POST['location'];
-$job->companyWebsite = $_POST['companywebsite'];
+
+
 $job->compensation = $_POST['compensation'];
 $job->remoteWork = $_POST['remoteWork']; 
 $job->jobType = $_POST['jobType'];
 $job->minSalary = $_POST['minSalary'];
 $job->maxSalary = $_POST['maxSalary'];
-$job->requiredSkills = $_POST['requiredSkills']; 
+$job->requiredSkills = json_encode($_POST['requiredSkills']); 
 $job->jobDescription = $_POST['jobdescriptioninfo'];
 
 
@@ -51,10 +51,10 @@ let job_title = '';
     var jobdescriptioninfo = ''
   */
 if($job->post()){
-    
-    echo('{"msg": "job post Successfully done", "status": "ok"}');
+    echo('{ "msg": "job post Successfully done", "status": "ok" }');
+   // echo('{"msg": "job post Successfully done", "status": "ok"}');
 }else{
-    echo('{"msg": "job post Failed", "status": "error"}');
+    echo('{"msg":"job post Failed", "status":"error"}');
 }
 
 

@@ -17,7 +17,9 @@ print_r($p['data'][0]['job_title']); */
 function getPublishedJobs($job){
     
 
-    $result =$job->getAllPublishJobPost();
+    $result =$job->getAllPublishJobPostWithCompany();
+
+
 
     $num = $result->rowCount();
 
@@ -29,13 +31,15 @@ function getPublishedJobs($job){
             extract($row);
 
             $jobList = array(
-                'job_id'=> $id ,
+                'job_id'=> $job_id ,
                 'user_id'=>$user_id,
                 'job_title'=>$job_title,
                 'company_name'=>$company_name,
-                'company_logo'=>$company_logo,
+                'company_logo'=>$company_logos,
+                'type'=>$type,
+                
                 'company_website'=>$company_website,
-                'company_location'=>$location,
+                'company_location'=>$company_location,
                 'remote_work'=>$remote_work,
                 'job_type'=>$job_type,
                 'compensation'=>$compensation,
@@ -70,15 +74,16 @@ function getSingleJob($job,$job_id){
 
     if($result){
         $row = $result->fetch(PDO::FETCH_ASSOC);
+
         extract($row);
         $jobArray = array(
-            'job_id'=> $id ,
+            'job_id'=> $job_id ,
             'user_id'=>$user_id,
             'job_title'=>$job_title,
             'company_name'=>$company_name,
-            'company_logo'=>$company_logo,
+            'company_logo'=>$company_logos,
             'company_website'=>$company_website,
-            'company_location'=>$location,
+            'company_location'=>$company_location,
             'remote_work'=>$remote_work,
             'job_type'=>$job_type,
             'compensation'=>$compensation,

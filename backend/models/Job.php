@@ -6,17 +6,16 @@ class Job
     private $jobs_table = 'jobs';
    
     //job creator info
-    private $userId = 32; // 37/38/39 // it will come by seassion//just for test,,you can chnge this value by seeing user table for test
-
+    public $u_id ; // 37/38/39 // it will come by seassion//just for test,,you can chnge this value by seeing user table for test
+    private $id ; // 37/38/39 // it will come by seassion//just for test,,you can chnge this value by seeing user table for test
+  
     // job info
      
     public $jobTitle;
-    public $companyName;
-    public $companyLogo;
-    public $companyWebsite;
+   
     public $applicationDeadline;
     
-    public $location;
+
     
     public $compensation;
     public $remoteWork;
@@ -42,23 +41,19 @@ class Job
 
     public function post(){
         $this->approveStatus = 0;
-
        
+        $job_id = uniqid();
         
-        $query = "INSERT INTO ". $this->jobs_table ." SET user_id=:user_id, job_title=:job_title, company_name=:company_name ,company_website=:company_website,location=:location,remote_work=:remote_work,job_type=:job_type,compensation=:compensation,min_salary=:min_salary,max_salary=:max_salary,skills=:skills, job_description=:job_description,deadline=:deadline, approve_status=:approve_status" ; 
+        $query = "INSERT INTO ". $this->jobs_table ." SET job_id=:job_id,user_id=:user_id, job_title=:job_title,remote_work=:remote_work,job_type=:job_type,compensation=:compensation,min_salary=:min_salary,max_salary=:max_salary,skills=:skills, job_description=:job_description,deadline=:deadline, approve_status=:approve_status" ; 
 
 
         $stmt = $this->conn->prepare($query);
 
         // bind values
-        $stmt->bindParam(":user_id", $this->userId);
+        $stmt->bindParam(":job_id", $job_id);
+        $stmt->bindParam(":user_id", $this->u_id);
         $stmt->bindParam(":job_title", $this->jobTitle);
-        $stmt->bindParam(":company_name", $this->companyName);
-        // $stmt->bindParam(":company_logo", $this->companyLogo);
-        $stmt->bindParam(":company_website", $this->companyWebsite);
-
-    
-        $stmt->bindParam(":location", $this->location);
+       
         $stmt->bindParam(":remote_work", $this->remoteWork);
         $stmt->bindParam(":job_type", $this->jobType);
         $stmt->bindParam(":compensation", $this->compensation);
@@ -134,8 +129,40 @@ class Job
             return false;
         }
     }
+
+    public function getAllPublishJobPostWithCompany(){
+        $query = "SELECT *
+        FROM jobs
+        INNER JOIN employer
+        ON jobs.user_id=employer.id and jobs.approve_status = 1";
+
+        $stmt = $this->conn->prepare($query);
+        // execute query
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            return $stmt;
+        }else{
+            return false;
+        }
+    }
     
     public function getSingleJobPost($jobId){
+        $query = "SELECT *
+        FROM jobs INNER JOIN employer
+        ON jobs.user_id=employer.id and jobs.job_id = '$jobId' 
+        ";
+
+        $stmt = $this->conn->prepare($query);
+        // execute query
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            return $stmt;
+        }else{
+            return false;
+        }
+    }  
+    
+    public function getSingleJobPostWithCompany($jobId){
         $query = "SELECT *
         FROM " . $this->jobs_table . " 
         WHERE id = '$jobId'";
@@ -148,7 +175,7 @@ class Job
         }else{
             return false;
         }
-    }   
+    }  
 
     public function getOwnUserAllJobPost($id){
         $query = "SELECT *
@@ -164,7 +191,24 @@ class Job
             return false;
         }
     }  
+    //  'job_id'=> $id ,
     
+
+    public function getAllJobPostWIthCompnayInfo(){
+        $query = "SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+        FROM 'jobs'
+        INNER JOIN 'employer'
+        ON Orders.CustomerID=Customers.CustomerID;";
+
+        $stmt = $this->conn->prepare($query);
+        // execute query
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            return $stmt;
+        }else{
+            return false;
+        }
+    }
 
 
 

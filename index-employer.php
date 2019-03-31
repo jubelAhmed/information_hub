@@ -28,7 +28,23 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    
     <![endif]-->
+
+    <style>
+    #reference{
+        color:green; 
+        margin-left:20px;
+        text-decoration: overline;
+
+    }
+    #reference:hover{
+        color:blue;
+        
+    }
+    </style>
+
 </head>
 
 <body class="animated fadeIn">
@@ -85,9 +101,9 @@
                 </div><br>
                 <div class="col-sm-2"></div>
                 <div class="col-sm-4">
-                    <h5 id="error" style="color: red;"></h5>
-                    <h4 id="success" style="color: green;"></h4>
-
+                    
+                <h5 id="error" style="color: red;"></h5>
+                         <h4 id="success" style="color: green;"></h4> 
 
                     <h4 class="m-b-0">
 
@@ -107,7 +123,21 @@
                             <input class="form-control" type="text" id="company_name" placeholder="company Name">
                         </div>
                         <div class="form-group">
-                            <input class="form-control" type="text" id="company_website" placeholder="company website link">
+                         <div class="row">
+                            <div class="col-md-7">
+                                <div class="form-group">
+                                    <label>Company Website<font color="red">*</font> </label>
+                                    <input type="text" name="company_website" id="company_website" class="form-control"
+                                        placeholder="https://www.company.com" />
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="">Require!</label><br>
+                                <span class="badge" style="background-color:green;">https://</span> Company website must
+                                have a secure http protocol (HTTPS)
+                            </div>
+                         </div>
+                           
                         </div>
                         <div class="form-group">
                             <label>Location <font color="red">*</font></label>
@@ -135,10 +165,13 @@
                         </div>
 
                         <small>By clicking register button you are agree with all terms and condition.</small> <br><br>
-                        <input type="button" class="btn btn-azure" id="newuserbtn" value="Register New CompanyAccount"><br>
+                        <input type="button" class="btn btn-azure" id="newuserbtn" value="Register New Employer Account">
+                        <a id="reference"  href="./index.php">create user account</a>
+                        <br>
                         <center>
                             <div id="loading"></div>
                         </center>
+                        
 
                     </form>
 

@@ -2,10 +2,10 @@
 
       
     session_start();
-    if(!$_SESSION['valid']){
-    session_destroy();
-    header("Location:http://localhost/information_hub/index.php");
-    }
+    if(!$_SESSION['valid'] && !$_SESSION['type'] == "user"){
+        session_destroy();
+        header("Location:http://localhost/information_hub/index.php");
+      }
     if(!isset($_GET['id'])){
         exit();
     }
@@ -35,7 +35,7 @@
     $skillListwithComma = implode(", ", $skills);
 
     $phpdate = strtotime( $job['deadline']  );
-    $deadline = date("d/m/y", $phpdate );
+    $deadline = date("d/m/Y", $phpdate );
 
 
     
@@ -68,9 +68,9 @@
 
             <center>
                 <div>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-                        alt="Company Logo" style="border-radius: 5%; max-height:
-                  100px; max-width: 100px;">
+                <?php echo '<img style="border-radius: 5%; max-height:
+                  100px; max-width: 100px;" alt="Company Logo" src="data:image ; base64 , '.$job['company_logo'].' "/> ';?>
+                   
                     <h2><?php echo $job['job_title'] ; ?></h2>
                     <h3><?php echo $job['company_name'] ; ?></h3>
                     <a href="<?php echo $job['company_website']; ?>">
@@ -142,7 +142,7 @@
             <input type="text" id='applicantId' value="<?php echo $user_id ; ?>" hidden>
             <input type="text" id='jobId' value="<?php echo $job_id ; ?>" hidden>
             <button type="button" id="applyBtn" class=" hover-effect btn btn-success btn-lg "><i class="fa
-                  fa-check"></i> Apply Job</button>
+                  fa-check" ></i> Apply Job</button>
         </div>
 
 
