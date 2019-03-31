@@ -2,17 +2,8 @@
   session_start();
   if(!$_SESSION['valid'] || $_SESSION['type'] == "employer"){
     session_destroy();
-    header("Location:http://localhost/information_hub/index.php");
+    header("Location: ../index.php");
   }
-// include_once('../backend/config/Database.php');
-// include_once('../backend/models/getPost.php');
-
-// $database = new Database();
-
-// $db = $database->connect();
-
-// $getPost = new GetPost($db);
-// $user_id = $_SESSION['user_login_uid'];  
 ?>
 <!DOCTYPE html>
 <html lang="en">

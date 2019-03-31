@@ -25,7 +25,7 @@
                     </ul>
                 </li>
                 <li class="right">
-                    <a href="../backend/api/user/auth/logout.php" style="color:blue">Log Out</a>
+                    <a href="./logout.php" style="color:blue">Log Out</a>
                 </li>
             </ul>
         </div>
