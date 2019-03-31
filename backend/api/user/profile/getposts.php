@@ -1,6 +1,6 @@
 <?php 
 session_start();
-//error_reporting(0);
+error_reporting(0);
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
@@ -22,7 +22,9 @@ if(count($getPost->getPosts($user_id)) == 0){
 	echo('{"msg": "You have not enough permission to view post!","status": "error"}');
 
 }else{
+	$myCustomResult = $getPost->getPosts($user_id);
+	$myCustomResult['status'] = 'ok';
 
-	 echo json_encode($getPost->getPosts($user_id));
+	 echo json_encode($myCustomResult);
 }
 ?>
