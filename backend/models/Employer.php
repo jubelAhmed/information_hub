@@ -24,9 +24,9 @@ class Employer
     // signup function
 
     public function signup(){
-        // if($this->isAlreadyExist()){
-        //     return false;
-        // }
+         if($this->isAlreadyExist()){
+             return false;
+         }
 
      
         // query to insert record

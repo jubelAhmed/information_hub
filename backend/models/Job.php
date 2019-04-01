@@ -195,10 +195,10 @@ class Job
     
 
     public function getAllJobPostWIthCompnayInfo(){
-        $query = "SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
-        FROM 'jobs'
-        INNER JOIN 'employer'
-        ON Orders.CustomerID=Customers.CustomerID;";
+        $query = "SELECT *
+        FROM jobs
+        INNER JOIN employer
+        ON jobs.user_id=employer.id ";
 
         $stmt = $this->conn->prepare($query);
         // execute query
