@@ -13,16 +13,15 @@ $database = new Database();
 $db = $database->connect();
 
 $getPost = new GetPost($db);
-$user_id = $_SESSION['user_login_uid'];
 
 
 
-if(count($getPost->getPosts($user_id)) == 0){
+if(count($getPost->getPosts()) == 0){
 
 	echo('{"msg": "You have not enough permission to view post!","status": "error"}');
 
 }else{
-	$myCustomResult = $getPost->getPosts($user_id);
+	$myCustomResult = $getPost->getPosts();
 	$myCustomResult['status'] = 'ok';
 
 	 echo json_encode($myCustomResult);
