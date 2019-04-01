@@ -19,9 +19,9 @@ if((empty($_POST['title'])) || (empty($_POST['category'])) || (empty($_POST['des
     die();
 }
 
-$ownPost->postTitle = $_POST['title'];
+$ownPost->postTitle = htmlspecialchars($_POST['title']);
 $ownPost->postCatagories = $_POST['category'];
-$ownPost->postDescription = $_POST['description'];
+$ownPost->postDescription = htmlspecialchars($_POST['description']);
 $user_id = $_POST['userid'];
 
 if($ownPost->post($user_id)){

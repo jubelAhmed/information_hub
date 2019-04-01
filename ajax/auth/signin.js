@@ -1,8 +1,8 @@
 $(document).ready(function() {
   $("#signinBtn").on("click", function() {
+    console.log('test')
     var email = $("#email").val();
     var pass = $("#password").val();
-
     //$("#loginstatus").html("<img src='https://cdn.dribbble.com/users/473527/screenshots/3443226/success.gif' style='max-height:70px; max-width:170px'>")
     // Checking user and password is filled up or not
     if (email.trim() != "" && pass.trim() != "") {
@@ -12,7 +12,6 @@ $(document).ready(function() {
         data: { email: email, password: pass },
         dataType: "json",
         success: function(result) {
-         
           console.log(result.type);
           if (result.status == "error") {
             $("#error").html(result.msg);
