@@ -1,4 +1,44 @@
-  <!DOCTYPE html>
+<?php 
+    
+    session_start();
+    // if(!$_SESSION['valid'] && !$_SESSION['type'] == "user"){
+    //     session_destroy();
+    //     header("Location:http://localhost/information_hub/index.php");
+    //   }
+
+    include_once('../backend/config/Database.php');
+    include_once('../backend/models/Job.php');
+    //include_once('../../backend/models/Employer.php');
+   
+    
+
+    $database = new Database();
+
+    $db = $database->connect();
+
+    $job = new Job($db);
+    //$employer = new Employer($db);
+
+    include '../backend/api/user/job/get_job.php';
+   // include '../../backend/api/user/job/employer.php';
+
+    $allJobArray = getAllJobs($job);
+    //$companyInfo = getAllCompanyInfo($employer, $_SESSION['user_login_uid']);
+
+
+    $jobs = json_decode($allJobArray, true);
+
+    
+
+  /*   print_r($p['data'][0]['programming_skills'][0]);
+ */
+    
+
+
+?>
+
+
+<!DOCTYPE html>
 <html lang="en">
   <!-- Mirrored from demos.bootdey.com/dayday/sidebar_profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:35:41 GMT -->
   <head>
@@ -88,7 +128,7 @@
                   <table class="table user-list">
                     <thead>
                       <tr>
-                        <th>User</th>
+                        <th>Employer</th>
                         <th>Title</th>
                         <th class="text-center">Status</th>
                         <th>Created</th>
@@ -98,12 +138,10 @@
                     <tbody>
                       <tr>
                         <td>
-                          <img src="img/Friends/guy-2.jpg" alt="">
-                          <a href="#" class="user-link">John Doe</a>
-                          <span class="user-subhead">Admin</span>
+                          <a href="#" class="user" style="font-size:16px">John Doe</a>
                         </td>
                         <td>
-                          <h4>Lorem ipsum dolor sit amet.</h4>
+                          <h4>Lorem ipsum dolor sit Lorem ipsum dolor, sit amet consectetur adipisicing elit. </h4>
                           </td>
                         <td class="text-center">
                           <div class="label label-warning">Pending</div>
@@ -131,7 +169,7 @@
                         <td>
                           <img src="img/Friends/woman-1.jpg" alt="">
                           <a href="#" class="user-link">John Doe</a>
-                          <span class="user-subhead">Admin</span>
+                          
                         </td>
                         <td>
                             <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
@@ -162,7 +200,7 @@
                         <td>
                           <img src="img/Friends/woman-2.jpg" alt="">
                           <a href="#" class="user-link">John Doe</a>
-                          <span class="user-subhead">Member</span>
+                          >
                         </td>
                         <td>
                           <h4>Lorem ipsum dolor.</h4>
@@ -193,7 +231,7 @@
                         <td>
                           <img src="img/Friends/woman-3.jpg" alt="">
                           <a href="#" class="user-link">John Doe</a>
-                          <span class="user-subhead">Registered</span>
+                          
                         </td>
                         <td>
                           <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
@@ -222,9 +260,9 @@
                       </tr>
                       <tr>
                         <td>
-                          <img src="img/Friends/woman-4.jpg" alt="">
+                          
                           <a href="#" class="user-link">John Doe</a>
-                          <span class="user-subhead">Registered</span>
+                        
                         </td>
                         <td>
                           <h4>Lorem ipsum.</h4>
@@ -255,7 +293,7 @@
                         <td>
                           <img src="img/Friends/woman-5.jpg" alt="">
                           <a href="#" class="user-link">Robert Downey Jr.</a>
-                          <span class="user-subhead">Admin</span>
+                          
                         </td>
                         <td>
                           <h4>Lorem ipsum dolor sit amet.</h4>
