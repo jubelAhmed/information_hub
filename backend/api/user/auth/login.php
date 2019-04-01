@@ -16,7 +16,7 @@ $user = new User($db);
 
 // set ID property of user to be edited
 $user->email = isset($_POST['email']) ? $_POST['email'] : die();
-$user->password = md5( isset(trim($_POST['password'])) ? $_POST['password'] : die());
+$user->password = md5(isset($_POST['password']) ? trim($_POST['password']) : die());
 
 // read the details of user to be edited
 $stmt = $user->login();

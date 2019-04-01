@@ -9,7 +9,7 @@
 <html lang="en">
 <!-- Mirrored from demos.bootdey.com/dayday/home.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:35:14 GMT -->
 
-<head>
+<head id="head">
 
     <?php  
       include('../includes/header.php');
@@ -17,8 +17,9 @@
     ?>
 
     <!-- star -->
-    <link rel="stylesheet" href="../assets/css/star.css">
-    <script src="../assets/js/star.js"></script>
+   
+    
+    
 
     <!-- multiple selcet  start linkup -->
     <!-- Latest compiled and minified CSS -->
@@ -26,6 +27,10 @@
         crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+
+    <!-- <link rel="stylesheet" href="../assets/css/star.css"> -->
+    <link href="../assets/css/star.css?<?=filemtime("../assets/css/star.css")?>" rel="stylesheet" type="text/css" />
+    <script src="../assets/js/star.js" type="text/javascript" ></script>
     <!-- multiple selcet end -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -33,7 +38,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    
+    
     <style>
+    
     ul#catagoryList li {
         display: inline;
         color: #189fd4;
@@ -54,6 +63,8 @@
         color: red;
     }
     </style>
+
+
 </head>
 
 <body class="animated fadeIn">
@@ -274,7 +285,9 @@
                 <!-- Friends activity -->
                 <div class="widget">
                     <div class="widget-header">
-                        <h3 class="widget-caption">Top Rated List</h3>
+                        <h3 class="widget-caption " >
+                            <span id="top"> Top Rated List</span>
+                        </h3>
                     </div>
                     <div class="widget-body bordered-top bordered-sky">
                         <div class="card">
@@ -365,6 +378,8 @@
                                                         style="padding-left: 3px"></i>
                                                 </btn>
                                             </div>
+                                            
+                                            
                                         </div>
                                     </li>
                                 </ul>
@@ -393,6 +408,7 @@
     });
     </script>
     <script src="../assets/js/post.js"></script>
+    
     <script src="../ajax/own-post/home-post.js"></script>
 </body>
 
