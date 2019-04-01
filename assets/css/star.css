@@ -1,4 +1,6 @@
 /* Rating Star Widgets Style */
+
+
 .rating-stars ul {
   list-style-type: none;
   padding: 0;
@@ -9,6 +11,8 @@
 .rating-stars ul > li.star {
   display: inline-block;
 }
+
+
 
 /* Idle State of the stars */
 .rating-stars ul > li.star > i.fa {
