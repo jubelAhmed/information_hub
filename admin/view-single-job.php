@@ -1,3 +1,46 @@
+<?php
+
+      
+    session_start();
+    if(!$_SESSION['valid'] && !$_SESSION['employer'] == "user"){
+        session_destroy();
+        header("Location:http://localhost/information_hub/index.php");
+      }
+    if(!isset($_GET['id'])){
+        exit();
+    }
+
+    $job_id = $_GET['id'];
+
+   
+
+    include_once('../backend/config/Database.php');
+    include_once('../backend/models/Job.php');  
+
+    $database = new Database();
+
+    $db = $database->connect();
+
+    $job = new Job($db);
+
+    include '../backend/api/user/job/get_job.php';
+
+    $publishedJob = getSingleJob($job , $job_id);
+
+    
+    $job = json_decode($publishedJob, true);
+    
+    $skills = $job['skills']; 
+
+    $skillListwithComma = implode(", ", $skills);
+
+    $phpdate = strtotime( $job['deadline']  );
+    $deadline = date("d/m/Y", $phpdate );
+
+
+    
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +64,10 @@
     <link href="../assets/css/forms.css" rel="stylesheet" />
     <link href="../assets/css/buttons.css" rel="stylesheet" />
     <link href="../assets/css/sidebar_profile.css" rel="stylesheet" />
+ 
     <script src="../assets/js/jquery.1.11.1.min.js"></script>
+    
+    
     <script src="../assets/bootstrap.3.3.6/js/bootstrap.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -54,7 +100,7 @@
                     <a href="#" class="hover-effect">Home</a>
                 </li>
                 <li class="active" >
-                    <a href="job-post-status.html" class="hover-effect">Job Posts</a>
+                    <a href="./job-post-status.php" class="hover-effect">Job Posts</a>
                 </li>
                 <li>
                     <a href="#" class="hover-effect">Users </a>
@@ -65,43 +111,48 @@
             <div class="container-fluid">
               <div class="row">
                 <center>
-                    <div>
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" alt="Company Logo" style="border-radius: 5%; max-height: 100px; max-width: 100px;">
-                    <h3>Google Inc</h3>
-                    <p>Dhaka, Bangladesh</p>
+                <div>
+                <?php echo '<img style="border-radius: 5%; max-height:
+                  100px; max-width: 100px;" alt="Company Logo" src="data:image ; base64 , '.$job['company_logo'].' "/> ';?>
+                   
+                    <h2><?php echo $job['job_title'] ; ?></h2>
+                    <h3><?php echo $job['company_name'] ; ?></h3>
+                    <a href="<?php echo $job['company_website']; ?>">
+                        <?php echo $job['company_website']; ?>
+                    </a>
+
+                    <p><?php echo $job['company_location'] ;?></p>
                     <hr>
-                    </div>
+                </div>
                     
                 </center>
                 <div class="col-md-5">
                   <table class="table" style="font-size: 22px;">
-
-                      <tr>
-                        <td>Work From: </td>
-                        <td>Remote Work</td>
-                      </tr>
-                      <tr>
-                        <td>Job Type : </td>
-                        <td>Part Time</td>
-                      </tr>
-                      <tr>
-                        <td>Compensation: </td>
-                        <td>Monthly</td>
-                      </tr>
-                      <tr>
-                        <td>Salary: </td>
-                        <td>50,000 - 150,000 </td>
-                      </tr>
-                      <tr>
-                        <td>Require Skills: </td>
-                        <td>Java, C++, Android, Java, C++, Android, Java, C++, Android, Java, C++, Android, Java, C++, Android,</td>
-                      </tr>
+                  <tr>
+                    <td>Work From: </td>
+                    <td><?php echo $job['remote_work']==0?"Office":"Remote Job" ?></td>
+                </tr>
+                <tr>
+                    <td>Job Type : </td>
+                    <td><?php echo $job['job_type'] ; ?></td>
+                </tr>
+                <tr>
+                    <td>Compensation: </td>
+                    <td><?php echo $job['compensation'] ; ?></td>
+                </tr>
+                <tr>
+                    <td>Salary: </td>
+                    <td><?php echo $job['min_salary'] ." - ".$job['max_salary'] ; ?> </td>
+                </tr>
+                <tr>
+                    <td>Required Skills: </td>
+                    <td> <?php echo $skillListwithComma ; ?> </td>
+                </tr>
                     </table>
                 </div>
                
                 <div class="col-md-7 lead">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae nostrum nihil error aperiam, eius tempora quod nulla deleniti reprehenderit, ipsa perspiciatis voluptatem ipsum perferendis? Maiores in quo qui repudiandae? Explicabo itaque eum vitae accusantium dolores vero nesciunt est quam laboriosam, possimus corrupti rerum ullam, enim, facilis a asperiores! Sed, quos.
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, consectetur, voluptas. Illo reprehenderit ipsum dolore dolorum eligendi explicabo, eveniet perferendis officia unde ab pariatur, laboriosam animi fugiat iure recusandae minima quasi sequi nam. Dolore, quibusdam placeat voluptates hic ipsam pariatur omnis consequuntur possimus! Culpa excepturi ipsam alias dicta nostrum nam, inventore voluptates, quis laborum laudantium quia dignissimos veniam fuga quam fugit possimus. Voluptate laudantium, quibusdam cum consectetur eum, voluptatibus. Dignissimos cum vel accusamus in atque itaque necessitatibus dolorum sequi sed earum est facilis.
+                <?php echo $job['job_description']; ?>
                 </div>
 
               </div>
@@ -110,10 +161,20 @@
                 <div class="col-md-4">
                  
                 </div>
-                <div class="col-md-4"></div>
                 <div class="col-md-4">
-                   <button style="margin-right: 30px;" type="button" class="btn btn-danger btn-lg"><i class="fa fa-trash"></i> Delete Job </button>
-                  <button type="button" class="btn btn-success btn-lg"><i class="fa fa-check"></i> Publish Job</button>
+                <div>
+                <center>
+                    <h3 id="success" class="text-info"></h3>
+                    <h3 id="error" class="text-danger"></h3>
+                </center>
+            </div>
+                </div>
+                <div class="col-md-4">
+
+               
+                 <input type="text" id='jobId' value="<?php echo $job_id ; ?>" hidden>
+                   <button style="margin-right: 30px;" id="deleteBtn" type="button" class="btn btn-danger btn-lg"><i class="fa fa-trash"></i> Delete Job </button>
+                  <button type="button" id="publishBtn" class="btn btn-success btn-lg"><i class="fa fa-check"></i> Publish Job</button>
                 </div>
 
               </div>
@@ -128,6 +189,7 @@
     </div>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
        <script src="../assets/js/admin-cart.js"></script>
+       <script src="../ajax/admin/job-status.js"></script>
   </body>
 
 <!-- Mirrored from demos.bootdey.com/dayday/sidebar_profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jan 2019 17:35:42 GMT -->

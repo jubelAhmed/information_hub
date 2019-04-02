@@ -49,8 +49,8 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
-    <link rel="icon" href="img/favicon.png" />
-    <title>Day-Day</title>
+    <link rel="icon" href="../assets/static/img/icon-infohub.png" />
+<title>information-hub</title>
     <!-- Bootstrap core CSS -->
     <link href="../assets/bootstrap.3.3.6/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../assets/font-awesome.4.6.1/css/font-awesome.min.css" rel="stylesheet" />
@@ -125,10 +125,11 @@
                     </label>
                   </div>
                   <div class="table-responsive">
+                 
                   <table class="table user-list">
                     <thead>
                       <tr>
-                        <th>Employer</th>
+                        <th>Company</th>
                         <th>Title</th>
                         <th class="text-center">Status</th>
                         <th>Created</th>
@@ -136,21 +137,38 @@
                       </tr>
                     </thead>
                     <tbody>
+                    <?php foreach ($jobs['data'] as $job) { ?>
                       <tr>
                         <td>
-                          <a href="#" class="user" style="font-size:16px">John Doe</a>
+                        <?php echo '<img height="50px" width="50px" alt="Company Logo" src="data:image ; base64 , '.$job['company_logo'].' "/> ';?>
+                          <a href="#" class="user" style="font-size:16px">
+                          <?php echo $job['company_name'] ?>
+                          </a>
                         </td>
                         <td>
-                          <h4>Lorem ipsum dolor sit Lorem ipsum dolor, sit amet consectetur adipisicing elit. </h4>
+                          <h4><?php echo $job['job_title'] ?> </h4>
                           </td>
                         <td class="text-center">
-                          <div class="label label-warning">Pending</div>
+                          
+                            <?php 
+                              $status = $job["approve_status"];
+                              if($status){
+                                echo "<span class=\"label label-success\">Published</span>";
+                              }else{
+                                echo "<span class=\"label label-warning\">Pending</span>";;
+                              }
+                            ?>
+                         
                         </td>
                         <td>
-                          2013/08/08
+                          <?php
+                           $phpdate = strtotime( $job['current_data']  );
+                           $createDate = date("d/m/Y", $phpdate );
+                           echo $createDate ;
+                          ?>
                         </td>
                         <td style="width: 20%;">
-                          <a href="./view-single-job.html" class="table-link success">
+                          <a  href="<?php echo "./view-single-job.php?id=$job[job_id]";?>" class="table-link success">
                             <span class="fa-stack">
                               <i class="fa fa-square fa-stack-2x"></i>
                               <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
@@ -165,163 +183,10 @@
                           </a>
                         </td>
                       </tr>
-                      <tr>
-                        <td>
-                          <img src="img/Friends/woman-1.jpg" alt="">
-                          <a href="#" class="user-link">John Doe</a>
-                          
-                        </td>
-                        <td>
-                            <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
-                        </td>
-                        <td class="text-center">
-                          <span class="label label-success">Published</span>
-                        </td>
-                        <td>
-                          2013/08/08
-                        </td>
-                        <td style="width: 20%;">
-                          <a href="./view-single-job.html" class="table-link success">
-                            <span class="fa-stack">
-                              <i class="fa fa-square fa-stack-2x"></i>
-                              <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
-                            </span>
-                          </a>
-                          
-                          <a href="#" class="table-link danger">
-                            <span class="fa-stack">
-                              <i class="fa fa-square fa-stack-2x"></i>
-                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                            </span>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <img src="img/Friends/woman-2.jpg" alt="">
-                          <a href="#" class="user-link">John Doe</a>
-                          >
-                        </td>
-                        <td>
-                          <h4>Lorem ipsum dolor.</h4>
-                        </td>
-                        <td class="text-center">
-                          <span class="label label-success">Active</span>
-                        </td>
-                        <td>
-                          2013/08/08
-                        </td>
-                        <td style="width: 20%;">
-                          <a href="./view-single-job.html" class="table-link success">
-                            <span class="fa-stack">
-                              <i class="fa fa-square fa-stack-2x"></i>
-                              <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
-                            </span>
-                          </a>
-                          
-                          <a href="#" class="table-link danger">
-                            <span class="fa-stack">
-                              <i class="fa fa-square fa-stack-2x"></i>
-                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                            </span>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <img src="img/Friends/woman-3.jpg" alt="">
-                          <a href="#" class="user-link">John Doe</a>
-                          
-                        </td>
-                        <td>
-                          <h4>Lorem ipsum dolor sit amet, consectetur adipisicing.</h4>
-                        </td>
-                        <td class="text-center">
-                          <span class="label label-danger">Banned</span>
-                        </td>
-                        <td>
-                          2013/08/08
-                        </td>
-                        <td style="width: 20%;">
-                          <a href="#" class="table-link success">
-                            <span class="fa-stack">
-                              <i class="fa fa-square fa-stack-2x"></i>
-                              <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
-                            </span>
-                          </a>
-                          
-                          <a href="#" class="table-link danger">
-                            <span class="fa-stack">
-                              <i class="fa fa-square fa-stack-2x"></i>
-                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                            </span>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          
-                          <a href="#" class="user-link">John Doe</a>
-                        
-                        </td>
-                        <td>
-                          <h4>Lorem ipsum.</h4>
-                        </td>
-                        <td class="text-center">
-                          <span class="label label-warning">Pending</span>
-                        </td>
-                        <td>
-                          2013/08/08
-                        </td>
-                        <td style="width: 20%;">
-                          <a href="./view-single-job.html" class="table-link success">
-                            <span class="fa-stack">
-                              <i class="fa fa-square fa-stack-2x"></i>
-                              <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
-                            </span>
-                          </a>
-                          
-                          <a href="#" class="table-link danger">
-                            <span class="fa-stack">
-                              <i class="fa fa-square fa-stack-2x"></i>
-                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                            </span>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <img src="img/Friends/woman-5.jpg" alt="">
-                          <a href="#" class="user-link">Robert Downey Jr.</a>
-                          
-                        </td>
-                        <td>
-                          <h4>Lorem ipsum dolor sit amet.</h4>
-                        </td>
-                        <td class="text-center">
-                          <span class="label label-success">Active</span>
-                        </td>
-                        <td>
-                          2013/08/08
-                        </td>
-                        <td style="width: 20%;">
-                          <a href="./view-single-job.html" class="table-link success">
-                            <span class="fa-stack">
-                              <i class="fa fa-square fa-stack-2x"></i>
-                              <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
-                            </span>
-                          </a>
-                          
-                          <a href="#" class="table-link danger">
-                            <span class="fa-stack">
-                              <i class="fa fa-square fa-stack-2x"></i>
-                              <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
-                            </span>
-                          </a>
-                        </td>
-                      </tr>
+                      <?php } // foreach ($jobs as $job) ?>
                     </tbody>
                   </table>
+                 
                   </div>
                   <ul class="pagination pull-right">
                   <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
