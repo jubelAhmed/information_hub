@@ -8,6 +8,7 @@ $( document ).ready(function() {
 	    	$("#postloader").hide()
 	    	if(result.status == 'ok'){
 	    		for (var i = 0; i < Object.keys(result).length - 1; i++) {
+	    			userFullName(result[i].id, result[i].user_id)
 	    			// console.log(result[i].post_title)
 					var script = document.createElement('script');						;
 					script.src = "../assets/js/star.js";
@@ -21,7 +22,7 @@ $( document ).ready(function() {
 							" <div class=\"box-header with-border\"> <div class=\"row\">" +
 							" <div class=\"col-md-6\">" +
 							" <div class=\"user-block\">" +
-							" <img class=\"img-circle\" alt=\"User Image\" src=\"../assets/static/img/dark-blue.png\"> <span class=\"username\"><a href=\"#\">"+ result[i].fullname +"</a></span> <span class=\"description\">"+
+							" <img class=\"img-circle\" alt=\"User Image\" src=\"../assets/static/img/dark-blue.png\"> <span class=\"username\"><a href=\"#\"><span id=\""+ result[i].id+result[i].user_id  +"\"><img style=\"max-width:25px; max-height:25px;\" src=\"https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif\"> <br></span></a></span> <span class=\"description\">"+
 							" " + result[i].time + " </span> </div>" +
 							" </div>" +
 							" <div class=\"col-md-6\">" +
@@ -115,6 +116,26 @@ function returnCategory(string){
 	}
 	return myRes.toString().replace(',', '').replace(',', '').replace(',', '')
 }
+
+function userFullName(post, id){
+	$.ajax({
+	    url: "../backend/api/user/profile/getUserFullName.php",
+	    type: "POST",
+	    data: { id: id },
+	    dataType: "json",
+	    success: function(result) {
+	    	if(result.status == 'ok'){
+	    		console.log(result.fullname)
+	    		$("#"+post+result.id).html(result.fullname)
+	    		console.log("Replaced: "+ post+result.id)
+	    	}else{
+	    		return 'Anonymous!'
+	    	}
+	    },
+	    // async: false
+	});
+}
+
 
 
 })

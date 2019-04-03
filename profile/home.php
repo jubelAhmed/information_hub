@@ -17,10 +17,6 @@
     ?>
 
     <!-- star -->
-   
-    
-    
-
     <!-- multiple selcet  start linkup -->
     <!-- Latest compiled and minified CSS -->
     <!-- <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>  -->
@@ -405,12 +401,18 @@
         width: "resolve",
         placeholder: "Select catagories" // need to override the changed default
     });
+    
+    </script>
+ 
     </script>
     <script src="../assets/js/post.js"></script>
     
     <script src="../ajax/own-post/home-post.js"></script>
+    
 </body>
-
+<script>
+    
+</script>
 
 
 </html>
