@@ -372,6 +372,7 @@
                             <div class="tab-pane fade " id="edit_profile">
                            
                                 <div class="row">
+
                                     <div class="col-md-12">
 
                                         <div class="widget" >
@@ -488,6 +489,9 @@
                                         </div>
 
                                     </div>
+                                    
+                                   
+
                                 </div>
 
                             </div>
