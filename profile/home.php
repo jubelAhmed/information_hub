@@ -18,7 +18,7 @@
 
     <!-- star -->
     <link rel="stylesheet" href="../assets/css/star.css">
-    <script src="../assets/js/star.js"></script>
+  
 
     <!-- multiple selcet  start linkup -->
     <!-- Latest compiled and minified CSS -->
@@ -391,11 +391,17 @@
         width: "resolve",
         placeholder: "Select catagories" // need to override the changed default
     });
+    
+    </script>
+ 
     </script>
     <script src="../assets/js/post.js"></script>
     <script src="../ajax/own-post/home-post.js"></script>
+    
 </body>
-
+<script>
+    
+</script>
 
 
 </html>
