@@ -37,6 +37,13 @@
         margin-bottom: 10px;
     }
 
+    .edit-profile-box{
+        background: white !important;
+        padding: 10px;
+        margin-top: 2px;
+        margin-bottom: 10px;
+    }
+
     .badge-style {
         padding-left: 10px;
         padding-right: 10px;
@@ -362,10 +369,11 @@
                             </div>
                             <!-- end profile -->
                             <!-- add profile -->
-                            <div class="tab-pane fade profile-box" id="edit_profile">
-
-                                <div class="row" >
+                            <div class="tab-pane fade " id="edit_profile">
+                           
+                                <div class="row">
                                     <div class="col-md-12">
+
                                         <div class="widget" >
                                             <div class="widget-header">
                                                 <span class="widget-caption"></span>
@@ -439,6 +447,7 @@
                                                         </div>
                                                          
                                                     </form>
+                                 
                                                 </div>
                                             </div>
                                         </div>

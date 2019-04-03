@@ -64,7 +64,8 @@
 
     <div class="container " style="background-color:white ">
         <div class="row " style="margin-top:15px;padding-left:10px;padding-right:10px"">
-            <div class=" col-md-10">
+        <div class="col-md-2"></div>
+            <div class=" col-md-6">
 
             <center>
                 <div>
@@ -83,8 +84,8 @@
             </center>
 
         </div>
-        <div class="col-md-2">
-            <h4 class="text-info">Last Apply Date : <span> <strong>
+        <div class="col-md-2 " style="margin-top:40px">
+            <h4 class="text-info bg-success " style="padding:5px;">Last Apply Date <span> <strong>
                         <center> <?php echo $deadline ?>
                 </span></strong></center>
             </h4>
@@ -92,7 +93,7 @@
     </div>
     <div class="row">
 
-        <div class="col-md-5">
+        <div class="col-md-5 col-md-offset-1">
             <table class="table" style="font-size: 22px;">
 
                 <tr>
