@@ -72,7 +72,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="../employer-home.php">Home</a></li>
                     <li><a href="./post.php">Create New Job</a></li>
-                    <li><a href="#">view Jobs</a></li>
+                    <li><a href="./employer-jobs.php">view Jobs</a></li>
                     <li class="right">
                         <a href="../backend/api/user/auth/logout.php" style="color:blue">Log Out</a>
                     </li>
