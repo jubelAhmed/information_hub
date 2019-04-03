@@ -363,22 +363,77 @@
                                     <div class="col-md-12">
                                         <div class="widget" >
                                             <div class="widget-header">
-                                                <span class="widget-caption">Inputs With Default Icons</span>
+                                                <span class="widget-caption"></span>
                                             </div>
                                             <div class="widget-body">
                                                 <div class="collapse in">
                                                     <form role="form">
                                                          <div class="form-group">
+                                                            <label for="">Career Objective</label>
                                                             <span class="input-icon icon-right">
-                                                                <input class="form-control" type="text">
-                                                                <i class="fa fa-user darkorange"></i>
+                                                                <textarea class="form-control" cols="10" rows="6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, laborum.</textarea>
+                                                                <!-- <i class="fa fa-user darkorange"></i> -->
                                                             </span>
+                                                            <input type="button" class="form-control btn btn-sm btn-success" value=" Update">
                                                         </div>
-
+                                                        <div class="form-group">
+                                                            <label for="">Web Developer</label> 
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eos atque modi, nemo quae rerum.</p>
+                                                            <input type="button" class="btn btn-sm btn-danger" value=" delete">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="">Android Deveolper</label> 
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eos atque modi, nemo quae rerum.</p>
+                                                            <input type="button" class="btn btn-sm btn-danger" value=" delete">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="">Add Experience</label> <br>
+                                                            <input type="text" class="form-control" placeholder="Android Developer"><br>
+                                                            <textarea class="form-control" rows="8" cols="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eos atque modi, nemo quae rerum.</textarea>
+                                                            <input type="button" class="form-control btn btn-sm btn-primary" value=" Add new experience">
+                                                        </div>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
+
+                                    <div class="widget" >
+                                            <div class="widget-header">
+                                                <center><h3 class="widget-caption"><u>Educational Qualification</u></h3></center>
+                                            </div>
+                                            <div class="widget-body">
+                                                <div class="collapse in">
+                                                    <form role="form">
+                                                          
+                                                        <div class="form-group">
+                                                             <label for="">Subject</label>
+                                                             <input type="text" class="form-control input-sm">
+                                                        </div>
+                                                        <div class="form-group">
+                                                             <label for="">Institution</label>
+                                                             <input type="text" class="form-control input-sm">
+                                                        </div>
+                                                        <div class="form-group">
+                                                             <label for="">Year of Passing</label>
+                                                             <input type="text" class="form-control input-sm">
+                                                        </div>
+                                                        <div class="form-group">
+                                                             <label for="">Location</label>
+                                                             <input type="text" class="form-control input-sm">
+                                                        </div>
+                                                        <div class="form-group">
+                                                             <label for="">Result</label>
+                                                             <input type="text" class="form-control input-sm">
+                                                        </div>
+                                                        <div class="form-group">
+                                                             <input type="button" class="btn btn-sm btn-success from-control" class="form-control input-sm" value="Add New Educational Qualification">
+                                                        </div>
+                                                         
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
 
