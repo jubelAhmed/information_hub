@@ -70,6 +70,21 @@
             }
         }
 
+        public function getAllappliedUsers($jobId){
+            $query = "SELECT *
+            FROM users INNER JOIN apply_job
+            WHERE apply_job.job_id = '$jobId' and users.id = apply_job.applicant_id ";
+    
+            $stmt = $this->conn->prepare($query);
+            // execute query
+            $stmt->execute();
+            if($stmt->rowCount() > 0){
+                return $stmt;
+            }else{
+                return false;
+            }
+        }
+
         
     }
 

@@ -125,7 +125,7 @@ class Employer
 
  
     public function getCompanyInfo($employerId){
-        $query = "SELECT `id`, `company_name`, `company_website`, `company_logos`, `company_location`,`type`,`user_name`
+        $query = "SELECT `id`, `company_name`, `company_website`, `company_logos`, `company_location`,`type`,`email`,`user_name`
         FROM " . $this->table . " 
         WHERE id = '$employerId' ";
 

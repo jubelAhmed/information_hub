@@ -54,9 +54,9 @@
 
     <style>
     .top-bar-image {
-        background-color:  #e6ffff
+        /* background-color:  #e6ffff
 ;
-        background-image: linear-gradient( #e6ffff, white);
+        background-image: linear-gradient( #e6ffff, white); */
         height: 200px;
         width: 100%;
 
@@ -65,7 +65,7 @@
     </style>
 </head>
 
-<body>
+<body style="background-color:white">
     <nav class="navbar navbar-white navbar-fixed-top text-danger ">
         <div class="container">
             <div class="navbar-header">
@@ -82,7 +82,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="./employer-home.php">Home</a></li>
                     <li><a href="./jobs/post.php">Create New Job</a></li>
-                    <li><a href="#">view Jobs</a></li>
+                    <li><a href="./jobs/employer-jobs.php">view Jobs</a></li>
                     <li class="right">
                         <a href="../backend/api/user/auth/logout.php" style="color:blue">Log Out</a>
                     </li>
@@ -91,68 +91,40 @@
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row page-content">
+    <div class=" " style="background-color:white ; ">
+        <div class="row  ">
 
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-12 ">
                 <div id="body-section">
-                    <div class="top-bar-image">
+                    <div class="top-bar-image" style="background-color:#FBFCFC ; margin-top:72px">
                         <center>
 
                             <div style="padding-top:5px;padding-bottom:2px">
-                                <img src=" <?php echo "data:image ; base64 , ". $companyInfo['company_logos'] ; ?>" width="200px" height="120px" class="image"
-                                    alt="company image" />
+                                <img src=" <?php echo "data:image ; base64 , ". $companyInfo['company_logos'] ; ?>"
+                                    width="200px" height="120px" class="img-thumbnail image " alt="company image" />
                             </div>
                             <div>
-                                <h3 class="text-info text-capitalize"> <?php echo $companyInfo['company_name'] ; ?> </h3>
+                                <h3 class="text-info text-capitalize"> <?php echo $companyInfo['company_name'] ; ?>
+                                </h3>
                             </div>
 
                         </center>
                     </div>
-                    <div style="background:white;margin-top:3px;height:400px">
-                        <div class="row" style="padding:10px;
-                            color:gray;font-size:18px">
-                            <div class="col-md-3 col-md-offset-4">
-                                User Name :
-
+                    <div style="background:white;margin-top:3px;height:300px">
+                        
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-8">
+                                    <div>
+                                        <h2 class="text-info">About</h2>
+                                    </div>
+                                    <div>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur culpa ad id delectus impedit cupiditate sint itaque unde ullam, deleniti cumque beatae ratione maiores minus temporibus quod rerum excepturi quis?</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-2"></div>
                             </div>
-                            <div class="col-md-3 text-capitalize">
-                            <?php echo $companyInfo['user_name'] ; ?>
-                            </div>
-                        </div>
-                        <div class="row" style="padding:10px;
-                            color:gray;font-size:18px">
-                            <div class="col-md-3 col-md-offset-4">
-
-                                Company Website :
-
-                            </div>
-                            <div class="col-md-3">
-                             <a href= "<?php echo  $companyInfo['website_name'] ; ?>"><?php echo  $companyInfo['company_website'] ; ?></a>
-                            </div>
-                        </div>
-                        <div class="row" style="padding:10px;
-                            color:gray;font-size:18px">
-                            <div class="col-md-3 col-md-offset-4">
-
-                                Location :
-
-                            </div>
-                            <div class="col-md-3 text-capitalize">
-                            <?php echo  $companyInfo['company_location'] ; ?>
-                            </div>
-                        </div>
-                        <!-- <div class="row" style="padding:10px;
-                            color:gray;font-size:18px">
-                            <div class="col-md-3 col-md-offset-4">
-
-                                Email :
-
-                            </div>
-                            <div class="col-md-3">
-                                @gmail.com
-                            </div>
-                        </div> -->
+                       
                     </div>
                 </div>
             </div>
@@ -161,9 +133,68 @@
     </div>
 
 
-    <footer class="footer">
-        <div class="container">
-            <p class="text-muted text-center">Copyright &copy; information hub - all rights reserved</p>
+    <footer class="" style="background-color:black ;color:white;padding:20px">
+        <div class="container ">
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <center>
+                        <h3 class="text-info text-capitalize"> <?php echo $companyInfo['company_name'] ; ?> </h3>
+                    </center>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            <span>Email:</span>
+                        </div>
+                        <div class="col-md-6">
+                            <a
+                                href="mailto:<?php echo  $companyInfo['email'] ; ?>"><?php echo  $companyInfo['email'] ; ?></a>
+
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-3 ">
+                            <span>location:</span>
+                        </div>
+                        <div class="col-md-6">
+                            <?php echo  $companyInfo['company_location'] ; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span>website:</span>
+                        </div>
+                        <div class="col-md-6">
+                            <a
+                                href="<?php echo  $companyInfo['website_name'] ; ?>"><?php echo  $companyInfo['company_website'] ; ?></a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class=" profile-box">
+                        
+                        <ul class="list-unstyled list-social">
+                            <li class="social-list">
+                                <a href="#"><i class="social-i fa fa-twitter"></i> @twitter</a>
+                            </li>
+                            <li class="social-list">
+                                <a href="#"><i class="social-i fa fa-facebook"></i>
+                                    @facebook</a>
+                            </li>
+                            <li class="social-list">
+                                <a href="#"><i class="social-i fa fa-linkedin"></i>
+                                    @linkedin</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </footer>
 

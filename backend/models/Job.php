@@ -210,6 +210,22 @@ class Job
         }
     }
 
+    public function getAllPublishOwnCompanyJobPostWithCompany($employerId){
+        $query = "SELECT *
+        FROM jobs
+        INNER JOIN employer
+        ON jobs.user_id=employer.id and employer.id = '$employerId' ";
+
+        $stmt = $this->conn->prepare($query);
+        // execute query
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            return $stmt;
+        }else{
+            return false;
+        }
+    }
+
     public function updateJobStatus($jobId){
 
         if($this->isAlreadyAprrovedJob($jobId)){

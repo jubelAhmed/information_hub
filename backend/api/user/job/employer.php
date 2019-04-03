@@ -23,6 +23,7 @@ function getCompanyAllInfo($employer,$employerId){
                 'company_logos'=>$company_logos,
                 'company_location'=>$company_location,
                 'user_name'=>$user_name,
+                'email'=>$email
                 
                 
                 

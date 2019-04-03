@@ -1,4 +1,4 @@
-$(window).load(function(){
+$(document).ready(function(){
   
    $('#stars li').on('click', function(){
      console.log("clicks");
