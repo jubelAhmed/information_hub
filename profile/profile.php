@@ -37,7 +37,7 @@
         margin-bottom: 10px;
     }
 
-    .edit-profile-box{
+    .edit-profile-box {
         background: white !important;
         padding: 10px;
         margin-top: 2px;
@@ -55,12 +55,23 @@
         margin-right: 5px;
         color: white;
     }
+
+    .our-skill-plus-button:hover {
+        color: black;
+    }
+
+    .badge-close-feature:hover {
+        display: inline;
+        color: #580000 !important;
+        padding-left: 5%;
+        font-size: 16px;
+        cursor: pointer;
+    }
     </style>
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-    <script src="../ajax/job-post/job-skill.js"></script>
+
+
+
+   
 </head>
 
 <body class="animated fadeIn">
@@ -370,127 +381,146 @@
                             <!-- end profile -->
                             <!-- add profile -->
                             <div class="tab-pane fade " id="edit_profile">
-                           
+
                                 <div class="row">
 
                                     <div class="col-md-12">
 
-                                        <div class="widget" >
+                                        <div class="widget">
                                             <div class="widget-header">
                                                 <span class="widget-caption"></span>
                                             </div>
                                             <div class="widget-body">
                                                 <div class="collapse in">
                                                     <form role="form">
-                                                         <div class="form-group">
+                                                        <div class="form-group">
                                                             <label for="">Career Objective</label>
                                                             <span class="input-icon icon-right">
-                                                                <textarea class="form-control" cols="10" rows="6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, laborum.</textarea>
+                                                                <textarea class="form-control" cols="10"
+                                                                    rows="6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, laborum.</textarea>
                                                                 <!-- <i class="fa fa-user darkorange"></i> -->
                                                             </span>
-                                                            <input type="button" class="form-control btn btn-sm btn-success" value=" Update">
+                                                            <input type="button"
+                                                                class="form-control btn btn-sm btn-success"
+                                                                value=" Update">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="">Web Developer</label> 
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eos atque modi, nemo quae rerum.</p>
-                                                            <input type="button" class="btn btn-sm btn-danger" value=" delete">
+                                                            <label for="">Web Developer</label>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                                Dolor eos atque modi, nemo quae rerum.</p>
+                                                            <input type="button" class="btn btn-sm btn-danger"
+                                                                value=" delete">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="">Android Deveolper</label> 
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eos atque modi, nemo quae rerum.</p>
-                                                            <input type="button" class="btn btn-sm btn-danger" value=" delete">
+                                                            <label for="">Android Deveolper</label>
+                                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                                Dolor eos atque modi, nemo quae rerum.</p>
+                                                            <input type="button" class="btn btn-sm btn-danger"
+                                                                value=" delete">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="">Add Experience</label> <br>
-                                                            <input type="text" class="form-control" placeholder="Android Developer"><br>
-                                                            <textarea class="form-control" rows="8" cols="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eos atque modi, nemo quae rerum.</textarea>
-                                                            <input type="button" class="form-control btn btn-sm btn-primary" value=" Add new experience">
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Android Developer"><br>
+                                                            <textarea class="form-control" rows="8"
+                                                                cols="10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eos atque modi, nemo quae rerum.</textarea>
+                                                            <input type="button"
+                                                                class="form-control btn btn-sm btn-primary"
+                                                                value=" Add new experience">
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
 
-                                    <div class="widget" >
+                                        <div class="widget">
                                             <div class="widget-header">
-                                                <center><h3 class="widget-caption"><u>Educational Qualification</u></h3></center>
+                                                <center>
+                                                    <h3 class="widget-caption"><u>Educational Qualification</u></h3>
+                                                </center>
                                             </div>
                                             <div class="widget-body">
                                                 <div class="collapse in">
                                                     <form role="form">
                                                         <div class="form-group bg-success">
-                                                             <label for="">Title: SSC</label>
-                                                             <input type="button" class="input-sm btn btn-sm" style="margin-left:5%" value="Delete">
-                                                        </div>  
+                                                            <label for="">Title: SSC</label>
+                                                            <input type="button" class="input-sm btn btn-sm"
+                                                                style="margin-left:5%" value="Delete">
+                                                        </div>
 
                                                         <div class="form-group">
-                                                             <label for="">Subject</label>
-                                                             <input type="text" class="form-control input-sm">
+                                                            <label for="">Subject</label>
+                                                            <input type="text" class="form-control input-sm">
                                                         </div>
                                                         <div class="form-group">
-                                                             <label for="">Institution</label>
-                                                             <input type="text" class="form-control input-sm">
+                                                            <label for="">Institution</label>
+                                                            <input type="text" class="form-control input-sm">
                                                         </div>
                                                         <div class="form-group">
-                                                             <label for="">Year of Passing</label>
-                                                             <input type="text" class="form-control input-sm">
+                                                            <label for="">Year of Passing</label>
+                                                            <input type="text" class="form-control input-sm">
                                                         </div>
                                                         <div class="form-group">
-                                                             <label for="">Location</label>
-                                                             <input type="text" class="form-control input-sm">
+                                                            <label for="">Location</label>
+                                                            <input type="text" class="form-control input-sm">
                                                         </div>
                                                         <div class="form-group">
-                                                             <label for="">Result</label>
-                                                             <input type="text" class="form-control input-sm">
+                                                            <label for="">Result</label>
+                                                            <input type="text" class="form-control input-sm">
                                                         </div>
                                                         <div class="form-group">
-                                                             <input type="button" class="btn btn-sm btn-success from-control" class="form-control input-sm" value="Add New Educational Qualification">
+                                                            <input type="button"
+                                                                class="btn btn-sm btn-success from-control"
+                                                                class="form-control input-sm"
+                                                                value="Add New Educational Qualification">
                                                         </div>
-                                                         
+
                                                     </form>
-                                 
+
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="widget" >
+                                        <div class="widget">
                                             <div class="widget-header">
-                                                <center><h3 class="widget-caption"><u>Educational Qualification</u></h3></center>
+                                                <center>
+                                                    <h3 class="widget-caption"><u>Educational Qualification</u></h3>
+                                                </center>
                                             </div>
                                             <div class="widget-body">
                                                 <div class="collapse in">
-                                                     
-                                                         
-                                                        <div class="row" style="margin-top: 8px;">
+
+                                                    <div class="row" style="margin-top: 8px;">
                                                         <div class="col-md-4"></div>
                                                         <div class="col-md-3 col-sm-3 col-lg-3">
                                                             <div class="input-group input-group-sm">
-                                                                <input class="form-control" id="idSpecialSkillInput" type="text"
-                                                                    placeholder="special-skill">
+                                                                <input class="form-control" id="idSpecialSkillInput"
+                                                                    type="text" placeholder="special-skill">
                                                                 <span class="input-group-btn">
-                                                                    <i id="special_skill_btn" class="our-skill-plus-button fa fa-plus-circle"
+                                                                    <i id="special_skill_btn"
+                                                                        class="our-skill-plus-button fa fa-plus-circle"
                                                                         style="font-size: 30px; color: green; margin-left: 5px; cursor: pointer;"
                                                                         onclick="addNewSkill()"></i>
                                                                 </span>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row" style="margin-top: 30px; margin-left: 20%; margin-right: 30%;">
+                                                    <div class="row"
+                                                        style="margin-top: 30px; margin-left: 20%; margin-right: 30%;">
                                                         <!-- add all special skill like that */ -->
                                                         <div id="idSpecialSkill">
 
                                                         </div>
 
                                                     </div>
-                                                                                         
-                                                   
+
                                                 </div>
                                             </div>
                                         </div>
 
                                     </div>
-                                    
-                                   
+
+
 
                                 </div>
 
@@ -503,5 +533,5 @@
         </div>
     </div>
 </body>
-
+<script src="../ajax/job-post/job-skill.js"></script>
 </html>
