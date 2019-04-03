@@ -1,6 +1,6 @@
 <?php 
   session_start();
-  if(!$_SESSION['valid'] && !$_SESSION['type'] == "user"){
+  if(!$_SESSION['valid'] || $_SESSION['type'] == "employer"){
     session_destroy();
     header("Location:http://localhost/information_hub/index.php");
   }

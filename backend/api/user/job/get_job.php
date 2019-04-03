@@ -69,6 +69,62 @@ function getPublishedJobs($job){
     
 }
 
+
+function getPublishedOwnCompanyJobs($job,$employerId){
+    
+
+    $result =$job->getAllPublishOwnCompanyJobPostWithCompany($employerId);
+
+
+
+    $num = $result->rowCount();
+
+    if($num > 0){
+        $jobArray = array();
+        $jobArray['data'] = array();
+        $jobArray['status'] = "no";
+        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+            extract($row);
+
+            $jobList = array(
+                'job_id'=> $job_id ,
+                'user_id'=>$user_id,
+                'job_title'=>$job_title,
+                'company_name'=>$company_name,
+                'company_logo'=>$company_logos,
+                'type'=>$type,
+                
+                'company_website'=>$company_website,
+                'company_location'=>$company_location,
+                'remote_work'=>$remote_work,
+                'job_type'=>$job_type,
+                'compensation'=>$compensation,
+                'min_salary'=>$min_salary,
+                'max_salary'=>$max_salary,
+                'skills'=>json_decode($skills),
+                'job_description'=>$job_description,
+                'current_data'=>$current_data,
+                'deadline'=>$deadline
+                
+            );
+
+            array_push($jobArray['data'],$jobList);
+             $jobArray['status'] = "ok";
+            
+        }
+
+       
+
+        return json_encode($jobArray);
+
+    }else{
+        echo json_encode(array('message'=>"there have no published jobs",'status'=>"no"));
+        return json_encode(array('message'=>"there have no published jobs",'status'=>"no"));
+    }
+
+    
+}
+
 function getSingleJob($job,$job_id){
     $result = $job->getSingleJobPost($job_id);
 
@@ -97,6 +153,60 @@ function getSingleJob($job,$job_id){
         return json_encode($jobArray);
 
     }
+}
+
+function getAllJobs($job){
+    
+   
+    $result =$job->getAllJobPostWIthCompnayInfo();
+
+    
+
+    if($result){
+        $jobArray = array();
+        $jobArray['data'] = array();
+        $jobArray['status'] = "no";
+        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+            extract($row);
+
+            $jobList = array(
+                'job_id'=> $job_id ,
+                'user_id'=>$user_id,
+                'job_title'=>$job_title,
+                'company_name'=>$company_name,
+                'company_logo'=>$company_logos,
+                'type'=>$type,
+                
+                'company_website'=>$company_website,
+                'company_location'=>$company_location,
+                'remote_work'=>$remote_work,
+                'job_type'=>$job_type,
+                'compensation'=>$compensation,
+                'min_salary'=>$min_salary,
+                'max_salary'=>$max_salary,
+                'skills'=>json_decode($skills),
+                'job_description'=>$job_description,
+                'current_data'=>$current_data,
+                'approve_status'=>$approve_status,
+                'deadline'=>$deadline
+                
+            );
+
+            array_push($jobArray['data'],$jobList);
+             $jobArray['status'] = "ok";
+            
+        }
+
+        //echo json_encode($jobArray);
+
+        return json_encode($jobArray);
+
+    }else{
+        //echo json_encode(array('message'=>"there have no pending post",'status'=>"no"));
+        return json_encode(array('message'=>"there have no job post",'status'=>"no"));
+    }
+
+    
 }
 
 function getPendingJobs(){
@@ -153,6 +263,11 @@ function getPendingJobs(){
 
     
 }
+
+
+
+
+
 
 
 

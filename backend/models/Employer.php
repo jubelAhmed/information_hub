@@ -24,9 +24,9 @@ class Employer
     // signup function
 
     public function signup(){
-        // if($this->isAlreadyExist()){
-        //     return false;
-        // }
+         if($this->isAlreadyExist()){
+             return false;
+         }
 
      
         // query to insert record
@@ -125,7 +125,7 @@ class Employer
 
  
     public function getCompanyInfo($employerId){
-        $query = "SELECT `id`, `company_name`, `company_website`, `company_logos`, `company_location`,`type`
+        $query = "SELECT `id`, `company_name`, `company_website`, `company_logos`, `company_location`,`type`,`email`,`user_name`
         FROM " . $this->table . " 
         WHERE id = '$employerId' ";
 

@@ -1,5 +1,8 @@
 $(document).ready(function(){
   
+   $('#stars li').on('click', function(){
+     console.log("clicks");
+   })
   /* 1. Visualizing things on Hover - See next part for action on click */
   $('#stars li').on('mouseover', function(){
     var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
