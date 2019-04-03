@@ -389,6 +389,34 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
+                                                    <div class="col-md-3 text-success" style="font-size:16px;margin-top:4px">
+                                                        <span >Place</span>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                    <div class="form-group">
+                                                               
+                                                               <span class="input-icon icon-right">
+                                                                   <input class="form-control" type="text" id="job">
+                                                                   <i class="fa fa-user darkorange"></i>
+                                                               </span>
+                                                           </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-3 text-success" style="font-size:16px;margin-top:4px">
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                    <div class="form-group">
+                                                               
+                                                               <span class="input-icon icon-right">
+                                                                   <input class="form-control" type="text" id="job">
+                                                                   <i class="fa fa-user darkorange"></i>
+                                                               </span>
+                                                           </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
                                                     <div class="col-sm-4">
                                                         <span class="text-muted">Date of Birth</span>
                                                     </div>
