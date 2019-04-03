@@ -53,10 +53,10 @@
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav" style="margin-top:40px;">
           <li class="active">
-            <a href="./admin-panel.html" class="hover-effect">Home</a>
+            <a href="./dashboard.php" class="hover-effect">Home</a>
           </li>
           <li class="">
-            <a href="job-post-status.html" class="hover-effect">Job Posts</a>
+            <a href="./job-post-status.php" class="hover-effect">Job Posts</a>
           </li>
           <li>
             <a href="#" class="hover-effect">Users </a>

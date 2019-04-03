@@ -195,10 +195,10 @@ class Job
     
 
     public function getAllJobPostWIthCompnayInfo(){
-        $query = "SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
-        FROM 'jobs'
-        INNER JOIN 'employer'
-        ON Orders.CustomerID=Customers.CustomerID;";
+        $query = "SELECT *
+        FROM jobs
+        INNER JOIN employer
+        ON jobs.user_id=employer.id ";
 
         $stmt = $this->conn->prepare($query);
         // execute query
@@ -208,6 +208,74 @@ class Job
         }else{
             return false;
         }
+    }
+
+    public function getAllPublishOwnCompanyJobPostWithCompany($employerId){
+        $query = "SELECT *
+        FROM jobs
+        INNER JOIN employer
+        ON jobs.user_id=employer.id and employer.id = '$employerId' ";
+
+        $stmt = $this->conn->prepare($query);
+        // execute query
+        $stmt->execute();
+        if($stmt->rowCount() > 0){
+            return $stmt;
+        }else{
+            return false;
+        }
+    }
+
+    public function updateJobStatus($jobId){
+
+        if($this->isAlreadyAprrovedJob($jobId)){
+            return false;
+        }
+
+        $query = "UPDATE jobs SET approve_status = :approve_status  
+            WHERE job_id = :job_id";
+        $status = 1;
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":approve_status",$status );
+        $stmt->bindParam(":job_id", $jobId);
+
+        if($stmt->execute()){
+            return true;
+        }
+         else return false;
+         
+
+    }
+
+    private function isAlreadyAprrovedJob($jobId){
+
+        $result = $this->conn->prepare("SELECT *
+        FROM jobs WHERE approve_status = 1 AND job_id = '".$jobId."' ");
+      
+        $result->execute();
+
+        if($result->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+    
+    public function deleteJob($jobId){
+
+        
+        $query = "DELETE FROM jobs WHERE job_id =  :job_id";
+   
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":job_id", $jobId);
+
+        if($stmt->execute()){
+            return true;
+        }
+         else return false;
+         
+
     }
 
 

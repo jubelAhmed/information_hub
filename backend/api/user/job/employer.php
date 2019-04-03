@@ -2,7 +2,7 @@
 <?php
 
 
-function getAllCompanyInfo($employer,$employerId){
+function getCompanyAllInfo($employer,$employerId){
     
 
     $result =$employer->getCompanyInfo($employerId);
@@ -12,10 +12,9 @@ function getAllCompanyInfo($employer,$employerId){
     $num = $result->rowCount();
 
     if($num > 0){
-        $companyInfoArray = array();
-        $companyInfoArray['data'] = array();
+      
        
-        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+        $row = $result->fetch(PDO::FETCH_ASSOC) ;
             extract($row);
             
             $infoList = array(
@@ -23,18 +22,13 @@ function getAllCompanyInfo($employer,$employerId){
                 'company_website'=>$company_website,
                 'company_logos'=>$company_logos,
                 'company_location'=>$company_location,
+                'user_name'=>$user_name,
+                'email'=>$email
                 
                 
                 
             );
-
-            array_push($companyInfoArray['data'],$infoList);
-            
-        }
-
-       
-
-        return json_encode($companyInfoArray);
+            return json_encode($infoList);
 
     }else{
         echo json_encode(array('message'=>"there have no published jobs",'status'=>"no"));
