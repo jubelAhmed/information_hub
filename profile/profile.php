@@ -37,6 +37,13 @@
         margin-bottom: 10px;
     }
 
+    .edit-profile-box{
+        background: white !important;
+        padding: 10px;
+        margin-top: 2px;
+        margin-bottom: 10px;
+    }
+
     .badge-style {
         padding-left: 10px;
         padding-right: 10px;
@@ -357,25 +364,47 @@
                             </div>
                             <!-- end profile -->
                             <!-- add profile -->
-                            <div class="tab-pane fade profile-box" id="edit_profile">
-
-                                <div class="row" >
+                            <div class="tab-pane fade " id="edit_profile">
+                           
+                                <div class="row">
                                     <div class="col-md-12">
-                                        <div class="widget" >
-                                            <div class="widget-header">
-                                                <span class="widget-caption">Inputs With Default Icons</span>
+                                    <div class="section profile-box">
+                                            <div>
+                                                <h3 class="text-info"> Personal Info</h3>
                                             </div>
-                                            <div class="widget-body">
-                                                <div class="collapse in">
-                                                    <form role="form">
-                                                         <div class="form-group">
-                                                            <span class="input-icon icon-right">
-                                                                <input class="form-control" type="text">
-                                                                <i class="fa fa-user darkorange"></i>
-                                                            </span>
-                                                        </div>
+                                            <div style="padding-top:10px">
 
-                                                    </form>
+                                                <div class="row">
+                                                    <div class="col-md-3 text-success" style="font-size:16px;margin-top:4px">
+                                                        <span >Current Job</span>
+                                                    </div>
+                                                    <div class="col-md-7">
+                                                    <div class="form-group">
+                                                               
+                                                               <span class="input-icon icon-right">
+                                                                   <input class="form-control" type="text" id="job">
+                                                                   <i class="fa fa-user darkorange"></i>
+                                                               </span>
+                                                           </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <span class="text-muted">Date of Birth</span>
+                                                    </div>
+                                                    <div class="col-sm-8">12 January 1990</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <span class="text-muted">Gender</span>
+                                                    </div>
+                                                    <div class="col-sm-8">Male</div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <span class="text-muted">Lives in</span>
+                                                    </div>
+                                                    <div class="col-sm-8">Dhaka</div>
                                                 </div>
                                             </div>
                                         </div>
