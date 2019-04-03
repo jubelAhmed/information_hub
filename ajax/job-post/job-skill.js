@@ -1,8 +1,8 @@
-let rootSpecialSkill = document.getElementById("idSpecialSkill");
+var rootSpecialSkill = document.getElementById("idSpecialSkill");
 let n = 1;
 function addNewSkill() {
   var skill = document.getElementById("idSpecialSkillInput");
-
+  
   if (skill.value == "") {
     alert("fill up skill field.");
     skill.focus();
@@ -21,7 +21,9 @@ function addNewSkill() {
   n++;
 
   span.innerHTML = skillTemplate;
-
+  
+  
+  
   skill.value = "";
 
   rootSpecialSkill.appendChild(span);
@@ -38,16 +40,9 @@ var input = document.getElementById("idSpecialSkillInput");
 
 
 
-// var keycode = (event.keyCode ? event.keyCode : event.which);
-// if(keycode == '13'){
-//     document.getElementById("special_skill_btn").click();
-// }
-
-
-
-// input.addEventListener("keyup", function(event) {
-//   if (event.keyCode === 13) {
-//     event.preventDefault();
-//     document.getElementById("special_skill_btn").click();
-//   }
-// });
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("special_skill_btn").click();
+  }
+});
