@@ -20,6 +20,7 @@ if((empty($_POST['firstName'])) || (empty($_POST['lastName'])) || (empty($_POST[
 }
 
 $user->firstName = $_POST['firstName'];
+
 $user->lastName = $_POST['lastName'];
 //$user->userName = $_POST['userName'];
 $user->email = $_POST['email'];
