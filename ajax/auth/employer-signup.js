@@ -71,13 +71,13 @@ $(document).ready(function() {
                 $("#loading").hide();
                 setTimeout(function() {
                   window.location.href = "http://localhost/information_hub/index-employer.php";
-                }, 20000);
+                }, 500);
               } else if (result.status == "ok") {
                 $("#success").html("Account Registraion Successfull");
                 $("#loading").hide();
                 setTimeout(function() {
                   window.location.href = "http://localhost/information_hub/index-employer.php";
-                }, 5000);
+                }, 500);
               }
             },
             error:function(err){
@@ -91,7 +91,7 @@ $(document).ready(function() {
             $("#error").html("Your password must match!");
             $("#newuserbtn").show();
       $("#loading").html("");
-          }, 2000);
+          }, 5000);
           
         }
       } else {
@@ -99,7 +99,7 @@ $(document).ready(function() {
         setTimeout(function() {
           $("#loading").hide();
          
-        }, 2000);
+        }, 1000);
         $("#error").html("You must enter all required informaiton!");
         setTimeout(function() {
           window.location.href = "http://localhost/information_hub/index-employer.php";

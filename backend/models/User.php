@@ -30,11 +30,12 @@ class User
      
         // query to insert record
         $query = "INSERT INTO " . $this->table. "
-                SET first_name=:first_name, last_name=:last_name, email=:email , birthday=:birthday,occupation=:occupation,gender=:gender,password=:password";
+                SET first_name=:first_name, last_name=:last_name, email=:email , birthday=:birthday,occupation=:occupation,gender=:gender,type=:type,password=:password";
     
         // prepare query
         $stmt = $this->conn->prepare($query);
     
+        $type = "user";
         // sanitize
         $this->firstName=htmlspecialchars(strip_tags($this->firstName));
         $this->lastName=htmlspecialchars(strip_tags($this->lastName));
@@ -47,6 +48,7 @@ class User
         $stmt->bindParam(":birthday", $this->birthday);
         $stmt->bindParam(":occupation", $this->occupation);
         $stmt->bindParam(":gender", $this->gender);
+        $stmt->bindParam(":type", $type);
         $stmt->bindParam(":password", $pass);
        
     

@@ -42,13 +42,13 @@ $(document).ready(function() {
               $("#loading").hide();
               setTimeout(function() {
                 window.location.href = "./";
-              }, 20000);
+              }, 2000);
             } else if (result.status == "ok") {
               $("#success").html("Account Registraion Successfull");
               $("#loading").hide();
               setTimeout(function() {
                 window.location.href = "./";
-              }, 10000);
+              }, 2000);
             }
           }
         });
