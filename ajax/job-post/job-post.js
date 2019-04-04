@@ -103,7 +103,7 @@ $(document).ready(function() {
           alert("thank you and your job will be reviewed");
       
           setTimeout(function() {
-            window.location.href = "http://localhost/information_hub/profile/jobs/post.php";
+            window.location.href = "../../employer/jobs/employer-jobs.php";
           }, 5000);
           
         }
