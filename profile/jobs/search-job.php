@@ -8,6 +8,7 @@
 
     include_once('../../backend/config/Database.php');
     include_once('../../backend/models/Job.php');
+    include('../../backend/models/filter-job.php');
     //include_once('../../backend/models/Employer.php');
    
     
@@ -18,11 +19,15 @@
 
     $job = new Job($db);
     //$employer = new Employer($db);
+    $searcjob = new FilterJob($db);
+      
 
     include '../../backend/api/user/job/get_job.php';
+    include '../../backend/api/user/job/filter-job.php';
    // include '../../backend/api/user/job/employer.php';
 
     $allPublishedJobArray = getPublishedJobs($job);
+
     //$companyInfo = getAllCompanyInfo($employer, $_SESSION['user_login_uid']);
 
 
@@ -160,6 +165,11 @@
                 </div>
             </div>
             <!-- Middle Part -->
+
+            <?php 
+                //
+
+             ?>
             <div class="col-md-6">
                 <!-- Searching -->
                 <div class="directory-info-row">
@@ -167,8 +177,11 @@
                         <div class="col-md-6 col-md-offset-3">
                             <div class="form-group">
                                 <span class="input-icon inverted">
-                                    <input class="form-control input-sm" type="text">
-                                    <i class="glyphicon glyphicon-search bg-blue"></i>
+                                    <form action="#" method="POST">
+                                    <input class="form-control input-sm" name="searchtext" type="text" placeholder="c++">
+                                    <br>
+                                    <input style="margin-left:45%" type="submit" name="searchbtn" class="btn btn-sm btn-success" value="Search"><!-- <i class="glyphicon glyphicon-search bg-blue"> </i> -->
+                                    </form>
                                 </span>
                             </div>
                         </div>
@@ -177,54 +190,133 @@
 
                 <!-- Posts start -->
 
-                <?php foreach ($publishedJobs['data'] as $jobs) { ?>
+                <?php 
+                    if(isset($_POST['searchbtn'])){
+
+                            $posts = getFilteredposts($searcjob, $_POST['searchtext']);
+                            $resultJobs = json_decode($posts, true);
+
+                            // print_r($resultJobs);
+
+                            foreach ($resultJobs as $result) {
+                                # code...
+                            
+                            //===============================
+                            ?>
 
 
-                <div style="background-color: white; border-radius: 10px;
-            margin-bottom: 10px;">
-                    <div class="row">
-                        <!-- logo column -->
-                        <div class="col-md-4 col-sm-3 col-xs-12" style="padding: 20px;">
-                        <?php echo '<img height="110px" width="160px" alt="Company Logo" src="data:image ; base64 , '.$jobs['company_logo'].' "/> ';?>
-                           
-                        </div>
-                        <!-- Title column -->
-                        <div class="col-md-8 pull-left text-info" style="padding-left:1%;">
-                            <div>
-                                <h3><?php echo $jobs['job_title'] ?></h3>
+
+                            <div style="background-color: white; border-radius: 10px;
+                    margin-bottom: 10px;">
+                            <div class="row">
+                                <!-- logo column -->
+                                <div class="col-md-4 col-sm-3 col-xs-12" style="padding: 20px;">
+                                <?php echo '<img height="110px" width="160px" alt="Company Logo" src="data:image ; base64 , '.$result['company_logos'].' "/> ';?>
+                                   
+                                </div>
+                                <!-- Title column -->
+                                <div class="col-md-8 pull-left text-info" style="padding-left:1%;">
+                                    <div>
+                                        <h3><?php echo $result['job_title'] ?></h3>
+                                        
+                                        <h5><span class="text-capitalize"><?php echo $result['company_name'] ?></span></h5>
+                                        <h6> <?php echo $result['company_location'] ?></h6>
+                                    </div>
+
+
+                                    <div class="row" style="padding: 10px; ">
+
+                                        <?php 
+                                         $skills = json_decode($result['skills']); 
+                                            $i = 1;
+                                            foreach ($skills as $value) {
+                                                if($i==8)break;
+                                                echo "<span style=\"font-size:16px ; padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;margin-right:5px;margin-top:5px\" class=\"badge \"> ".$value."</span>\n";
+                                                $i =$i+1;
+                                        
+                                            }
                                 
-                                <h5><span class="text-capitalize"><?php echo $jobs['company_name'] ?></span></h5>
-                                <h6> <?php echo $jobs['company_location'] ?></h6>
+                                         ?>
+
+                                    </div>
+
+                                </div>
                             </div>
 
+                            <div class="row">
+                                <div class="com-md-6 pull-right" style="padding-right:5%;
+                        padding-bottom: 20px">
+                                    <?php echo "<a href=\"./view-single-job.php?id=$result[job_id]&userId=$_SESSION[user_login_uid] \" target=\"_blank\" id=\"details_btn\" class=\"btn btn-sm btn-secondery\">Details</a>" ?>
+                                </div>
+                            </div>
+                        </div>
 
-                            <div class="row" style="padding: 10px; ">
+                
 
-                                <?php 
-                                 $skills = $jobs['skills']; 
-                                    $i = 1;
-                                    foreach ($skills as $value) {
-                                        if($i==8)break;
-                                        echo "<span style=\"font-size:16px ; padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;margin-right:5px;margin-top:5px\" class=\"badge \"> ".$value."</span>\n";
-                                        $i =$i+1;
+
+
+
+
+                        <?php
+                                }
+
+
+                            // ===============================
+
+        
+                    }else{
+
+
+
+                        foreach ($publishedJobs['data'] as $jobs) { ?>
+
+
+                        <div style="background-color: white; border-radius: 10px;
+                    margin-bottom: 10px;">
+                            <div class="row">
+                                <!-- logo column -->
+                                <div class="col-md-4 col-sm-3 col-xs-12" style="padding: 20px;">
+                                <?php echo '<img height="110px" width="160px" alt="Company Logo" src="data:image ; base64 , '.$jobs['company_logo'].' "/> ';?>
+                                   
+                                </div>
+                                <!-- Title column -->
+                                <div class="col-md-8 pull-left text-info" style="padding-left:1%;">
+                                    <div>
+                                        <h3><?php echo $jobs['job_title'] ?></h3>
+                                        
+                                        <h5><span class="text-capitalize"><?php echo $jobs['company_name'] ?></span></h5>
+                                        <h6> <?php echo $jobs['company_location'] ?></h6>
+                                    </div>
+
+
+                                    <div class="row" style="padding: 10px; ">
+
+                                        <?php 
+                                         $skills = $jobs['skills']; 
+                                            $i = 1;
+                                            foreach ($skills as $value) {
+                                                if($i==8)break;
+                                                echo "<span style=\"font-size:16px ; padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;margin-right:5px;margin-top:5px\" class=\"badge \"> ".$value."</span>\n";
+                                                $i =$i+1;
+                                        
+                                            }
                                 
-                                    }
-                        
-                                 ?>
+                                         ?>
 
+                                    </div>
+
+                                </div>
                             </div>
 
+                            <div class="row">
+                                <div class="com-md-6 pull-right" style="padding-right:5%;
+                        padding-bottom: 20px">
+                                    <?php echo "<a href=\"./view-single-job.php?id=$jobs[job_id]&userId=$_SESSION[user_login_uid] \" target=\"_blank\" id=\"details_btn\" class=\"btn btn-sm btn-secondery\">Details</a>" ?>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="com-md-6 pull-right" style="padding-right:5%;
-                padding-bottom: 20px">
-                            <?php echo "<a href=\"./view-single-job.php?id=$jobs[job_id]&userId=$_SESSION[user_login_uid] \" target=\"_blank\" id=\"details_btn\" class=\"btn btn-sm btn-secondery\">Details</a>" ?>
-                        </div>
-                    </div>
-                </div>
-                <?php } // foreach ($publishedJobs as $jobs) ?>
+                        <?php }   }
+ // foreach ($publishedJobs as $jobs) ?>
             </div>
 
             <!-- Posts end -->
