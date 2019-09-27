@@ -32,7 +32,7 @@ if($stmt->rowCount() > 0){
 
     $type = $row['type'];
 
-   
+    
     if($type == "user"){
         echo('{"msg": "login Successfully done", "status": "ok","type": "user"}');
     }else if($type == "employer"){

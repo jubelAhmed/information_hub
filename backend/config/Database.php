@@ -3,10 +3,10 @@
 class Database
 {
 
-    private $host = "database.amadersoft.com";
-    private $db_name = "universityProject";
-    private $user_name = "university";
-    private $password = "udb2019XBD";
+    private $host = "localhost";
+    private $db_name = "online_information_hub";
+    private $user_name = "root";
+    private $password = "";
 
         // db connect
 
