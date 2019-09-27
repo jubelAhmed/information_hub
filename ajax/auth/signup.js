@@ -14,6 +14,7 @@ $(document).ready(function() {
       "<img src='./assets/static/img/gif/loading.gif' style='max-height:70px; max-width:170px'>"
     );
 
+
     if (
       firstname.trim() != "" &&
       lastname.trim() != "" &&
@@ -37,6 +38,7 @@ $(document).ready(function() {
           },
           dataType: "json",
           success: function(result) {
+            console.log(result.status)
             if (result.status == "error") {
               $("#error").html(result.msg);
               $("#loading").hide();
@@ -56,10 +58,10 @@ $(document).ready(function() {
         setTimeout(function() {
           $("#loading").hide();
           $("#error").html("Your password must match!");
-        }, 20000);
+        }, 2000);
         setTimeout(function() {
           window.location.href = "./";
-        }, 20000);
+        }, 2000);
       }
     } else {
       setTimeout(function() {
